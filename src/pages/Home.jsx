@@ -11,7 +11,10 @@ import {
   ShoppingBag, 
   Palette,
   ExternalLink,
-  Sparkles
+  Sparkles,
+  Zap,
+  Leaf,
+  Wifi
 } from 'lucide-react';
 
 const domains = [
