@@ -222,7 +222,7 @@ export default function Home() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="max-w-3xl mx-auto text-center"
+            className="max-w-4xl mx-auto text-center"
           >
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
               Your Gateway to the
@@ -230,9 +230,55 @@ export default function Home() {
                 LBC Ecosystem
               </span>
             </h2>
-            <p className="text-lg text-slate-400 max-w-2xl mx-auto leading-relaxed">
-              Explore all platforms and services powered by LBCHUB. 
-              From blockchain solutions to community initiatives, find everything in one place.
+
+            {/* Highlighted Tagline Banner */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.7, delay: 0.4 }}
+              className="relative mt-8 mb-10 mx-auto max-w-3xl"
+            >
+              {/* Glow behind banner */}
+              <div className="absolute inset-0 bg-gradient-to-r from-yellow-500/20 via-amber-400/20 to-orange-500/20 rounded-2xl blur-xl" />
+              
+              <div className="relative rounded-2xl border border-amber-400/30 bg-gradient-to-br from-slate-900/90 via-amber-950/30 to-slate-900/90 backdrop-blur-xl px-8 py-7">
+                {/* Token badge */}
+                <div className="flex items-center justify-center gap-2 mb-4">
+                  <div className="h-px flex-1 bg-gradient-to-r from-transparent to-amber-400/50" />
+                  <span className="px-4 py-1 rounded-full bg-gradient-to-r from-amber-500 to-yellow-400 text-slate-900 text-xs font-bold tracking-widest uppercase shadow-lg shadow-amber-500/30">
+                    Powered by $LUMINA Token
+                  </span>
+                  <div className="h-px flex-1 bg-gradient-to-l from-transparent to-amber-400/50" />
+                </div>
+
+                <p className="text-2xl md:text-3xl font-bold text-white leading-snug mb-2">
+                  LBC Network
+                </p>
+                <p className="text-lg md:text-xl font-medium bg-gradient-to-r from-amber-300 via-yellow-200 to-orange-300 bg-clip-text text-transparent leading-relaxed">
+                  Illuminating Lebanon, MENA & Africa
+                </p>
+                <p className="text-slate-400 text-base mt-2">
+                  with blockchain, green energy & digital access
+                </p>
+
+                {/* 3 pillars */}
+                <div className="flex flex-wrap justify-center gap-4 mt-6">
+                  {[
+                    { icon: Zap, label: 'Blockchain', color: 'text-amber-400', bg: 'bg-amber-400/10 border-amber-400/20' },
+                    { icon: Leaf, label: 'Green Energy', color: 'text-emerald-400', bg: 'bg-emerald-400/10 border-emerald-400/20' },
+                    { icon: Wifi, label: 'Digital Access', color: 'text-cyan-400', bg: 'bg-cyan-400/10 border-cyan-400/20' },
+                  ].map(({ icon: Icon, label, color, bg }) => (
+                    <div key={label} className={`flex items-center gap-2 px-4 py-2 rounded-full border ${bg} backdrop-blur-sm`}>
+                      <Icon className={`w-4 h-4 ${color}`} />
+                      <span className={`text-sm font-semibold ${color}`}>{label}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </motion.div>
+
+            <p className="text-slate-400 text-base max-w-2xl mx-auto leading-relaxed">
+              Explore all platforms and services powered by LBCHUB — find everything in one place.
             </p>
           </motion.div>
         </section>
