@@ -286,94 +286,108 @@ export default function Home() {
               <span className="text-xs font-semibold tracking-widest uppercase text-slate-500 mb-3 block">Execution Plan</span>
               <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">Strategic Roadmap</h2>
               <p className="text-slate-400 text-base max-w-3xl mx-auto leading-relaxed font-light">
-                LBC Network is building a structured, multi-phase digital infrastructure ecosystem designed for long-term sustainability, regulatory alignment, and real-world impact across Lebanon, MENA, and Africa.
+                LBC Network is a Canada-based digital infrastructure initiative, designed to scale globally through a structured, multi-phase ecosystem focused on blockchain technology, digital access, and real-world impact.
               </p>
             </motion.div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-white/5 rounded-2xl overflow-hidden border border-white/5">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-px rounded-2xl overflow-hidden border border-white/[0.04]" style={{ background: 'rgba(255,255,255,0.03)' }}>
               {[
                 {
                   phase: 'Phase 1',
                   title: 'Foundation',
-                  accent: 'rgba(99,102,241,0.12)',
-                  border: 'rgba(99,102,241,0.3)',
+                  subtitle: 'Canada-Based',
                   dot: '#6366f1',
+                  barColor: 'rgba(99,102,241,0.5)',
+                  glow: 'rgba(99,102,241,0.06)',
                   items: [
                     'LBC Network core platform',
                     'Lumina Wallet infrastructure',
-                    'Investor framework (Canada-based)',
-                    'Ecosystem architecture development',
+                    'Canada-based investor framework',
+                    'Ecosystem architecture and governance design',
                   ],
                 },
                 {
                   phase: 'Phase 2',
                   title: 'Digital Expansion',
-                  accent: 'rgba(139,92,246,0.12)',
-                  border: 'rgba(139,92,246,0.3)',
+                  subtitle: 'Global Readiness',
                   dot: '#8b5cf6',
+                  barColor: 'rgba(139,92,246,0.5)',
+                  glow: 'rgba(139,92,246,0.06)',
                   items: [
                     'Integrated digital marketplace',
                     'NFT infrastructure layer',
                     'Token-based utility integrations',
-                    'Unified service access within LBCHub',
+                    'Unified access through LBCHub',
                   ],
                 },
                 {
                   phase: 'Phase 3',
                   title: 'Real-World Services',
-                  accent: 'rgba(251,191,36,0.08)',
-                  border: 'rgba(251,191,36,0.25)',
+                  subtitle: 'Global Scale',
                   dot: '#f59e0b',
+                  barColor: 'rgba(251,191,36,0.4)',
+                  glow: 'rgba(251,191,36,0.05)',
                   items: [
-                    'Driver-first mobility platform (60–70% driver revenue model)',
-                    'Direct-impact charity infrastructure (transparent allocation model)',
+                    'Driver-first mobility platform (60–70% revenue to drivers)',
+                    'Direct-impact charity infrastructure with transparent allocation',
                     'Branded technology and electronics expansion',
+                    'Global ecosystem rollout across MENA, Africa, and emerging markets',
                   ],
                 },
-              ].map(({ phase, title, accent, border, dot, items }, i) => (
+              ].map(({ phase, title, subtitle, dot, barColor, glow, items }, i) => (
                 <motion.div
                   key={phase}
-                  initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }} transition={{ duration: 0.5, delay: i * 0.12 }}
-                  className="relative p-8 md:p-10"
-                  style={{ background: 'linear-gradient(160deg, rgba(10,8,28,0.95), rgba(8,6,20,0.98))' }}
+                  initial={{ opacity: 0 }} whileInView={{ opacity: 1 }}
+                  viewport={{ once: true }} transition={{ duration: 0.5, delay: i * 0.1 }}
+                  className="relative flex flex-col p-10"
+                  style={{ background: 'linear-gradient(170deg, rgba(9,7,24,0.97), rgba(7,5,18,0.99))' }}
                 >
-                  {/* Top accent bar */}
-                  <div className="absolute top-0 left-8 right-8 h-px" style={{ background: `linear-gradient(90deg, transparent, ${border}, transparent)` }} />
+                  {/* Top accent line */}
+                  <div className="absolute top-0 inset-x-0 h-[2px]" style={{ background: `linear-gradient(90deg, transparent 0%, ${barColor} 50%, transparent 100%)` }} />
 
-                  {/* Phase label */}
-                  <div className="flex items-center gap-2.5 mb-6">
-                    <span className="w-2 h-2 rounded-full flex-shrink-0" style={{ background: dot, boxShadow: `0 0 8px ${dot}` }} />
-                    <span className="text-xs font-semibold tracking-widest uppercase text-slate-500">{phase}</span>
+                  {/* Phase label + dot */}
+                  <div className="flex items-center gap-2.5 mb-1">
+                    <span className="w-1.5 h-1.5 rounded-full" style={{ background: dot }} />
+                    <span className="text-[10px] font-semibold tracking-widest uppercase text-slate-500">{phase}</span>
                   </div>
 
-                  <h3 className="text-xl font-bold text-white mb-6 leading-snug">{title}</h3>
+                  <h3 className="text-lg font-bold text-white leading-tight">{title}</h3>
+                  <p className="text-xs text-slate-600 mb-6 mt-0.5 font-medium tracking-wide">{subtitle}</p>
 
-                  {/* Divider */}
-                  <div className="h-px mb-6" style={{ background: 'rgba(255,255,255,0.05)' }} />
+                  <div className="h-px mb-6" style={{ background: 'rgba(255,255,255,0.04)' }} />
 
-                  <ul className="space-y-3.5">
+                  <ul className="space-y-4 flex-1">
                     {items.map((item, j) => (
                       <li key={j} className="flex items-start gap-3">
-                        <span className="mt-2 w-1 h-1 rounded-full flex-shrink-0" style={{ background: dot }} />
+                        <span className="mt-[7px] w-[3px] h-[3px] rounded-full flex-shrink-0" style={{ background: dot }} />
                         <span className="text-slate-400 text-sm leading-relaxed">{item}</span>
                       </li>
                     ))}
                   </ul>
 
-                  {/* Subtle glow */}
-                  <div className="absolute inset-0 rounded-none pointer-events-none" style={{ background: accent }} />
+                  {/* Glow overlay */}
+                  <div className="absolute inset-0 pointer-events-none" style={{ background: glow }} />
                 </motion.div>
               ))}
             </div>
 
-            <motion.p
+            {/* Closing flags row */}
+            <motion.div
               initial={{ opacity: 0 }} whileInView={{ opacity: 1 }}
               viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.3 }}
-              className="text-center text-slate-600 text-sm mt-8 max-w-2xl mx-auto leading-relaxed"
+              className="mt-10 flex flex-col items-center gap-4"
             >
-              Each phase will be executed methodically, ensuring operational stability, compliance alignment, and scalable long-term growth.
-            </motion.p>
+              <div className="flex flex-wrap justify-center gap-6 text-xs text-slate-500">
+                <span className="flex items-center gap-2"><span>🇨🇦</span> Founded in Canada</span>
+                <span className="w-px h-4 bg-white/10 self-center hidden sm:block" />
+                <span className="flex items-center gap-2"><span>🌍</span> Scaling Globally</span>
+                <span className="w-px h-4 bg-white/10 self-center hidden sm:block" />
+                <span className="flex items-center gap-2"><span>🏗️</span> Built like Infrastructure</span>
+              </div>
+              <p className="text-center text-slate-600 text-xs max-w-2xl leading-relaxed">
+                Built in Canada. Designed for global scale. Each phase is executed methodically to ensure compliance, operational stability, and long-term sustainability.
+              </p>
+            </motion.div>
           </div>
         </section>
 
