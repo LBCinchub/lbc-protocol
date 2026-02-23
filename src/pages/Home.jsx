@@ -275,6 +275,108 @@ export default function Home() {
           </div>
         </section>
 
+        {/* STRATEGIC ROADMAP */}
+        <section className="px-6 pb-24">
+          <div className="max-w-6xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }} transition={{ duration: 0.6 }}
+              className="text-center mb-16"
+            >
+              <span className="text-xs font-semibold tracking-widest uppercase text-slate-500 mb-3 block">Execution Plan</span>
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">Strategic Roadmap</h2>
+              <p className="text-slate-400 text-base max-w-3xl mx-auto leading-relaxed font-light">
+                LBC Network is building a structured, multi-phase digital infrastructure ecosystem designed for long-term sustainability, regulatory alignment, and real-world impact across Lebanon, MENA, and Africa.
+              </p>
+            </motion.div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-white/5 rounded-2xl overflow-hidden border border-white/5">
+              {[
+                {
+                  phase: 'Phase 1',
+                  title: 'Foundation',
+                  accent: 'rgba(99,102,241,0.12)',
+                  border: 'rgba(99,102,241,0.3)',
+                  dot: '#6366f1',
+                  items: [
+                    'LBC Network core platform',
+                    'Lumina Wallet infrastructure',
+                    'Investor framework (Canada-based)',
+                    'Ecosystem architecture development',
+                  ],
+                },
+                {
+                  phase: 'Phase 2',
+                  title: 'Digital Expansion',
+                  accent: 'rgba(139,92,246,0.12)',
+                  border: 'rgba(139,92,246,0.3)',
+                  dot: '#8b5cf6',
+                  items: [
+                    'Integrated digital marketplace',
+                    'NFT infrastructure layer',
+                    'Token-based utility integrations',
+                    'Unified service access within LBCHub',
+                  ],
+                },
+                {
+                  phase: 'Phase 3',
+                  title: 'Real-World Services',
+                  accent: 'rgba(251,191,36,0.08)',
+                  border: 'rgba(251,191,36,0.25)',
+                  dot: '#f59e0b',
+                  items: [
+                    'Driver-first mobility platform (60–70% driver revenue model)',
+                    'Direct-impact charity infrastructure (transparent allocation model)',
+                    'Branded technology and electronics expansion',
+                  ],
+                },
+              ].map(({ phase, title, accent, border, dot, items }, i) => (
+                <motion.div
+                  key={phase}
+                  initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }} transition={{ duration: 0.5, delay: i * 0.12 }}
+                  className="relative p-8 md:p-10"
+                  style={{ background: 'linear-gradient(160deg, rgba(10,8,28,0.95), rgba(8,6,20,0.98))' }}
+                >
+                  {/* Top accent bar */}
+                  <div className="absolute top-0 left-8 right-8 h-px" style={{ background: `linear-gradient(90deg, transparent, ${border}, transparent)` }} />
+
+                  {/* Phase label */}
+                  <div className="flex items-center gap-2.5 mb-6">
+                    <span className="w-2 h-2 rounded-full flex-shrink-0" style={{ background: dot, boxShadow: `0 0 8px ${dot}` }} />
+                    <span className="text-xs font-semibold tracking-widest uppercase text-slate-500">{phase}</span>
+                  </div>
+
+                  <h3 className="text-xl font-bold text-white mb-6 leading-snug">{title}</h3>
+
+                  {/* Divider */}
+                  <div className="h-px mb-6" style={{ background: 'rgba(255,255,255,0.05)' }} />
+
+                  <ul className="space-y-3.5">
+                    {items.map((item, j) => (
+                      <li key={j} className="flex items-start gap-3">
+                        <span className="mt-2 w-1 h-1 rounded-full flex-shrink-0" style={{ background: dot }} />
+                        <span className="text-slate-400 text-sm leading-relaxed">{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+
+                  {/* Subtle glow */}
+                  <div className="absolute inset-0 rounded-none pointer-events-none" style={{ background: accent }} />
+                </motion.div>
+              ))}
+            </div>
+
+            <motion.p
+              initial={{ opacity: 0 }} whileInView={{ opacity: 1 }}
+              viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.3 }}
+              className="text-center text-slate-600 text-sm mt-8 max-w-2xl mx-auto leading-relaxed"
+            >
+              Each phase will be executed methodically, ensuring operational stability, compliance alignment, and scalable long-term growth.
+            </motion.p>
+          </div>
+        </section>
+
         {/* FOOTER */}
         <footer className="px-6 pb-12">
           <div className="max-w-7xl mx-auto">
