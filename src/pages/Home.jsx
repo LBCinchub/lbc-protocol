@@ -11,7 +11,7 @@ import {
 const domains = [
   { url: 'lbc.network',          fullUrl: 'https://lbc.network',          name: 'Main Homepage',      description: 'The official LBC Network company homepage',              icon: Globe,           gradient: 'from-blue-500 to-cyan-400',    glow: 'rgba(59,130,246,0.15)' },
   { url: 'lbchub.io',            fullUrl: 'https://lbchub.io',            name: 'Interactive Hub',    description: 'Central command dashboard for all operations',           icon: LayoutDashboard, gradient: 'from-violet-500 to-purple-400', glow: 'rgba(139,92,246,0.15)' },
-  { url: 'lumina-blockchain.com', fullUrl: 'https://lumina-blockchain.com', name: 'Lumina Wallet',     description: 'Blockchain wallet, $LUMINA token & documentation',        icon: Wallet,          gradient: 'from-amber-400 to-yellow-300', glow: 'rgba(251,191,36,0.15)' },
+  { url: 'lumina-blockchain.com', fullUrl: 'https://lumina-blockchain.com', name: 'Lumina Wallet',     description: 'Blockchain wallet, $LBC token & documentation',        icon: Wallet,          gradient: 'from-amber-400 to-yellow-300', glow: 'rgba(251,191,36,0.15)' },
   { url: 'lbchub.app',           fullUrl: 'https://lbchub.app',           name: 'Driver Portal',      description: 'Driver management and logistics center',                 icon: Truck,           gradient: 'from-emerald-500 to-teal-400', glow: 'rgba(16,185,129,0.15)' },
   { url: 'lbchub.ca',            fullUrl: 'https://lbchub.ca',            name: 'Investor Relations', description: 'Investment opportunities, reports & financials',          icon: TrendingUp,      gradient: 'from-indigo-500 to-blue-400',  glow: 'rgba(99,102,241,0.15)' },
   { url: 'lbchub.org',           fullUrl: 'https://lbchub.org',           name: 'Charity Platform',   description: 'Community initiatives and social impact',                icon: Heart,           gradient: 'from-rose-500 to-pink-400',    glow: 'rgba(244,63,94,0.15)' },
@@ -143,7 +143,7 @@ export default function Home() {
             <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-[10px] font-semibold tracking-widest uppercase border border-amber-400/20 text-amber-400/80 mb-10"
               style={{ background: 'rgba(251,191,36,0.05)' }}>
               <span className="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse" />
-              Powered by $LUMINA · Built on Solana
+              Powered by $LBC · Built on Solana
             </span>
           </motion.div>
 
@@ -232,14 +232,14 @@ export default function Home() {
             <SectionLabel>Native Token</SectionLabel>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
               <div>
-                <h2 className="text-2xl md:text-3xl font-bold text-white mb-2">Lumina <span className="text-amber-400">($LUMINA)</span></h2>
+                <h2 className="text-2xl md:text-3xl font-bold text-white mb-2">Lumina <span className="text-amber-400">($LBC)</span></h2>
                 <p className="text-slate-500 text-sm mb-8 font-light">Native utility and governance token of LBC Protocol</p>
                 <p className="text-slate-400 text-base leading-relaxed mb-8 font-light">
                   Lumina is the native utility and governance token of LBC Protocol, enabling on-chain participation across the ecosystem.
                 </p>
                 <p className="text-xs text-slate-600 border border-white/5 rounded-lg px-4 py-3"
                   style={{ background: 'rgba(255,255,255,0.02)' }}>
-                  $LUMINA does not represent equity ownership or financial guarantees.
+                  $LBC does not represent equity ownership or financial guarantees.
                 </p>
               </div>
               <div className="space-y-3">
@@ -406,7 +406,7 @@ export default function Home() {
               </div>
             </div>
             <div className="flex flex-wrap items-center justify-center gap-5 text-[11px] text-slate-700">
-              <span className="flex items-center gap-1.5"><span className="w-1 h-1 rounded-full bg-amber-500/50" />Powered by $LUMINA</span>
+              <span className="flex items-center gap-1.5"><span className="w-1 h-1 rounded-full bg-amber-500/50" />Powered by $LBC</span>
               <span className="flex items-center gap-1.5"><span className="w-1 h-1 rounded-full bg-violet-500/50" />Built on Solana</span>
               <span className="flex items-center gap-1.5"><span className="w-1 h-1 rounded-full bg-slate-500/50" />Designed for Global Scale</span>
             </div>
