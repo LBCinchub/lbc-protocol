@@ -10,7 +10,7 @@ import {
 
 const domains = [
   { url: 'lbc.network',          fullUrl: 'https://lbc.network',          name: 'Main Homepage',      description: 'The official LBC Network company homepage',              icon: Globe,           gradient: 'from-blue-500 to-cyan-400',    glow: 'rgba(59,130,246,0.15)' },
-  { url: 'lbchub.io',            fullUrl: 'https://lbchub.io',            name: 'Interactive Hub',    description: 'Central command dashboard for all operations',           icon: LayoutDashboard, gradient: 'from-violet-500 to-purple-400', glow: 'rgba(139,92,246,0.15)' },
+  { url: 'lbc-hub.com',          fullUrl: 'https://lbc-hub.com',          name: 'Interactive Hub',    description: 'Central command dashboard for all operations',           icon: LayoutDashboard, gradient: 'from-violet-500 to-purple-400', glow: 'rgba(139,92,246,0.15)' },
   { url: 'lumina-blockchain.com', fullUrl: 'https://lumina-blockchain.com', name: 'Lumina Wallet',     description: 'Blockchain wallet, $LBC token & documentation',        icon: Wallet,          gradient: 'from-amber-400 to-yellow-300', glow: 'rgba(251,191,36,0.15)' },
   { url: 'lbchub.app',           fullUrl: 'https://lbchub.app',           name: 'Driver Portal',      description: 'Driver management and logistics center',                 icon: Truck,           gradient: 'from-emerald-500 to-teal-400', glow: 'rgba(16,185,129,0.15)' },
   { url: 'lbchub.ca',            fullUrl: 'https://lbchub.ca',            name: 'Investor Relations', description: 'Investment opportunities, reports & financials',          icon: TrendingUp,      gradient: 'from-indigo-500 to-blue-400',  glow: 'rgba(99,102,241,0.15)' },
