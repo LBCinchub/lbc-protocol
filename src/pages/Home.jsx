@@ -49,7 +49,7 @@ const roadmapPhases = [
   {
     phase: 'Phase 3', title: 'Global Infrastructure Rollout', subtitle: 'Global Scale',
     dot: '#f59e0b', bar: 'rgba(251,191,36,0.4)', bg: 'rgba(251,191,36,0.04)',
-    items: ['Driver-first mobility platform (60–70% revenue to drivers)', 'Direct-impact charity infrastructure with transparent allocation', 'Branded technology and electronics expansion', 'Global rollout across MENA, Africa, and emerging markets'],
+    items: ['Driver-first mobility platform (up to 80% revenue to drivers based on customer star ratings)', 'Direct-impact charity infrastructure with transparent allocation', 'Branded technology and electronics expansion', 'Global rollout across MENA, Africa, and emerging markets'],
   },
 ];
 
