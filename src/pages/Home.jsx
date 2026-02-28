@@ -22,7 +22,7 @@ const domains = [
 
 const architecture = [
   { icon: Cpu,    label: 'Protocol Layer',     desc: 'Core blockchain infrastructure and smart contract framework.',                                                                  color: '#6366f1' },
-  { icon: Zap,    label: 'Token Layer',        desc: 'Lumina ($LUMINA) — hybrid utility and governance token powering ecosystem participation.',                                     color: '#f59e0b' },
+  { icon: Zap,    label: 'Token Layer',        desc: 'Lumina ($LBC) — hybrid utility and governance token powering ecosystem participation.',                                     color: '#f59e0b' },
   { icon: Layers, label: 'Application Layer',  desc: 'Mobility, marketplace, wallet, NFT infrastructure, and impact systems built on LBC Protocol.',                                 color: '#8b5cf6' },
 ];
 
