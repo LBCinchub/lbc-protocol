@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import {
   Globe, LayoutDashboard, Truck, Wallet, TrendingUp, Heart,
   ShoppingBag, Palette, HeadphonesIcon, ExternalLink,
-  Zap, ArrowRight, ChevronRight, Shield, Star, Layers, Cpu, Grid
+  Zap, ArrowRight, ChevronRight, Shield, Star, Layers, Cpu, Grid, Radio
 } from 'lucide-react';
 
 // ─── Data ────────────────────────────────────────────────────────────────────
