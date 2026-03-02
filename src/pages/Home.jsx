@@ -18,6 +18,7 @@ const domains = [
   { url: 'lbchub.support',       fullUrl: 'https://lbchub.support',       name: 'Support Center',     description: '24/7 customer support and help resources',               icon: HeadphonesIcon,  gradient: 'from-sky-500 to-blue-400',     glow: 'rgba(14,165,233,0.15)' },
   { url: 'lbchub.shop',          fullUrl: 'https://lbchub.shop',          name: 'Official Store',     description: 'Merchandise, products and branded goods',                icon: ShoppingBag,     gradient: 'from-fuchsia-500 to-purple-400', glow: 'rgba(217,70,239,0.15)' },
   { url: 'lbchub.art',           fullUrl: 'https://lbchub.art',           name: 'NFT Gallery',        description: 'Digital art collection and NFT showcase',                icon: Palette,         gradient: 'from-cyan-500 to-teal-400',    glow: 'rgba(6,182,212,0.15)' },
+  { url: 'lbchub.live',          fullUrl: 'https://lbchub.live',          name: 'War Zone Radar',     description: 'Real-time radar and live intelligence from active war zones', icon: Radio,           gradient: 'from-red-600 to-orange-500',   glow: 'rgba(220,38,38,0.15)' },
 ];
 
 const architecture = [
