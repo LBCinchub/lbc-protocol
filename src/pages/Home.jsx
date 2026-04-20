@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { base44 } from '@/api/base44Client';
 import { motion } from 'framer-motion';
 import {
   Globe, LayoutDashboard, Truck, Wallet, TrendingUp, Heart,
@@ -120,10 +121,26 @@ export default function Home() {
   const [message, setMessage] = useState('');
   const [messages, setMessages] = useState([]);
 
-  const handleSendMessage = () => {
+  const handleSendMessage = async () => {
     if (message.trim()) {
-      setMessages([...messages, { text: message, sender: 'user' }]);
+      const userMsg = message;
+      setMessages(prev => [...prev, { text: userMsg, sender: 'user' }]);
       setMessage('');
+
+      try {
+        const response = await base44.integrations.Core.InvokeLLM({
+          prompt: `You are Big Brother, the central intelligence of the LBC Protocol ecosystem. You help users navigate and understand the LBC Protocol, its applications, and opportunities. Be helpful, concise, and knowledgeable about the ecosystem.
+
+User: ${userMsg}
+
+Respond in 1-2 sentences.`,
+        });
+
+        setMessages(prev => [...prev, { text: response, sender: 'assistant' }]);
+      } catch (error) {
+        console.error('LLM Error:', error);
+        setMessages(prev => [...prev, { text: 'I encountered an error. Please try again.', sender: 'assistant' }]);
+      }
     }
   };
 
