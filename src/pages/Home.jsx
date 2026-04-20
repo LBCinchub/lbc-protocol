@@ -42,12 +42,12 @@ const architecture = [
 ];
 
 const ecosystemApps = [
-  { name: 'LBCHub',                    icon: LayoutDashboard, color: '#8b5cf6' },
-  { name: 'Lumina Wallet',             icon: Wallet,          color: '#f59e0b' },
-  { name: 'Mobility Infrastructure',   icon: Truck,           color: '#10b981' },
-  { name: 'Digital Marketplace',       icon: ShoppingBag,     color: '#6366f1' },
-  { name: 'NFT Infrastructure',        icon: Palette,         color: '#06b6d4' },
-  { name: 'Impact & Charity Framework',icon: Heart,           color: '#f43f5e' },
+  { name: 'LBCHub — Central Intelligence',          icon: LayoutDashboard, color: '#8b5cf6' },
+  { name: 'Lumina Wallet — $LBC Native Wallet',    icon: Wallet,          color: '#f59e0b' },
+  { name: 'Driver Portal — Mobility First',        icon: Truck,           color: '#10b981' },
+  { name: 'Digital Marketplace — Commerce Layer',  icon: ShoppingBag,     color: '#6366f1' },
+  { name: 'NFT Gallery — Digital Assets',          icon: Palette,         color: '#06b6d4' },
+  { name: 'Impact Framework — Transparent Giving', icon: Heart,           color: '#f43f5e' },
 ];
 
 const roadmapPhases = [
