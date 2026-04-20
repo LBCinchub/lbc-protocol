@@ -36,9 +36,9 @@ const domains = [
 ];
 
 const architecture = [
-  { icon: Cpu,    label: 'Protocol Layer',     desc: 'Core blockchain infrastructure and smart contract framework.',                                                                  color: '#6366f1' },
-  { icon: Zap,    label: 'Token Layer',        desc: 'Lumina ($LBC) — hybrid utility and governance token powering ecosystem participation.',                                     color: '#f59e0b' },
-  { icon: Layers, label: 'Application Layer',  desc: 'Mobility, marketplace, wallet, NFT infrastructure, and impact systems built on LBC Protocol.',                                 color: '#8b5cf6' },
+  { icon: Cpu,    label: 'Protocol Layer',     desc: 'Solana-native blockchain infrastructure with hybrid utility smart contracts, governance signaling, and transparent transaction ledgers.',                                                                  color: '#6366f1' },
+  { icon: Zap,    label: 'Token Layer',        desc: 'Lumina ($LBC) — hybrid utility and governance token enabling on-chain ecosystem participation, application integration, and community signaling.',                                     color: '#f59e0b' },
+  { icon: Layers, label: 'Application Layer',  desc: 'Driver-first mobility platform, integrated digital marketplace, transparent charity framework, Lumina Wallet, and NFT infrastructure—all built on LBC Protocol.',                                 color: '#8b5cf6' },
 ];
 
 const ecosystemApps = [
@@ -52,19 +52,19 @@ const ecosystemApps = [
 
 const roadmapPhases = [
   {
-    phase: 'Phase 1', title: 'Foundation', subtitle: 'Canada-Based',
+    phase: 'Phase 1', title: 'Foundation', subtitle: 'Canada-Based Infrastructure',
     dot: '#6366f1', bar: 'rgba(99,102,241,0.5)', bg: 'rgba(99,102,241,0.05)',
-    items: ['LBC Network core platform', 'Lumina Wallet infrastructure', 'Canada-based investor framework', 'Ecosystem architecture and governance design'],
+    items: ['LBC Network core platform & governance framework', 'Lumina Wallet - secure on-chain transactions', 'Investor relations & Canada-based community', 'Solana integration & smart contract deployment'],
   },
   {
-    phase: 'Phase 2', title: 'Digital Expansion', subtitle: 'Global Readiness',
+    phase: 'Phase 2', title: 'Digital Layer', subtitle: 'Integrated Ecosystem',
     dot: '#8b5cf6', bar: 'rgba(139,92,246,0.5)', bg: 'rgba(139,92,246,0.05)',
-    items: ['Integrated digital marketplace', 'NFT infrastructure layer', 'Token-based utility integrations', 'Unified access through LBCHub'],
+    items: ['LBCHub — central intelligence & coordination platform', 'Digital marketplace with $LBC integration', 'NFT infrastructure for digital assets & community', 'Driver portal foundation & logistics framework'],
   },
   {
-    phase: 'Phase 3', title: 'Global Infrastructure Rollout', subtitle: 'Global Scale',
+    phase: 'Phase 3', title: 'Global Scale', subtitle: 'Real-World Impact',
     dot: '#f59e0b', bar: 'rgba(251,191,36,0.4)', bg: 'rgba(251,191,36,0.04)',
-    items: ['Driver-first mobility platform (up to 80% revenue to drivers based on customer star ratings)', 'Direct-impact charity infrastructure with transparent allocation', 'Branded technology and electronics expansion', 'Global rollout across MENA, Africa, and emerging markets'],
+    items: ['Driver-first mobility — up to 80% revenue share based on quality ratings', 'Transparent charity infrastructure with direct impact allocation', 'LBC Beauty, LBC AUTO, and brand expansion', 'Global rollout: MENA, Africa, and emerging markets with localized operations'],
   },
 ];
 
@@ -204,12 +204,12 @@ Respond in 1-2 sentences.`,
           <motion.p initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.18 }}
             className="text-xl md:text-2xl font-light mb-8 leading-snug"
             style={{ color: 'rgba(255,255,255,0.45)' }}>
-            Decentralized Infrastructure Layer for Emerging Markets
+            Blockchain Infrastructure Layer Powering Global Economic Access
           </motion.p>
 
           <motion.p initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.25 }}
             className="text-base text-slate-500 max-w-2xl mx-auto leading-relaxed mb-12 font-light">
-            Built from Canada and engineered for global scale, LBC Protocol powers blockchain-based applications across mobility, commerce, digital access, and transparent impact systems.
+            LBC Protocol is a decentralized infrastructure layer designed for real-world deployment in emerging markets. Built from Canada, engineered for global scale—powering driver-first mobility, transparent impact systems, integrated commerce, and blockchain-native applications.
           </motion.p>
 
           <motion.div initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.32 }}
@@ -238,10 +238,10 @@ Respond in 1-2 sentences.`,
             <h2 className="text-2xl md:text-3xl font-bold text-white mb-8 max-w-xl leading-snug">What is LBC Protocol?</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
               <p className="text-slate-400 text-base leading-relaxed font-light">
-                LBC Protocol is a blockchain-native infrastructure layer designed to support decentralized applications operating in real-world environments.
+                LBC Protocol is an open blockchain infrastructure layer designed for real-world economic applications. It combines hybrid utility mechanics with transparent governance frameworks to enable driver-first mobility, impact-driven commerce, and scalable on-chain participation across emerging markets.
               </p>
               <p className="text-slate-500 text-base leading-relaxed font-light">
-                The protocol integrates hybrid utility mechanics, governance signaling frameworks, and scalable on-chain infrastructure designed for long-term deployment across emerging markets.
+                Native to the Solana blockchain, LBC Protocol manages $LBC as its utility and governance token. The ecosystem encompasses LBCHub for central coordination, Lumina Wallet for on-chain transactions, and application-layer services spanning transportation, digital commerce, charitable impact, and financial infrastructure.
               </p>
             </div>
           </motion.div>
@@ -282,13 +282,13 @@ Respond in 1-2 sentences.`,
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
               <div>
                 <h2 className="text-2xl md:text-3xl font-bold text-white mb-2">Lumina <span className="text-amber-400">($LBC)</span></h2>
-                <p className="text-slate-500 text-sm mb-8 font-light">Native utility and governance token of LBC Protocol</p>
+                <p className="text-slate-500 text-sm mb-8 font-light">Native utility and governance token powering the ecosystem</p>
                 <p className="text-slate-400 text-base leading-relaxed mb-8 font-light">
-                  Lumina is the native utility and governance token of LBC Protocol, enabling on-chain participation across the ecosystem.
+                  Lumina ($LBC) is the native token of LBC Protocol, enabling transparent on-chain transactions, governance participation, and application-layer integration. It powers direct economic relationships between drivers, merchants, users, and the platform infrastructure.
                 </p>
                 <p className="text-xs text-slate-600 border border-white/5 rounded-lg px-4 py-3"
                   style={{ background: 'rgba(255,255,255,0.02)' }}>
-                  $LBC does not represent equity ownership or financial guarantees.
+                  $LBC is a utility token enabling protocol participation. It does not represent equity, ownership, or financial guarantees.
                 </p>
               </div>
               <div className="space-y-3">
@@ -328,10 +328,10 @@ Respond in 1-2 sentences.`,
               <div className="rounded-xl border p-6" style={{ background: 'rgba(99,102,241,0.04)', borderColor: 'rgba(99,102,241,0.12)' }}>
                 <div className="flex items-center gap-3 mb-4">
                   <Shield className="w-5 h-5 text-indigo-400" strokeWidth={1.5} />
-                  <span className="text-white text-sm font-semibold">Design Principles</span>
+                  <span className="text-white text-sm font-semibold">Implementation Approach</span>
                 </div>
                 <div className="space-y-3">
-                  {['Phased community participation', 'Regulatory alignment built-in', 'Protocol sustainability focus', 'Transparent signaling mechanisms'].map((item, i) => (
+                  {['Phased rollout across regions', 'Transparent community signaling', 'Built-in regulatory awareness', 'Long-term protocol sustainability', 'Driver-first incentive design'].map((item, i) => (
                     <div key={i} className="flex items-center gap-2.5">
                       <span className="w-1 h-1 rounded-full bg-indigo-400 flex-shrink-0" />
                       <span className="text-slate-500 text-sm">{item}</span>
