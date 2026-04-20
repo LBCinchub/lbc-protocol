@@ -433,11 +433,8 @@ export default function Home() {
 
       </div>
 
-      {/* Floating AI Message */}
-      <motion.a
-        href="https://teach.ai"
-        target="_blank"
-        rel="noopener noreferrer"
+      {/* Floating Message */}
+      <motion.button
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
         whileHover={{ scale: 1.1 }}
@@ -447,8 +444,8 @@ export default function Home() {
           background: 'linear-gradient(135deg, #06b6d4, #0ea5e9)',
           boxShadow: '0 0 24px rgba(6,182,212,0.4)'
         }}>
-        <Brain className="w-6 h-6" />
-      </motion.a>
+        <MessageCircle className="w-6 h-6" />
+      </motion.button>
     </div>
   );
 }
