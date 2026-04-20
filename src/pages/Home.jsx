@@ -32,7 +32,6 @@ const domains = [
   // Impact & Intelligence
   { url: 'lbchub.org',           fullUrl: 'https://lbchub.org',           name: 'Charity Platform',   description: 'Community initiatives and social impact',                icon: Heart,           gradient: 'from-rose-500 to-pink-400',    glow: 'rgba(244,63,94,0.15)' },
   { url: 'lbchub.live',          fullUrl: 'https://lbchub.live',          name: 'War Zone Radar',     description: 'Real-time radar and live intelligence from active war zones', icon: Radio,           gradient: 'from-red-600 to-orange-500',   glow: 'rgba(220,38,38,0.15)' },
-  { url: 'teach.ai',             fullUrl: 'https://teach.ai',             name: 'Teach AI',           description: 'AI-powered learning and knowledge platform',              icon: Brain,           gradient: 'from-cyan-500 to-blue-400',    glow: 'rgba(6,182,212,0.15)' },
 ];
 
 const architecture = [
