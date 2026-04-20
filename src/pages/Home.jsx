@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import {
   Globe, LayoutDashboard, Truck, Wallet, TrendingUp, Heart,
   ShoppingBag, Palette, HeadphonesIcon, ExternalLink,
-  Zap, ArrowRight, ChevronRight, Shield, Star, Layers, Cpu, Grid, Radio, Car, Sparkles
+  Zap, ArrowRight, ChevronRight, Shield, Star, Layers, Cpu, Grid, Radio, Car, Sparkles, Building
 } from 'lucide-react';
 
 // ─── Data ────────────────────────────────────────────────────────────────────
@@ -21,6 +21,7 @@ const domains = [
   { url: 'lbchub.live',          fullUrl: 'https://lbchub.live',          name: 'War Zone Radar',     description: 'Real-time radar and live intelligence from active war zones', icon: Radio,           gradient: 'from-red-600 to-orange-500',   glow: 'rgba(220,38,38,0.15)' },
   { url: 'lbchub.tech',          fullUrl: 'https://lbchub.tech',          name: 'LBC AUTO',           description: 'Automotive platform and vehicle services',                   icon: Car,             gradient: 'from-slate-600 to-gray-500',   glow: 'rgba(71,85,105,0.15)' },
   { url: 'lbc.ink',              fullUrl: 'https://lbc.ink',              name: 'LBC Beauty',         description: 'Beauty and wellness platform for her',                           icon: Sparkles,        gradient: 'from-pink-500 to-rose-400',    glow: 'rgba(236,72,153,0.15)' },
+  { url: 'lbchub.site',          fullUrl: 'https://lbchub.site',          name: 'Twin Lumina Building', description: 'iCoin real estate and development platform',                    icon: Building,        gradient: 'from-orange-500 to-amber-400', glow: 'rgba(249,115,22,0.15)' },
 ];
 
 const architecture = [
