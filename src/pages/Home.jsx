@@ -3,14 +3,15 @@ import { motion } from 'framer-motion';
 import {
   Globe, LayoutDashboard, Truck, Wallet, TrendingUp, Heart,
   ShoppingBag, Palette, HeadphonesIcon, ExternalLink,
-  Zap, ArrowRight, ChevronRight, Shield, Star, Layers, Cpu, Grid, Radio, Car, Sparkles, Building
+  Zap, ArrowRight, ChevronRight, Shield, Star, Layers, Cpu, Grid, Radio, Car, Sparkles, Building, Brain, MessageCircle
 } from 'lucide-react';
 
 // ─── Data ────────────────────────────────────────────────────────────────────
 
 const domains = [
-  { url: 'lbc.network',          fullUrl: 'https://lbc.network',          name: 'Main Homepage',      description: 'The official LBC Network company homepage',              icon: Globe,           gradient: 'from-blue-500 to-cyan-400',    glow: 'rgba(59,130,246,0.15)' },
-  { url: 'lbc-hub.com',          fullUrl: 'https://lbc-hub.com',          name: 'Interactive Hub',    description: 'Central command dashboard for all operations',           icon: LayoutDashboard, gradient: 'from-violet-500 to-purple-400', glow: 'rgba(139,92,246,0.15)' },
+  { url: 'lbc.network',          fullUrl: 'https://lbc.network',          name: 'Main Homepage',      description: 'The parent ecosystem — official LBC Network hub',          icon: Globe,           gradient: 'from-blue-500 to-cyan-400',    glow: 'rgba(59,130,246,0.15)' },
+  { url: 'lbchub.io',            fullUrl: 'https://lbchub.io',            name: 'Big Brother',        description: 'Central intelligence and ecosystem coordination',          icon: LayoutDashboard, gradient: 'from-indigo-600 to-purple-500', glow: 'rgba(102,51,153,0.15)' },
+  { url: 'lbc-hub.com',          fullUrl: 'https://lbc-hub.com',          name: 'Twin Sister',        description: 'Interactive hub and operational dashboard',                icon: LayoutDashboard, gradient: 'from-violet-500 to-purple-400', glow: 'rgba(139,92,246,0.15)' },
   { url: 'lumina-blockchain.com', fullUrl: 'https://lumina-blockchain.com', name: 'Lumina Wallet',     description: 'Blockchain wallet, $LBC token & documentation',        icon: Wallet,          gradient: 'from-amber-400 to-yellow-300', glow: 'rgba(251,191,36,0.15)' },
   { url: 'lbchub.app',           fullUrl: 'https://lbchub.app',           name: 'Driver Portal',      description: 'Driver management and logistics center',                 icon: Truck,           gradient: 'from-emerald-500 to-teal-400', glow: 'rgba(16,185,129,0.15)' },
   { url: 'lbchub.ca',            fullUrl: 'https://lbchub.ca',            name: 'Investor Relations', description: 'Investment opportunities, reports & financials',          icon: TrendingUp,      gradient: 'from-indigo-500 to-blue-400',  glow: 'rgba(99,102,241,0.15)' },
@@ -21,7 +22,8 @@ const domains = [
   { url: 'lbchub.live',          fullUrl: 'https://lbchub.live',          name: 'War Zone Radar',     description: 'Real-time radar and live intelligence from active war zones', icon: Radio,           gradient: 'from-red-600 to-orange-500',   glow: 'rgba(220,38,38,0.15)' },
   { url: 'lbchub.tech',          fullUrl: 'https://lbchub.tech',          name: 'LBC AUTO',           description: 'Automotive platform and vehicle services',                   icon: Car,             gradient: 'from-slate-600 to-gray-500',   glow: 'rgba(71,85,105,0.15)' },
   { url: 'lbc.ink',              fullUrl: 'https://lbc.ink',              name: 'LBC Beauty',         description: 'Beauty and wellness platform for her',                           icon: Sparkles,        gradient: 'from-pink-500 to-rose-400',    glow: 'rgba(236,72,153,0.15)' },
-  { url: 'lbchub.site',          fullUrl: 'https://lbchub.site',          name: 'Twin Lumina Building', description: 'iCoin real estate and development platform',                    icon: Building,        gradient: 'from-orange-500 to-amber-400', glow: 'rgba(249,115,22,0.15)' },
+  { url: 'lbchub.site',          fullUrl: 'https://lbchub.site',          name: 'Twin Sister',        description: 'iCoin real estate and development platform',               icon: Building,        gradient: 'from-orange-500 to-amber-400', glow: 'rgba(249,115,22,0.15)' },
+  { url: 'teach.ai',             fullUrl: 'https://teach.ai',             name: 'Teach AI',           description: 'AI-powered learning and knowledge platform',              icon: Brain,           gradient: 'from-cyan-500 to-blue-400',    glow: 'rgba(6,182,212,0.15)' },
 ];
 
 const architecture = [
@@ -106,6 +108,8 @@ function Divider() {
 // ─── Page ─────────────────────────────────────────────────────────────────────
 
 export default function Home() {
+  const [chatOpen, setChatOpen] = useState(false);
+  
   return (
     <div className="min-h-screen bg-[#050510] text-white overflow-x-hidden" style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>
 
@@ -422,6 +426,58 @@ export default function Home() {
         </footer>
 
       </div>
+
+      {/* Floating AI Chat Button */}
+      <motion.button
+        initial={{ opacity: 0, scale: 0.8 }}
+        animate={{ opacity: 1, scale: 1 }}
+        whileHover={{ scale: 1.1 }}
+        whileTap={{ scale: 0.95 }}
+        onClick={() => setChatOpen(!chatOpen)}
+        className="fixed bottom-6 right-6 w-14 h-14 rounded-full flex items-center justify-center text-white font-semibold shadow-lg transition-all duration-300 z-50"
+        style={{
+          background: 'linear-gradient(135deg, #06b6d4, #0ea5e9)',
+          boxShadow: '0 0 24px rgba(6,182,212,0.4)'
+        }}>
+        <MessageCircle className="w-6 h-6" />
+      </motion.button>
+
+      {/* AI Chat Panel */}
+      {chatOpen && (
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: 20 }}
+          className="fixed bottom-24 right-6 w-96 h-[500px] rounded-2xl border shadow-2xl overflow-hidden z-50"
+          style={{
+            background: 'rgba(10,9,24,0.95)',
+            borderColor: 'rgba(6,182,212,0.2)',
+            backdropFilter: 'blur(10px)'
+          }}>
+          <div className="flex flex-col h-full">
+            <div className="px-6 py-4 border-b" style={{ borderColor: 'rgba(6,182,212,0.1)' }}>
+              <h3 className="text-white font-semibold flex items-center gap-2">
+                <Brain className="w-4 h-4 text-cyan-400" /> LBC AI Assistant
+              </h3>
+              <p className="text-slate-500 text-xs mt-1">Powered by teach.ai</p>
+            </div>
+            <div className="flex-1 overflow-y-auto px-6 py-4">
+              <div className="space-y-3">
+                <div className="bg-cyan-500/10 rounded-lg px-4 py-3 border border-cyan-500/20">
+                  <p className="text-slate-300 text-sm">Welcome to LBC Protocol ecosystem. Ask me anything about our platforms, tokenomics, or roadmap!</p>
+                </div>
+              </div>
+            </div>
+            <div className="px-6 py-4 border-t" style={{ borderColor: 'rgba(6,182,212,0.1)' }}>
+              <input
+                type="text"
+                placeholder="Ask a question..."
+                className="w-full px-4 py-2 rounded-lg text-sm text-white bg-white/5 border border-white/10 focus:outline-none focus:border-cyan-500/50"
+              />
+            </div>
+          </div>
+        </motion.div>
+      )}
     </div>
   );
 }
