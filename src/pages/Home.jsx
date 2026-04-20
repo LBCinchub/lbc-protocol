@@ -117,6 +117,22 @@ function Divider() {
 
 export default function Home() {
   const [chatOpen, setChatOpen] = useState(false);
+  const [message, setMessage] = useState('');
+  const [messages, setMessages] = useState([]);
+
+  const handleSendMessage = () => {
+    if (message.trim()) {
+      setMessages([...messages, { text: message, sender: 'user' }]);
+      setMessage('');
+    }
+  };
+
+  const handleKeyPress = (e) => {
+    if (e.key === 'Enter') {
+      e.preventDefault();
+      handleSendMessage();
+    }
+  };
 
   return (
     <div className="min-h-screen bg-[#050510] text-white overflow-x-hidden" style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>
@@ -471,15 +487,28 @@ export default function Home() {
             </div>
             <div className="flex-1 overflow-y-auto px-6 py-4">
               <div className="space-y-3">
-                <div className="bg-cyan-500/10 rounded-lg px-4 py-3 border border-cyan-500/20">
-                  <p className="text-slate-300 text-sm">Welcome to Big Brother. I'm here to help you navigate the LBC Protocol ecosystem and answer your questions.</p>
-                </div>
+                {messages.length === 0 ? (
+                  <div className="bg-cyan-500/10 rounded-lg px-4 py-3 border border-cyan-500/20">
+                    <p className="text-slate-300 text-sm">Welcome to Big Brother. I'm here to help you navigate the LBC Protocol ecosystem and answer your questions.</p>
+                  </div>
+                ) : (
+                  messages.map((msg, i) => (
+                    <div key={i} className={`flex ${msg.sender === 'user' ? 'justify-end' : 'justify-start'}`}>
+                      <div className={`max-w-xs rounded-lg px-4 py-2 ${msg.sender === 'user' ? 'bg-cyan-600 text-white' : 'bg-cyan-500/10 text-slate-300 border border-cyan-500/20'}`}>
+                        <p className="text-sm">{msg.text}</p>
+                      </div>
+                    </div>
+                  ))
+                )}
               </div>
             </div>
             <div className="px-6 py-4 border-t" style={{ borderColor: 'rgba(6,182,212,0.1)' }}>
               <input
                 type="text"
                 placeholder="Ask Big Brother..."
+                value={message}
+                onChange={(e) => setMessage(e.target.value)}
+                onKeyPress={handleKeyPress}
                 className="w-full px-4 py-2 rounded-lg text-sm text-white bg-white/5 border border-white/10 focus:outline-none focus:border-cyan-500/50"
               />
             </div>
