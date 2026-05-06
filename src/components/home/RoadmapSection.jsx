@@ -21,10 +21,10 @@ const phases = [
     items: [
       { text: '💳 Lumina Blockchain Wallet App — iOS & Android launch', done: false },
       { text: '📱 LBC Hub App — iOS & Android release', done: false },
+      { text: '🏊 $LBC Token Liquidity Pool launch — after LBC Hub App goes live', done: false },
       { text: 'DePIN node prototype with solar tracking', done: false },
       { text: 'Fiat ramp partnerships', done: false },
       { text: 'Community beta launch in target regions', done: false },
-      { text: '🏊 Liquidity Pool launch — post LBC Hub App release', done: false },
     ],
   },
   {
