@@ -24,6 +24,7 @@ const phases = [
       { text: 'DePIN node prototype with solar tracking', done: false },
       { text: 'Fiat ramp partnerships', done: false },
       { text: 'Community beta launch in target regions', done: false },
+      { text: '🏊 Liquidity Pool launch — post LBC Hub App release', done: false },
     ],
   },
   {
