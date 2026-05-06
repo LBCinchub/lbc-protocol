@@ -34,29 +34,29 @@ const architecture = [
 ];
 
 const solutions = [
-  { icon: Wallet,   title: 'Digital Wallet & Payments',    desc: 'Non-custodial wallet with instant LBC/SOL/USDC transfers. Future fiat on/off-ramps (CAD/LBP). Borderless freelancer earnings.',                                      color: '#f59e0b' },
-  { icon: Users,    title: 'Freelancer Marketplace',        desc: 'Connect MENA talent with global clients. Secure on-chain escrow & reputation. Pay in $LBC — low fees, instant settlement.',                                            color: '#10b981' },
-  { icon: Sun,      title: 'DePIN Sustainability Nodes',    desc: 'Solar-powered Starlink/VSAT hotspots starting in Masnaa. Track energy production, uptime, and carbon offset on-chain. Earn $LBC rewards.',                            color: '#f97316' },
-  { icon: Lock,     title: 'Transparency & Anti-Corruption', desc: 'All transactions, node data, and usage logged immutably on Solana. Public dashboard for verifiable impact. Community governance via future DAO.',                   color: '#6366f1' },
+  { icon: Wallet,   title: 'Digital Wallet & Payments',    desc: 'Non-custodial wallet with instant LBC/SOL/USDC transfers. Future fiat on/off-ramps. Borderless freelancer earnings.',                                      color: '#f59e0b' },
+  { icon: Users,    title: 'Freelancer Marketplace',        desc: 'Connect global talent with clients worldwide. Secure on-chain escrow & reputation. Pay in $LBC — low fees, instant settlement.',                                    color: '#10b981' },
+  { icon: Sun,      title: 'DePIN Sustainability Nodes',    desc: 'Solar-powered Starlink/VSAT hotspots for underserved communities. Track energy production, uptime, and carbon offset on-chain. Earn $LBC rewards.',                 color: '#f97316' },
+  { icon: Lock,     title: 'Transparency & Governance',     desc: 'All transactions, node data, and usage logged immutably on Solana. Public dashboard for verifiable impact. Community governance via future DAO.',                   color: '#6366f1' },
 ];
 
 const problems = [
   { icon: Zap,     title: 'Telecom & Power Monopolies',  desc: 'Frequent blackouts, slow/expensive internet, high diesel costs driven by entrenched monopolies.' },
   { icon: Wallet,  title: 'Financial Exclusion',          desc: 'Freelancers & families face slow international transfers, high fees, and limited banking access.' },
   { icon: Shield,  title: 'Corruption & Opacity',         desc: 'Lack of verifiable records enables mismanagement. Centralized systems breed distrust and inefficiency.' },
-  { icon: MapPin,  title: 'Border & Rural Challenges',    desc: 'Areas like Masnaa/Majdal Anjar face compounded barriers — outages, refugee needs, cross-border trade friction.' },
+  { icon: MapPin,  title: 'Rural & Remote Challenges',     desc: 'Remote and underserved communities face compounded barriers — outages, limited banking, and cross-border trade friction.' },
 ];
 
 const roadmapPhases = [
   {
     phase: 'Q1–Q2 2026', title: 'Launch', subtitle: 'Foundation & Fair Launch',
     dot: '#6366f1', bar: 'rgba(99,102,241,0.5)', bg: 'rgba(99,102,241,0.05)',
-    items: ['New $LBC mint & fair launch on Solana', 'Website relaunch: lbc-hub.com + new domains', 'Private pilot: 1–3 Starlink dishes + solar in Masnaa', '🚗 Driver Portal App — first mobile release'],
+    items: ['New $LBC mint & fair launch on Solana', 'Website relaunch: lbc-hub.com + new domains', 'Private pilot: 1–3 Starlink dishes + solar nodes', '🚗 Driver Portal App — first mobile release'],
   },
   {
     phase: 'Q3–Q4 2026', title: 'Growth', subtitle: 'Wallet & DePIN Beta',
     dot: '#8b5cf6', bar: 'rgba(139,92,246,0.5)', bg: 'rgba(139,92,246,0.05)',
-    items: ['💳 Lumina Wallet App — iOS & Android launch', 'DePIN node prototype with solar tracking', 'Fiat ramp partnerships (Canada & Lebanon)', 'Community beta launch in Majdal Anjar'],
+    items: ['💳 Lumina Blockchain Wallet App — iOS & Android launch', 'DePIN node prototype with solar tracking', 'Fiat ramp partnerships', 'Community beta launch in target regions'],
   },
   {
     phase: '2027', title: 'Scale', subtitle: 'Full Ecosystem & DAO',
@@ -136,7 +136,7 @@ export default function Home() {
     setLoading(true);
     try {
       const response = await base44.integrations.Core.InvokeLLM({
-        prompt: `You are Big Brother, the central intelligence of the LBC Protocol ecosystem — a Solana-powered platform delivering real-world utility through Lumina ($LBC) token, a non-custodial digital wallet, freelancer marketplace, DePIN solar-powered Starlink connectivity nodes, and transparent anti-corruption infrastructure. The project is founded by @LBCHUB_FOUNDER, built from Canada, targeting Lebanon/MENA/Africa. Key domains: lbc-hub.com, lbchub.io, lbc.network. Contact: info@lbc.network.
+        prompt: `You are Big Brother, the central intelligence of the LBC Protocol ecosystem — a Solana-powered platform delivering real-world utility through the Lumina Blockchain ($LBC) token, a non-custodial digital wallet, freelancer marketplace, DePIN solar-powered Starlink connectivity nodes, and transparent governance infrastructure. LBC stands for Lumina Blockchain Coin. The project is founded by @LBCHUB_FOUNDER, built from Canada, targeting MENA and emerging markets globally. Key domains: lbc-hub.com, lbchub.io, lbc.network. Contact: info@lbc.network.
 
 User: ${userMsg}
 
@@ -194,7 +194,7 @@ Respond helpfully and concisely in 1-3 sentences.`,
             <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-[10px] font-semibold tracking-widest uppercase border border-amber-400/20 text-amber-400/80 mb-10"
               style={{ background: 'rgba(251,191,36,0.05)' }}>
               <span className="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse" />
-              Powered by $LBC · Built on Solana · Founded in Canada
+              Powered by Lumina Blockchain ($LBC) · Built on Solana · Founded in Canada
             </span>
           </motion.div>
 
@@ -211,7 +211,7 @@ Respond helpfully and concisely in 1-3 sentences.`,
 
           <motion.p initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.25 }}
             className="text-base text-slate-500 max-w-2xl mx-auto leading-relaxed mb-12 font-light">
-            LBC Hub is a Solana-powered ecosystem delivering real-world utility through the Lumina ($LBC) token and integrated applications — designed for underserved regions in Lebanon, MENA, and beyond.
+            LBC Hub is a Solana-powered ecosystem delivering real-world utility through the Lumina Blockchain ($LBC) token and integrated applications — designed for underserved regions across MENA and emerging markets.
           </motion.p>
 
           <motion.div initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.32 }}
@@ -237,7 +237,7 @@ Respond helpfully and concisely in 1-3 sentences.`,
         <section className="px-6 pb-20">
           <motion.div initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }} className="mb-12">
             <SectionLabel>Why We Exist</SectionLabel>
-            <h2 className="text-2xl md:text-3xl font-bold text-white mb-3">The Problem in Lebanon & Emerging Markets</h2>
+            <h2 className="text-2xl md:text-3xl font-bold text-white mb-3">The Problem in Emerging Markets</h2>
             <p className="text-slate-500 text-base font-light max-w-2xl">Centralized solutions fail to deliver resilient, affordable, inclusive tools for underserved communities.</p>
           </motion.div>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -329,9 +329,9 @@ Respond helpfully and concisely in 1-3 sentences.`,
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
               <div>
                 <h2 className="text-2xl md:text-3xl font-bold text-white mb-2">Lumina <span className="text-amber-400">($LBC)</span></h2>
-                <p className="text-slate-500 text-sm mb-8 font-light">SPL utility & governance token on Solana</p>
+                <p className="text-slate-500 text-sm mb-8 font-light">Lumina Blockchain Coin — SPL utility & governance token on Solana</p>
                 <p className="text-slate-400 text-base leading-relaxed mb-8 font-light">
-                  Lumina ($LBC) is the native token of LBC Protocol — fast, cheap, and scalable on Solana. It powers every transaction, reward, and governance decision across the ecosystem, enabling direct economic relationships between drivers, merchants, freelancers, node operators, and users.
+                  Lumina ($LBC) — Lumina Blockchain Coin — is the native token of LBC Protocol. Fast, cheap, and scalable on Solana, it powers every transaction, reward, and governance decision across the ecosystem, enabling direct economic relationships between drivers, merchants, freelancers, node operators, and users.
                 </p>
                 <p className="text-xs text-slate-600 border border-white/5 rounded-lg px-4 py-3"
                   style={{ background: 'rgba(255,255,255,0.02)' }}>
@@ -437,7 +437,7 @@ Respond helpfully and concisely in 1-3 sentences.`,
             <SectionLabel>Execution Plan</SectionLabel>
             <h2 className="text-2xl md:text-3xl font-bold text-white mb-3">Strategic Roadmap 2026–2027</h2>
             <p className="text-slate-500 text-base font-light max-w-2xl">
-              A structured, multi-phase approach to building global digital infrastructure — starting in Masnaa, Lebanon, scaling to the world.
+              A structured, multi-phase approach to building global digital infrastructure — starting with pilot communities and scaling to the world.
             </p>
           </motion.div>
 
@@ -478,7 +478,7 @@ Respond helpfully and concisely in 1-3 sentences.`,
             <div className="flex flex-wrap justify-center gap-6 text-xs text-slate-600">
               <span className="flex items-center gap-1.5">🇨🇦 Founded in Canada</span>
               <span className="hidden sm:block w-px h-3 bg-white/8 self-center" />
-              <span className="flex items-center gap-1.5">🌍 Scaling to Lebanon, MENA & Africa</span>
+              <span className="flex items-center gap-1.5">🌍 Scaling to MENA, Africa & Emerging Markets</span>
               <span className="hidden sm:block w-px h-3 bg-white/8 self-center" />
               <span className="flex items-center gap-1.5">☀️ Solar-Powered DePIN Nodes</span>
             </div>
