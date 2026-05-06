@@ -16,7 +16,7 @@ const phases = [
   },
   {
     phase: 'Q3–Q4 2026', status: 'upcoming', title: 'Growth',
-    subtitle: 'Wallet, Hub & DePIN Beta',
+    subtitle: 'Wallet, Hub, Pool & DePIN Beta',
     color: '#8b5cf6', glow: 'rgba(139,92,246,0.2)',
     items: [
       { text: '💳 Lumina Blockchain Wallet App — iOS & Android launch', done: false },
