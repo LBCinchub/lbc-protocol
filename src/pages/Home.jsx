@@ -20,11 +20,11 @@ const domains = [
   { url: 'lbc.network',           fullUrl: 'https://lbc.network',           name: 'Main Homepage',      description: 'The parent ecosystem — official LBC Network hub',                  icon: Globe,           gradient: 'from-blue-500 to-cyan-400',      glow: 'rgba(59,130,246,0.15)' },
   { url: 'lbchub.io',             fullUrl: 'https://lbchub.io',             name: 'Big Brother',        description: 'Central intelligence and ecosystem coordination',                 icon: LayoutDashboard, gradient: 'from-indigo-600 to-purple-500',   glow: 'rgba(102,51,153,0.15)' },
   { url: 'lbc-hub.com',           fullUrl: 'https://lbc-hub.com',           name: 'Twin Sister',        description: 'Interactive hub and operational dashboard',                      icon: LayoutDashboard, gradient: 'from-violet-500 to-purple-400',   glow: 'rgba(139,92,246,0.15)' },
-  { url: 'lbchub.site',           fullUrl: 'https://lbchub.site',           name: 'iCoin Real Estate',  description: 'iCoin real estate and development platform',                     icon: Building,        gradient: 'from-orange-500 to-amber-400',   glow: 'rgba(249,115,22,0.15)' },
+  { url: 'lbchub.site',           fullUrl: 'https://lbchub.site',           name: 'Lumina Ultra',       description: 'Premium lifestyle and luxury platform powered by $LBC',          icon: Building,        gradient: 'from-orange-500 to-amber-400',   glow: 'rgba(249,115,22,0.15)' },
   { url: 'lumina-blockchain.com', fullUrl: 'https://lumina-blockchain.com', name: 'Lumina Wallet',      description: 'Blockchain wallet, $LBC token & documentation',                 icon: Wallet,          gradient: 'from-amber-400 to-yellow-300',   glow: 'rgba(251,191,36,0.15)' },
   { url: 'lbchub.ca',             fullUrl: 'https://lbchub.ca',             name: 'Investor Relations', description: 'Investment opportunities, reports & financials',                 icon: TrendingUp,      gradient: 'from-indigo-500 to-blue-400',    glow: 'rgba(99,102,241,0.15)' },
   { url: 'lbchub.app',            fullUrl: 'https://lbchub.app',            name: 'Driver Portal',      description: 'Driver management and logistics center',                        icon: Truck,           gradient: 'from-emerald-500 to-teal-400',   glow: 'rgba(16,185,129,0.15)' },
-  { url: 'lbchub.support',        fullUrl: 'https://lbchub.support',        name: 'Support Center',     description: '24/7 customer support and help resources',                      icon: HeadphonesIcon,  gradient: 'from-sky-500 to-blue-400',       glow: 'rgba(14,165,233,0.15)' },
+  { url: 'lbchub.support',        fullUrl: 'https://lbchub.support',        name: 'Support Center',     description: 'Official LBC support — the only support channel we operate',     icon: HeadphonesIcon,  gradient: 'from-sky-500 to-blue-400',       glow: 'rgba(14,165,233,0.15)' },
   { url: 'lbchub.tech',           fullUrl: 'https://lbchub.tech',           name: 'LBC AUTO',           description: 'Automotive platform and vehicle services',                      icon: Car,             gradient: 'from-slate-600 to-gray-500',     glow: 'rgba(71,85,105,0.15)' },
   { url: 'lbchub.shop',           fullUrl: 'https://lbchub.shop',           name: 'Official Store',     description: 'Merchandise, products and branded goods',                       icon: ShoppingBag,     gradient: 'from-fuchsia-500 to-purple-400', glow: 'rgba(217,70,239,0.15)' },
   { url: 'lbc.ink',               fullUrl: 'https://lbc.ink',               name: 'LBC Beauty',         description: 'Beauty and wellness platform for her',                          icon: Sparkles,        gradient: 'from-pink-500 to-rose-400',      glow: 'rgba(236,72,153,0.15)' },
@@ -343,8 +343,8 @@ export default function Home() {
               <div className="flex flex-col gap-2 text-[11px]">
                 <a href="mailto:info@lbc.network" className="text-slate-600 hover:text-slate-300 transition-colors">📧 info@lbc.network</a>
                 <a href="mailto:tarek-samara@lbc-hub.com" className="text-slate-600 hover:text-slate-300 transition-colors">📧 tarek-samara@lbc-hub.com</a>
-                <a href="https://x.com/LBCHUB_FOUNDER" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1.5 text-slate-600 hover:text-slate-300 transition-colors">
-                  <X className="w-3 h-3" /> @LBCHUB_FOUNDER
+                <a href="https://x.com/LBC_FOUNDER" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1.5 text-slate-600 hover:text-slate-300 transition-colors">
+                  <X className="w-3 h-3" /> @LBC_FOUNDER
                 </a>
               </div>
 

@@ -22,7 +22,7 @@ export default function BigBrotherChat() {
     setLoading(true);
     try {
       const response = await base44.integrations.Core.InvokeLLM({
-        prompt: `You are Big Brother, the central intelligence of the LBC Protocol ecosystem — a Solana-powered platform delivering real-world utility through the Lumina Blockchain ($LBC) token, a non-custodial digital wallet, freelancer marketplace, DePIN solar-powered Starlink connectivity nodes, and transparent governance infrastructure. LBC stands for Lumina Blockchain Coin. The project is founded by @LBCHUB_FOUNDER, built from Canada, targeting MENA and emerging markets globally. Key domains: lbc-hub.com, lbchub.io, lbc.network. Contact: info@lbc.network.\n\nUser: ${userMsg}\n\nRespond helpfully and concisely in 1-3 sentences.`,
+        prompt: `You are Big Brother, the central intelligence of the LBC Protocol ecosystem — a Solana-powered platform delivering real-world utility through the Lumina Blockchain ($LBC) token, a non-custodial digital wallet, freelancer marketplace, DePIN solar-powered Starlink connectivity nodes, and transparent governance infrastructure. LBC stands for Lumina Blockchain Coin. The project is founded by @LBC_FOUNDER, built from Canada, targeting MENA and emerging markets globally. Key domains: lbc-hub.com, lbchub.io, lbc.network. Contact: info@lbc.network.\n\nUser: ${userMsg}\n\nRespond helpfully and concisely in 1-3 sentences.`,
       });
       setMessages(prev => [...prev, { text: response, sender: 'assistant' }]);
     } catch {
