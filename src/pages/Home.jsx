@@ -51,17 +51,17 @@ const roadmapPhases = [
   {
     phase: 'Q1–Q2 2026', title: 'Launch', subtitle: 'Foundation & Fair Launch',
     dot: '#6366f1', bar: 'rgba(99,102,241,0.5)', bg: 'rgba(99,102,241,0.05)',
-    items: ['New $LBC mint & fair launch on Solana', 'Website relaunch: lbc-hub.com + new domains', 'Private pilot: 1–3 Starlink dishes + solar in Masnaa', 'Lumina Wallet MVP + basic freelancer marketplace'],
+    items: ['New $LBC mint & fair launch on Solana', 'Website relaunch: lbc-hub.com + new domains', 'Private pilot: 1–3 Starlink dishes + solar in Masnaa', '🚗 Driver Portal App — first mobile release'],
   },
   {
-    phase: 'Q3–Q4 2026', title: 'Growth', subtitle: 'DePIN & Community Beta',
+    phase: 'Q3–Q4 2026', title: 'Growth', subtitle: 'Wallet & DePIN Beta',
     dot: '#8b5cf6', bar: 'rgba(139,92,246,0.5)', bg: 'rgba(139,92,246,0.05)',
-    items: ['DePIN node prototype with solar tracking', 'Fiat ramp partnerships (Canada & Lebanon)', 'Community beta launch in Majdal Anjar', 'On-chain analytics & impact dashboard', '📱 LBC Hub App — iOS & Android launch'],
+    items: ['💳 Lumina Wallet App — iOS & Android launch', 'DePIN node prototype with solar tracking', 'Fiat ramp partnerships (Canada & Lebanon)', 'Community beta launch in Majdal Anjar'],
   },
   {
-    phase: '2027', title: 'Scale', subtitle: 'Regional Expansion',
+    phase: '2027', title: 'Scale', subtitle: 'Full Ecosystem & DAO',
     dot: '#f59e0b', bar: 'rgba(251,191,36,0.4)', bg: 'rgba(251,191,36,0.04)',
-    items: ['Scale DePIN nodes across Bekaa Valley', 'Launch LBC governance DAO', 'Regional marketplace expansion', 'Global rollout: MENA, Africa, and emerging markets'],
+    items: ['📱 LBC Hub App — full iOS & Android release', 'Scale DePIN nodes across Bekaa Valley', 'Launch LBC governance DAO', 'Global rollout: MENA, Africa, and emerging markets'],
   },
 ];
 

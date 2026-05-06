@@ -3,16 +3,16 @@ import { motion } from 'framer-motion';
 import { Smartphone, CheckCircle2 } from 'lucide-react';
 
 const options = [
-  { id: 'ios',     label: 'iOS (iPhone)',           emoji: '🍎' },
-  { id: 'android', label: 'Android',                emoji: '🤖' },
-  { id: 'both',    label: 'Both iOS & Android',     emoji: '📱' },
-  { id: 'web',     label: 'Web App Only',            emoji: '🌐' },
+  { id: 'driver',  label: 'Driver Portal App',       emoji: '🚗' },
+  { id: 'wallet',  label: 'Lumina Wallet App',        emoji: '💳' },
+  { id: 'hub',     label: 'Full LBC Hub App',         emoji: '📱' },
+  { id: 'depin',   label: 'DePIN Node Dashboard',     emoji: '☀️' },
 ];
 
 export default function AppPoll() {
   const [selected, setSelected] = useState(null);
   const [voted, setVoted] = useState(false);
-  const [votes, setVotes] = useState({ ios: 12, android: 18, both: 47, web: 8 });
+  const [votes, setVotes] = useState({ driver: 21, wallet: 34, hub: 47, depin: 13 });
 
   const total = Object.values(votes).reduce((a, b) => a + b, 0);
 
@@ -43,9 +43,9 @@ export default function AppPoll() {
             <span className="text-[10px] font-semibold tracking-widest uppercase text-violet-500">Community Poll</span>
           </div>
 
-          <h3 className="text-white font-bold text-lg mb-1">Which platform do you want first?</h3>
+          <h3 className="text-white font-bold text-lg mb-1">Which app are you most excited for?</h3>
           <p className="text-slate-500 text-sm mb-6">
-            The LBC Hub mobile app is coming in <span className="text-violet-400 font-medium">Q3–Q4 2026</span>. Tell us your preference.
+            Driver Portal app → Lumina Wallet → Full LBC Hub. Tell us what you're waiting for most.
           </p>
 
           <div className="space-y-3">
