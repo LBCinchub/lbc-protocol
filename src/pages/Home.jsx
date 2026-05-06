@@ -6,6 +6,7 @@ import {
   ShoppingBag, Palette, HeadphonesIcon, ExternalLink,
   Zap, ArrowRight, ChevronRight, Shield, Star, Layers, Cpu, Grid, Radio, Car, Sparkles, Building, Brain, MessageCircle, Sun, Users, MapPin, Lock, Leaf, X
 } from 'lucide-react';
+import AppPoll from '@/components/AppPoll';
 
 // ─── Data ────────────────────────────────────────────────────────────────────
 
@@ -55,7 +56,7 @@ const roadmapPhases = [
   {
     phase: 'Q3–Q4 2026', title: 'Growth', subtitle: 'DePIN & Community Beta',
     dot: '#8b5cf6', bar: 'rgba(139,92,246,0.5)', bg: 'rgba(139,92,246,0.05)',
-    items: ['DePIN node prototype with solar tracking', 'Fiat ramp partnerships (Canada & Lebanon)', 'Community beta launch in Majdal Anjar', 'On-chain analytics & impact dashboard'],
+    items: ['DePIN node prototype with solar tracking', 'Fiat ramp partnerships (Canada & Lebanon)', 'Community beta launch in Majdal Anjar', 'On-chain analytics & impact dashboard', '📱 LBC Hub App — iOS & Android launch'],
   },
   {
     phase: '2027', title: 'Scale', subtitle: 'Regional Expansion',
@@ -483,6 +484,11 @@ Respond helpfully and concisely in 1-3 sentences.`,
             </div>
           </motion.div>
         </section>
+
+        {/* ── APP POLL ── */}
+        <AppPoll />
+
+        <Divider />
 
         {/* ── FOOTER ── */}
         <footer className="px-6 pb-12">
