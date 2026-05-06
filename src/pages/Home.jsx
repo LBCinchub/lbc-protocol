@@ -1,80 +1,76 @@
 import React, { useState } from 'react';
-import { base44 } from '@/api/base44Client';
 import { motion } from 'framer-motion';
 import {
   Globe, LayoutDashboard, Truck, Wallet, TrendingUp, Heart,
   ShoppingBag, Palette, HeadphonesIcon, ExternalLink,
-  Zap, ArrowRight, ChevronRight, Shield, Star, Layers, Cpu, Grid, Radio, Car, Sparkles, Building, Brain, MessageCircle, Sun, Users, MapPin, Lock, Leaf, X
+  Zap, ArrowRight, ChevronRight, Shield, Star, Layers, Cpu, Grid,
+  Radio, Car, Sparkles, Building, MessageCircle, Sun, Users, MapPin,
+  Lock, X, CheckCircle2
 } from 'lucide-react';
 import AppPoll from '@/components/AppPoll';
+import NavBar from '@/components/home/NavBar';
+import HeroSection from '@/components/home/HeroSection';
+import TokenSection from '@/components/home/TokenSection';
+import RoadmapSection from '@/components/home/RoadmapSection';
+import BigBrotherChat from '@/components/home/BigBrotherChat';
 
-// ─── Data ────────────────────────────────────────────────────────────────────
+// ─── Data ─────────────────────────────────────────────────────────────────────
 
 const domains = [
-  { url: 'lbc.network',            fullUrl: 'https://lbc.network',            name: 'Main Homepage',       description: 'The parent ecosystem — official LBC Network hub',                     icon: Globe,           gradient: 'from-blue-500 to-cyan-400',    glow: 'rgba(59,130,246,0.15)' },
-  { url: 'lbchub.io',              fullUrl: 'https://lbchub.io',              name: 'Big Brother',         description: 'Central intelligence and ecosystem coordination',                    icon: LayoutDashboard, gradient: 'from-indigo-600 to-purple-500', glow: 'rgba(102,51,153,0.15)' },
-  { url: 'lbc-hub.com',            fullUrl: 'https://lbc-hub.com',            name: 'Twin Sister',         description: 'Interactive hub and operational dashboard',                         icon: LayoutDashboard, gradient: 'from-violet-500 to-purple-400', glow: 'rgba(139,92,246,0.15)' },
-  { url: 'lbchub.site',            fullUrl: 'https://lbchub.site',            name: 'iCoin Real Estate',   description: 'iCoin real estate and development platform',                        icon: Building,        gradient: 'from-orange-500 to-amber-400', glow: 'rgba(249,115,22,0.15)' },
-  { url: 'lumina-blockchain.com',  fullUrl: 'https://lumina-blockchain.com',  name: 'Lumina Wallet',       description: 'Blockchain wallet, $LBC token & documentation',                    icon: Wallet,          gradient: 'from-amber-400 to-yellow-300', glow: 'rgba(251,191,36,0.15)' },
-  { url: 'lbchub.ca',              fullUrl: 'https://lbchub.ca',              name: 'Investor Relations',  description: 'Investment opportunities, reports & financials',                    icon: TrendingUp,      gradient: 'from-indigo-500 to-blue-400',  glow: 'rgba(99,102,241,0.15)' },
-  { url: 'lbchub.app',             fullUrl: 'https://lbchub.app',             name: 'Driver Portal',       description: 'Driver management and logistics center',                           icon: Truck,           gradient: 'from-emerald-500 to-teal-400', glow: 'rgba(16,185,129,0.15)' },
-  { url: 'lbchub.support',         fullUrl: 'https://lbchub.support',         name: 'Support Center',      description: '24/7 customer support and help resources',                         icon: HeadphonesIcon,  gradient: 'from-sky-500 to-blue-400',     glow: 'rgba(14,165,233,0.15)' },
-  { url: 'lbchub.tech',            fullUrl: 'https://lbchub.tech',            name: 'LBC AUTO',            description: 'Automotive platform and vehicle services',                         icon: Car,             gradient: 'from-slate-600 to-gray-500',   glow: 'rgba(71,85,105,0.15)' },
-  { url: 'lbchub.shop',            fullUrl: 'https://lbchub.shop',            name: 'Official Store',      description: 'Merchandise, products and branded goods',                          icon: ShoppingBag,     gradient: 'from-fuchsia-500 to-purple-400', glow: 'rgba(217,70,239,0.15)' },
-  { url: 'lbc.ink',                fullUrl: 'https://lbc.ink',                name: 'LBC Beauty',          description: 'Beauty and wellness platform for her',                             icon: Sparkles,        gradient: 'from-pink-500 to-rose-400',    glow: 'rgba(236,72,153,0.15)' },
-  { url: 'lbchub.art',             fullUrl: 'https://lbchub.art',             name: 'NFT Gallery',         description: 'Digital art collection and NFT showcase',                          icon: Palette,         gradient: 'from-cyan-500 to-teal-400',    glow: 'rgba(6,182,212,0.15)' },
-  { url: 'lbchub.org',             fullUrl: 'https://lbchub.org',             name: 'Charity Platform',    description: 'Community initiatives and social impact',                          icon: Heart,           gradient: 'from-rose-500 to-pink-400',    glow: 'rgba(244,63,94,0.15)' },
-  { url: 'lbchub.live',            fullUrl: 'https://lbchub.live',            name: 'War Zone Radar',      description: 'Real-time radar and live intelligence from active war zones',        icon: Radio,           gradient: 'from-red-600 to-orange-500',   glow: 'rgba(220,38,38,0.15)' },
+  { url: 'lbc.network',           fullUrl: 'https://lbc.network',           name: 'Main Homepage',      description: 'The parent ecosystem — official LBC Network hub',                  icon: Globe,           gradient: 'from-blue-500 to-cyan-400',      glow: 'rgba(59,130,246,0.15)' },
+  { url: 'lbchub.io',             fullUrl: 'https://lbchub.io',             name: 'Big Brother',        description: 'Central intelligence and ecosystem coordination',                 icon: LayoutDashboard, gradient: 'from-indigo-600 to-purple-500',   glow: 'rgba(102,51,153,0.15)' },
+  { url: 'lbc-hub.com',           fullUrl: 'https://lbc-hub.com',           name: 'Twin Sister',        description: 'Interactive hub and operational dashboard',                      icon: LayoutDashboard, gradient: 'from-violet-500 to-purple-400',   glow: 'rgba(139,92,246,0.15)' },
+  { url: 'lbchub.site',           fullUrl: 'https://lbchub.site',           name: 'iCoin Real Estate',  description: 'iCoin real estate and development platform',                     icon: Building,        gradient: 'from-orange-500 to-amber-400',   glow: 'rgba(249,115,22,0.15)' },
+  { url: 'lumina-blockchain.com', fullUrl: 'https://lumina-blockchain.com', name: 'Lumina Wallet',      description: 'Blockchain wallet, $LBC token & documentation',                 icon: Wallet,          gradient: 'from-amber-400 to-yellow-300',   glow: 'rgba(251,191,36,0.15)' },
+  { url: 'lbchub.ca',             fullUrl: 'https://lbchub.ca',             name: 'Investor Relations', description: 'Investment opportunities, reports & financials',                 icon: TrendingUp,      gradient: 'from-indigo-500 to-blue-400',    glow: 'rgba(99,102,241,0.15)' },
+  { url: 'lbchub.app',            fullUrl: 'https://lbchub.app',            name: 'Driver Portal',      description: 'Driver management and logistics center',                        icon: Truck,           gradient: 'from-emerald-500 to-teal-400',   glow: 'rgba(16,185,129,0.15)' },
+  { url: 'lbchub.support',        fullUrl: 'https://lbchub.support',        name: 'Support Center',     description: '24/7 customer support and help resources',                      icon: HeadphonesIcon,  gradient: 'from-sky-500 to-blue-400',       glow: 'rgba(14,165,233,0.15)' },
+  { url: 'lbchub.tech',           fullUrl: 'https://lbchub.tech',           name: 'LBC AUTO',           description: 'Automotive platform and vehicle services',                      icon: Car,             gradient: 'from-slate-600 to-gray-500',     glow: 'rgba(71,85,105,0.15)' },
+  { url: 'lbchub.shop',           fullUrl: 'https://lbchub.shop',           name: 'Official Store',     description: 'Merchandise, products and branded goods',                       icon: ShoppingBag,     gradient: 'from-fuchsia-500 to-purple-400', glow: 'rgba(217,70,239,0.15)' },
+  { url: 'lbc.ink',               fullUrl: 'https://lbc.ink',               name: 'LBC Beauty',         description: 'Beauty and wellness platform for her',                          icon: Sparkles,        gradient: 'from-pink-500 to-rose-400',      glow: 'rgba(236,72,153,0.15)' },
+  { url: 'lbchub.art',            fullUrl: 'https://lbchub.art',            name: 'NFT Gallery',        description: 'Digital art collection and NFT showcase',                       icon: Palette,         gradient: 'from-cyan-500 to-teal-400',      glow: 'rgba(6,182,212,0.15)' },
+  { url: 'lbchub.org',            fullUrl: 'https://lbchub.org',            name: 'Charity Platform',   description: 'Community initiatives and social impact',                       icon: Heart,           gradient: 'from-rose-500 to-pink-400',      glow: 'rgba(244,63,94,0.15)' },
+  { url: 'lbchub.live',           fullUrl: 'https://lbchub.live',           name: 'War Zone Radar',     description: 'Real-time radar and live intelligence from active war zones',   icon: Radio,           gradient: 'from-red-600 to-orange-500',     glow: 'rgba(220,38,38,0.15)' },
 ];
 
 const architecture = [
-  { icon: Cpu,    label: 'Protocol Layer',     desc: 'Solana-native blockchain — high TPS, ~$0.00025/tx. SPL token standard with mutable metadata and controlled authority for adaptive governance.',  color: '#6366f1' },
-  { icon: Zap,    label: 'Token Layer',        desc: 'Lumina ($LBC) — SPL utility & governance token. Powers fees, marketplace payments, DePIN node rewards, and on-chain governance signaling.',       color: '#f59e0b' },
-  { icon: Layers, label: 'Application Layer',  desc: 'Non-custodial wallet, freelancer marketplace with on-chain escrow, DePIN solar/Starlink nodes, and a public anti-corruption transparency dashboard.', color: '#8b5cf6' },
+  { icon: Cpu,    label: 'Protocol Layer',    desc: 'Solana-native blockchain — high TPS, ~$0.00025/tx. SPL token standard with mutable metadata and controlled authority for adaptive governance.', color: '#6366f1' },
+  { icon: Zap,    label: 'Token Layer',       desc: 'Lumina ($LBC) — SPL utility & governance token. Powers fees, marketplace payments, DePIN node rewards, and on-chain governance signaling.',      color: '#f59e0b' },
+  { icon: Layers, label: 'Application Layer', desc: 'Non-custodial wallet, freelancer marketplace with on-chain escrow, DePIN solar/Starlink nodes, and a public anti-corruption dashboard.',         color: '#8b5cf6' },
 ];
 
 const solutions = [
-  { icon: Wallet,   title: 'Digital Wallet & Payments',    desc: 'Non-custodial wallet with instant LBC/SOL/USDC transfers. Future fiat on/off-ramps. Borderless freelancer earnings.',                                      color: '#f59e0b' },
-  { icon: Users,    title: 'Freelancer Marketplace',        desc: 'Connect global talent with clients worldwide. Secure on-chain escrow & reputation. Pay in $LBC — low fees, instant settlement.',                                    color: '#10b981' },
-  { icon: Sun,      title: 'DePIN Sustainability Nodes',    desc: 'Solar-powered Starlink/VSAT hotspots for underserved communities. Track energy production, uptime, and carbon offset on-chain. Earn $LBC rewards.',                 color: '#f97316' },
-  { icon: Lock,     title: 'Transparency & Governance',     desc: 'All transactions, node data, and usage logged immutably on Solana. Public dashboard for verifiable impact. Community governance via future DAO.',                   color: '#6366f1' },
+  { icon: Wallet,  title: 'Digital Wallet & Payments',  desc: 'Non-custodial wallet with instant LBC/SOL/USDC transfers. Future fiat on/off-ramps. Borderless freelancer earnings.',            color: '#f59e0b' },
+  { icon: Users,   title: 'Freelancer Marketplace',     desc: 'Connect global talent with clients worldwide. Secure on-chain escrow & reputation. Pay in $LBC — low fees, instant settlement.',  color: '#10b981' },
+  { icon: Sun,     title: 'DePIN Sustainability Nodes', desc: 'Solar-powered Starlink/VSAT hotspots for underserved communities. Track energy & carbon offset on-chain. Earn $LBC rewards.',     color: '#f97316' },
+  { icon: Lock,    title: 'Transparency & Governance',  desc: 'All transactions & node data logged immutably on Solana. Public dashboard for verifiable impact. Community governance via DAO.',   color: '#6366f1' },
 ];
 
 const problems = [
-  { icon: Zap,     title: 'Telecom & Power Monopolies',  desc: 'Frequent blackouts, slow/expensive internet, high diesel costs driven by entrenched monopolies.' },
-  { icon: Wallet,  title: 'Financial Exclusion',          desc: 'Freelancers & families face slow international transfers, high fees, and limited banking access.' },
-  { icon: Shield,  title: 'Corruption & Opacity',         desc: 'Lack of verifiable records enables mismanagement. Centralized systems breed distrust and inefficiency.' },
-  { icon: MapPin,  title: 'Rural & Remote Challenges',     desc: 'Remote and underserved communities face compounded barriers — outages, limited banking, and cross-border trade friction.' },
-];
-
-const roadmapPhases = [
-  {
-    phase: 'Q1–Q2 2026', title: 'Launch', subtitle: 'Foundation & Fair Launch',
-    dot: '#6366f1', bar: 'rgba(99,102,241,0.5)', bg: 'rgba(99,102,241,0.05)',
-    items: ['New $LBC mint & fair launch on Solana', 'Website relaunch: lbc-hub.com + new domains', 'Private pilot: 1–3 Starlink dishes + solar nodes', '🚗 Driver Portal App — first mobile release'],
-  },
-  {
-    phase: 'Q3–Q4 2026', title: 'Growth', subtitle: 'Wallet, Hub & DePIN Beta',
-    dot: '#8b5cf6', bar: 'rgba(139,92,246,0.5)', bg: 'rgba(139,92,246,0.05)',
-    items: ['💳 Lumina Blockchain Wallet App — iOS & Android launch', '📱 LBC Hub App — iOS & Android release', 'DePIN node prototype with solar tracking', 'Fiat ramp partnerships', 'Community beta launch in target regions'],
-  },
-  {
-    phase: '2027', title: 'Scale', subtitle: 'Full Ecosystem & DAO',
-    dot: '#f59e0b', bar: 'rgba(251,191,36,0.4)', bg: 'rgba(251,191,36,0.04)',
-    items: ['Scale DePIN nodes across Bekaa Valley', 'Launch LBC governance DAO', 'Global rollout: MENA, Africa, and emerging markets', 'Advanced ecosystem integrations & partnerships'],
-  },
+  { icon: Zap,    title: 'Telecom & Power Monopolies', desc: 'Frequent blackouts, slow/expensive internet, high diesel costs driven by entrenched monopolies.' },
+  { icon: Wallet, title: 'Financial Exclusion',        desc: 'Freelancers & families face slow international transfers, high fees, and limited banking access.' },
+  { icon: Shield, title: 'Corruption & Opacity',      desc: 'Lack of verifiable records enables mismanagement. Centralized systems breed distrust and inefficiency.' },
+  { icon: MapPin, title: 'Rural & Remote Challenges',  desc: 'Remote communities face compounded barriers — outages, limited banking, and cross-border trade friction.' },
 ];
 
 const ecosystemApps = [
-  { name: 'LBCHub — Central Intelligence',          icon: LayoutDashboard, color: '#8b5cf6' },
-  { name: 'Lumina Wallet — $LBC Native Wallet',     icon: Wallet,          color: '#f59e0b' },
-  { name: 'Driver Portal — Mobility First',         icon: Truck,           color: '#10b981' },
-  { name: 'Digital Marketplace — Commerce Layer',   icon: ShoppingBag,     color: '#6366f1' },
-  { name: 'NFT Gallery — Digital Assets',           icon: Palette,         color: '#06b6d4' },
-  { name: 'Impact Framework — Transparent Giving',  icon: Heart,           color: '#f43f5e' },
+  { name: 'LBCHub — Central Intelligence',         icon: LayoutDashboard, color: '#8b5cf6' },
+  { name: 'Lumina Wallet — $LBC Native Wallet',    icon: Wallet,          color: '#f59e0b' },
+  { name: 'Driver Portal — Mobility First',        icon: Truck,           color: '#10b981' },
+  { name: 'Digital Marketplace — Commerce Layer',  icon: ShoppingBag,     color: '#6366f1' },
+  { name: 'NFT Gallery — Digital Assets',          icon: Palette,         color: '#06b6d4' },
+  { name: 'Impact Framework — Transparent Giving', icon: Heart,           color: '#f43f5e' },
 ];
 
-// ─── Components ──────────────────────────────────────────────────────────────
+// ─── Sub-components ───────────────────────────────────────────────────────────
+
+function Divider() {
+  return <div className="h-px my-16" style={{ background: 'linear-gradient(90deg, transparent, rgba(255,255,255,0.06), transparent)' }} />;
+}
+
+function SectionLabel({ children, color = 'text-slate-600' }) {
+  return <span className={`text-[10px] font-bold tracking-widest uppercase mb-3 block ${color}`}>{children}</span>;
+}
 
 function DomainCard({ domain, index }) {
   const [hovered, setHovered] = useState(false);
@@ -82,26 +78,23 @@ function DomainCard({ domain, index }) {
   return (
     <motion.a
       href={domain.fullUrl} target="_blank" rel="noopener noreferrer"
-      initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.45, delay: 0.05 + index * 0.06 }}
+      initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }} transition={{ duration: 0.4, delay: index * 0.04 }}
       onMouseEnter={() => setHovered(true)} onMouseLeave={() => setHovered(false)}
-      className="group block"
-    >
-      <div className="relative rounded-xl p-6 border transition-all duration-400 overflow-hidden"
+      className="group block">
+      <div className="relative rounded-2xl p-5 border transition-all duration-300 overflow-hidden"
         style={{
-          background: hovered ? 'rgba(15,13,32,0.95)' : 'rgba(10,9,24,0.8)',
-          borderColor: hovered ? 'rgba(255,255,255,0.1)' : 'rgba(255,255,255,0.04)',
-          boxShadow: hovered ? `0 0 32px ${domain.glow}` : 'none',
+          background: hovered ? 'rgba(15,13,32,0.98)' : 'rgba(10,9,24,0.6)',
+          borderColor: hovered ? 'rgba(255,255,255,0.12)' : 'rgba(255,255,255,0.05)',
+          boxShadow: hovered ? `0 0 30px ${domain.glow}` : 'none',
         }}>
         <div className="flex items-start justify-between mb-4">
-          <div className={`w-11 h-11 rounded-lg flex items-center justify-center bg-gradient-to-br ${domain.gradient} transition-transform duration-300 ${hovered ? 'scale-105' : ''}`}>
+          <div className={`w-10 h-10 rounded-xl flex items-center justify-center bg-gradient-to-br ${domain.gradient} transition-transform duration-300 ${hovered ? 'scale-110' : ''}`}>
             <Icon className="w-5 h-5 text-white" strokeWidth={1.5} />
           </div>
-          <motion.div animate={{ opacity: hovered ? 1 : 0 }} transition={{ duration: 0.15 }}>
-            <ExternalLink className="w-4 h-4 text-slate-500" />
-          </motion.div>
+          <ExternalLink className={`w-3.5 h-3.5 text-slate-600 transition-opacity ${hovered ? 'opacity-100' : 'opacity-0'}`} />
         </div>
-        <h3 className="text-white font-semibold text-sm mb-1">{domain.name}</h3>
+        <h3 className="text-white font-bold text-sm mb-1">{domain.name}</h3>
         <p className="text-slate-500 text-xs leading-relaxed mb-4">{domain.description}</p>
         <div className="flex items-center gap-1.5">
           <span className="w-1 h-1 rounded-full bg-emerald-500" />
@@ -112,143 +105,60 @@ function DomainCard({ domain, index }) {
   );
 }
 
-function SectionLabel({ children }) {
-  return <span className="text-[10px] font-semibold tracking-widest uppercase text-slate-600 mb-3 block">{children}</span>;
-}
-
-function Divider() {
-  return <div className="h-px my-20" style={{ background: 'linear-gradient(90deg, transparent, rgba(255,255,255,0.05), transparent)' }} />;
-}
-
 // ─── Page ─────────────────────────────────────────────────────────────────────
 
 export default function Home() {
-  const [chatOpen, setChatOpen] = useState(false);
-  const [message, setMessage] = useState('');
-  const [messages, setMessages] = useState([]);
-  const [loading, setLoading] = useState(false);
-
-  const handleSendMessage = async () => {
-    if (!message.trim() || loading) return;
-    const userMsg = message;
-    setMessages(prev => [...prev, { text: userMsg, sender: 'user' }]);
-    setMessage('');
-    setLoading(true);
-    try {
-      const response = await base44.integrations.Core.InvokeLLM({
-        prompt: `You are Big Brother, the central intelligence of the LBC Protocol ecosystem — a Solana-powered platform delivering real-world utility through the Lumina Blockchain ($LBC) token, a non-custodial digital wallet, freelancer marketplace, DePIN solar-powered Starlink connectivity nodes, and transparent governance infrastructure. LBC stands for Lumina Blockchain Coin. The project is founded by @LBCHUB_FOUNDER, built from Canada, targeting MENA and emerging markets globally. Key domains: lbc-hub.com, lbchub.io, lbc.network. Contact: info@lbc.network.
-
-User: ${userMsg}
-
-Respond helpfully and concisely in 1-3 sentences.`,
-      });
-      setMessages(prev => [...prev, { text: response, sender: 'assistant' }]);
-    } catch (error) {
-      setMessages(prev => [...prev, { text: 'I encountered an error. Please try again.', sender: 'assistant' }]);
-    }
-    setLoading(false);
-  };
-
-  const handleKeyPress = (e) => {
-    if (e.key === 'Enter') { e.preventDefault(); handleSendMessage(); }
-  };
-
   return (
-    <div className="min-h-screen bg-[#050510] text-white overflow-x-hidden" style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>
+    <div className="min-h-screen bg-[#04040f] text-white overflow-x-hidden" style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>
 
-      {/* Background */}
-      <div className="fixed inset-0 pointer-events-none select-none">
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[500px]"
-          style={{ background: 'radial-gradient(ellipse, rgba(79,70,229,0.18) 0%, transparent 70%)' }} />
-        <div className="absolute top-32 left-0 w-80 h-80 blur-3xl"
-          style={{ background: 'radial-gradient(circle, rgba(251,191,36,0.07) 0%, transparent 70%)' }} />
-        <div className="absolute bottom-0 right-0 w-96 h-96 blur-3xl"
-          style={{ background: 'radial-gradient(circle, rgba(139,92,246,0.06) 0%, transparent 70%)' }} />
-        <div className="absolute inset-0 opacity-[0.018]"
-          style={{ backgroundImage: 'linear-gradient(rgba(255,255,255,1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,1) 1px, transparent 1px)', backgroundSize: '64px 64px' }} />
+      {/* ── BACKGROUNDS ── */}
+      <div className="fixed inset-0 pointer-events-none select-none overflow-hidden">
+        {/* Top purple glow */}
+        <div className="absolute -top-32 left-1/2 -translate-x-1/2 w-[900px] h-[600px]"
+          style={{ background: 'radial-gradient(ellipse, rgba(79,70,229,0.15) 0%, transparent 65%)' }} />
+        {/* Left amber orb */}
+        <div className="absolute top-1/3 -left-20 w-80 h-80 blur-3xl"
+          style={{ background: 'radial-gradient(circle, rgba(251,191,36,0.06) 0%, transparent 70%)' }} />
+        {/* Right violet orb */}
+        <div className="absolute top-2/3 -right-20 w-96 h-96 blur-3xl"
+          style={{ background: 'radial-gradient(circle, rgba(139,92,246,0.07) 0%, transparent 70%)' }} />
+        {/* Bottom glow */}
+        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-64 blur-3xl"
+          style={{ background: 'radial-gradient(ellipse, rgba(99,102,241,0.06) 0%, transparent 70%)' }} />
+        {/* Grid */}
+        <div className="absolute inset-0 opacity-[0.016]"
+          style={{ backgroundImage: 'linear-gradient(rgba(255,255,255,1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,1) 1px, transparent 1px)', backgroundSize: '72px 72px' }} />
       </div>
+
+      {/* ── NAV ── */}
+      <NavBar />
 
       <div className="relative z-10 max-w-6xl mx-auto">
 
-        {/* ── NAV ── */}
-        <nav className="px-6 pt-8 pb-6 flex items-center justify-between">
-          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5 }}
-            className="flex items-center gap-2.5">
-            <div className="w-8 h-8 rounded-md flex items-center justify-center"
-              style={{ background: 'linear-gradient(135deg, #f59e0b, #7c3aed)' }}>
-              <Star className="w-4 h-4 text-white fill-white" />
-            </div>
-            <span className="font-bold text-base tracking-tight">LBC Protocol</span>
-          </motion.div>
-          <motion.a initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5, delay: 0.1 }}
-            href="https://lbchub.ca" target="_blank" rel="noopener noreferrer"
-            className="hidden md:flex items-center gap-2 px-4 py-2 rounded-full text-xs font-semibold border text-amber-300 border-amber-400/25 hover:bg-amber-400/8 transition-colors"
-            style={{ background: 'rgba(251,191,36,0.04)' }}>
-            <TrendingUp className="w-3.5 h-3.5" /> Investor Relations
-          </motion.a>
-        </nav>
-
         {/* ── HERO ── */}
-        <section className="px-6 pt-14 pb-20 text-center">
-          <motion.div initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
-            <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-[10px] font-semibold tracking-widest uppercase border border-amber-400/20 text-amber-400/80 mb-10"
-              style={{ background: 'rgba(251,191,36,0.05)' }}>
-              <span className="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse" />
-              Powered by Lumina Blockchain ($LBC) · Built on Solana · Founded in Canada
-            </span>
-          </motion.div>
-
-          <motion.h1 initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-5xl md:text-6xl lg:text-[72px] font-bold leading-[1.06] tracking-tight mb-5">
-            <span className="text-white">LBC Protocol</span>
-          </motion.h1>
-
-          <motion.p initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.18 }}
-            className="text-xl md:text-2xl font-light mb-8 leading-snug"
-            style={{ color: 'rgba(255,255,255,0.45)' }}>
-            Illuminating Communities with Transparent, Inclusive Technology
-          </motion.p>
-
-          <motion.p initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.25 }}
-            className="text-base text-slate-500 max-w-2xl mx-auto leading-relaxed mb-12 font-light">
-            LBC Hub is a Solana-powered ecosystem delivering real-world utility through the Lumina Blockchain ($LBC) token and integrated applications — designed for underserved regions across MENA and emerging markets.
-          </motion.p>
-
-          <motion.div initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.32 }}
-            className="flex flex-col sm:flex-row items-center justify-center gap-3">
-            <a href="#solution"
-              className="group flex items-center gap-2 px-7 py-3 rounded-full text-sm font-semibold text-white transition-all duration-300"
-              style={{ background: 'linear-gradient(135deg, #4f46e5, #7c3aed)', boxShadow: '0 0 24px rgba(124,58,237,0.3)' }}
-              onClick={(e) => { e.preventDefault(); document.getElementById('solution')?.scrollIntoView({ behavior: 'smooth' }); }}>
-              Explore Solution <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
-            </a>
-            <a href="#ecosystem"
-              className="flex items-center gap-2 px-7 py-3 rounded-full text-sm font-semibold border border-white/8 text-slate-300 hover:text-white hover:border-white/15 transition-all duration-300"
-              style={{ background: 'rgba(255,255,255,0.03)' }}
-              onClick={(e) => { e.preventDefault(); document.getElementById('ecosystem')?.scrollIntoView({ behavior: 'smooth' }); }}>
-              <Grid className="w-4 h-4" /> Explore Ecosystem
-            </a>
-          </motion.div>
-        </section>
+        <HeroSection />
 
         <Divider />
 
         {/* ── THE PROBLEM ── */}
-        <section className="px-6 pb-20">
+        <section className="px-6 pb-24">
           <motion.div initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }} className="mb-12">
             <SectionLabel>Why We Exist</SectionLabel>
-            <h2 className="text-2xl md:text-3xl font-bold text-white mb-3">The Problem in Emerging Markets</h2>
-            <p className="text-slate-500 text-base font-light max-w-2xl">Centralized solutions fail to deliver resilient, affordable, inclusive tools for underserved communities.</p>
+            <h2 className="text-3xl md:text-4xl font-black text-white mb-3">The Problem in Emerging Markets</h2>
+            <p className="text-slate-500 text-base font-light max-w-2xl">Centralized solutions fail to deliver resilient, affordable, and inclusive tools for underserved communities.</p>
           </motion.div>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {problems.map(({ icon: Icon, title, desc }, i) => (
               <motion.div key={title}
                 initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }} transition={{ duration: 0.4, delay: i * 0.07 }}
-                className="rounded-xl p-6 border"
-                style={{ background: 'rgba(10,9,24,0.7)', borderColor: 'rgba(255,255,255,0.05)' }}>
-                <Icon className="w-5 h-5 text-rose-400 mb-3" strokeWidth={1.5} />
-                <h3 className="text-white text-sm font-semibold mb-2">{title}</h3>
+                className="rounded-2xl p-6 border group hover:border-rose-500/20 transition-all duration-300"
+                style={{ background: 'rgba(10,9,24,0.6)', borderColor: 'rgba(255,255,255,0.05)' }}>
+                <div className="w-10 h-10 rounded-xl flex items-center justify-center mb-4"
+                  style={{ background: 'rgba(244,63,94,0.1)', border: '1px solid rgba(244,63,94,0.2)' }}>
+                  <Icon className="w-5 h-5 text-rose-400" strokeWidth={1.5} />
+                </div>
+                <h3 className="text-white text-sm font-bold mb-2">{title}</h3>
                 <p className="text-slate-500 text-sm leading-relaxed">{desc}</p>
               </motion.div>
             ))}
@@ -258,24 +168,24 @@ Respond helpfully and concisely in 1-3 sentences.`,
         <Divider />
 
         {/* ── THE SOLUTION ── */}
-        <section id="solution" className="px-6 pb-20">
+        <section id="solution" className="px-6 pb-24">
           <motion.div initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }} className="mb-12">
             <SectionLabel>LBC Hub Solution</SectionLabel>
-            <h2 className="text-2xl md:text-3xl font-bold text-white mb-3">A Modular, Solana-Native Platform</h2>
+            <h2 className="text-3xl md:text-4xl font-black text-white mb-3">A Modular, Solana-Native Platform</h2>
             <p className="text-slate-500 text-base font-light max-w-2xl">Four integrated layers delivering real-world utility across finance, connectivity, commerce, and governance.</p>
           </motion.div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
             {solutions.map(({ icon: Icon, title, desc, color }, i) => (
               <motion.div key={title}
                 initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }} transition={{ duration: 0.4, delay: i * 0.07 }}
-                className="rounded-xl p-6 border"
-                style={{ background: 'rgba(10,9,24,0.7)', borderColor: 'rgba(255,255,255,0.05)' }}>
-                <div className="w-10 h-10 rounded-lg flex items-center justify-center mb-4"
+                className="rounded-2xl p-7 border hover:scale-[1.01] transition-all duration-300"
+                style={{ background: 'rgba(10,9,24,0.6)', borderColor: `${color}15` }}>
+                <div className="w-11 h-11 rounded-xl flex items-center justify-center mb-5"
                   style={{ background: `${color}18`, border: `1px solid ${color}30` }}>
                   <Icon className="w-5 h-5" style={{ color }} strokeWidth={1.5} />
                 </div>
-                <h3 className="text-white text-sm font-semibold mb-2">{title}</h3>
+                <h3 className="text-white text-base font-bold mb-2">{title}</h3>
                 <p className="text-slate-500 text-sm leading-relaxed">{desc}</p>
               </motion.div>
             ))}
@@ -285,34 +195,33 @@ Respond helpfully and concisely in 1-3 sentences.`,
         <Divider />
 
         {/* ── ARCHITECTURE ── */}
-        <section id="architecture" className="px-6 pb-20">
+        <section id="architecture" className="px-6 pb-24">
           <motion.div initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }} className="mb-12">
             <SectionLabel>Technical Structure</SectionLabel>
-            <h2 className="text-2xl md:text-3xl font-bold text-white">Architecture Overview</h2>
+            <h2 className="text-3xl md:text-4xl font-black text-white">Architecture Overview</h2>
           </motion.div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-10">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mb-12">
             {architecture.map(({ icon: Icon, label, desc, color }, i) => (
               <motion.div key={label}
                 initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }} transition={{ duration: 0.45, delay: i * 0.08 }}
-                className="rounded-xl p-7 border"
-                style={{ background: 'rgba(10,9,24,0.7)', borderColor: 'rgba(255,255,255,0.05)' }}>
-                <div className="w-10 h-10 rounded-lg flex items-center justify-center mb-5"
+                className="rounded-2xl p-7 border"
+                style={{ background: 'rgba(10,9,24,0.6)', borderColor: `${color}18` }}>
+                <div className="w-11 h-11 rounded-xl flex items-center justify-center mb-5"
                   style={{ background: `${color}18`, border: `1px solid ${color}30` }}>
                   <Icon className="w-5 h-5" style={{ color }} strokeWidth={1.5} />
                 </div>
-                <h3 className="font-semibold text-white text-sm mb-2">{label}</h3>
+                <h3 className="font-bold text-white mb-2">{label}</h3>
                 <p className="text-slate-500 text-sm leading-relaxed">{desc}</p>
               </motion.div>
             ))}
           </div>
-          {/* Tech stack pills */}
           <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ duration: 0.5 }}>
-            <p className="text-[10px] font-semibold tracking-widest uppercase text-slate-600 mb-4">Tech Stack</p>
+            <p className="text-[10px] font-bold tracking-widest uppercase text-slate-700 mb-4">Tech Stack</p>
             <div className="flex flex-wrap gap-2">
               {['Solana Blockchain', 'SPL Token Standard', 'React PWA', 'Node.js', 'Rust Programs', 'IPFS Storage', 'Starlink / VSAT', 'Solar DePIN Nodes', 'Non-Custodial Wallet', 'On-Chain Analytics'].map(tech => (
-                <span key={tech} className="px-3 py-1.5 rounded-full text-xs border text-slate-400"
-                  style={{ background: 'rgba(255,255,255,0.02)', borderColor: 'rgba(255,255,255,0.06)' }}>
+                <span key={tech} className="px-3 py-1.5 rounded-full text-xs border text-slate-500 hover:text-slate-300 transition-colors"
+                  style={{ background: 'rgba(255,255,255,0.02)', borderColor: 'rgba(255,255,255,0.07)' }}>
                   {tech}
                 </span>
               ))}
@@ -322,77 +231,20 @@ Respond helpfully and concisely in 1-3 sentences.`,
 
         <Divider />
 
-        {/* ── NATIVE TOKEN ── */}
-        <section className="px-6 pb-20">
-          <motion.div initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }}>
-            <SectionLabel>Native Token</SectionLabel>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
-              <div>
-                <h2 className="text-2xl md:text-3xl font-bold text-white mb-2">Lumina <span className="text-amber-400">($LBC)</span></h2>
-                <p className="text-slate-500 text-sm mb-2 font-light">Lumina Blockchain Coin — SPL utility & governance token on Solana</p>
-                <div className="flex flex-wrap gap-2 mb-8">
-                  <a href="https://phantom.com/tokens/solana/2UoettzUUevYNNMhLYACqxjbvkpS4dnCZhbV6xFkuKkT?referralId=jx3tz816il" target="_blank" rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg border font-semibold text-[11px] text-violet-300 hover:text-violet-200 transition-colors"
-                    style={{ background: 'rgba(139,92,246,0.08)', borderColor: 'rgba(139,92,246,0.25)' }}>
-                    <span className="w-1.5 h-1.5 rounded-full bg-violet-400" />
-                    Buy $LBC on Phantom
-                    <ExternalLink className="w-3 h-3 flex-shrink-0" />
-                  </a>
-                  <a href="https://solscan.io/token/2UoettzUUevYNNMhLYACqxjbvkpS4dnCZhbV6xFkuKkT" target="_blank" rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg border font-mono text-[11px] text-amber-400/70 hover:text-amber-400 transition-colors"
-                    style={{ background: 'rgba(251,191,36,0.04)', borderColor: 'rgba(251,191,36,0.15)' }}>
-                    <span className="w-1.5 h-1.5 rounded-full bg-amber-400" />
-                    2UoettzU...uKkT
-                    <ExternalLink className="w-3 h-3 flex-shrink-0" />
-                  </a>
-                </div>
-                <p className="text-slate-400 text-base leading-relaxed mb-8 font-light">
-                  Lumina ($LBC) — Lumina Blockchain Coin — is the native token of LBC Protocol. Fast, cheap, and scalable on Solana, it powers every transaction, reward, and governance decision across the ecosystem, enabling direct economic relationships between drivers, merchants, freelancers, node operators, and users.
-                </p>
-                <a href="https://solscan.io/account/2SYh5UjyGEVwCMTQrY5LJrGRfEAmU9MqXECRrAMsNK34" target="_blank" rel="noopener noreferrer"
-                  className="flex items-center gap-2 px-4 py-3 rounded-lg border mb-4 hover:border-emerald-500/30 transition-colors group"
-                  style={{ background: 'rgba(16,185,129,0.03)', borderColor: 'rgba(16,185,129,0.15)' }}>
-                  <span className="w-2 h-2 rounded-full bg-emerald-500 flex-shrink-0" />
-                  <div className="min-w-0">
-                    <p className="text-[10px] font-semibold tracking-widest uppercase text-emerald-600 mb-0.5">Official Solana Wallet</p>
-                    <p className="text-emerald-400/70 group-hover:text-emerald-400 font-mono text-[11px] truncate transition-colors">2SYh5UjyGEVwCMTQrY5LJrGRfEAmU9MqXECRrAMsNK34</p>
-                  </div>
-                  <ExternalLink className="w-3.5 h-3.5 text-emerald-600 flex-shrink-0 ml-auto" />
-                </a>
-                <p className="text-xs text-slate-600 border border-white/5 rounded-lg px-4 py-3"
-                  style={{ background: 'rgba(255,255,255,0.02)' }}>
-                  $LBC is a utility token enabling protocol participation. It does not represent equity, ownership, or financial guarantees. Always DYOR.
-                </p>
-              </div>
-              <div className="space-y-3">
-                {[
-                  'Ecosystem transaction fees',
-                  'Freelancer marketplace payments',
-                  'DePIN node operator rewards',
-                  'Governance & community signaling',
-                  'Burns for scarcity management',
-                  'Borderless cross-border transfers',
-                ].map((item, i) => (
-                  <div key={i} className="flex items-center gap-3 py-3.5 px-4 rounded-lg border"
-                    style={{ background: 'rgba(251,191,36,0.03)', borderColor: 'rgba(251,191,36,0.1)' }}>
-                    <span className="w-1.5 h-1.5 rounded-full bg-amber-400 flex-shrink-0" />
-                    <span className="text-slate-300 text-sm">{item}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </motion.div>
-        </section>
+        {/* ── TOKEN ── */}
+        <div id="token">
+          <TokenSection />
+        </div>
 
         <Divider />
 
         {/* ── GOVERNANCE ── */}
-        <section className="px-6 pb-20">
+        <section className="px-6 pb-24">
           <motion.div initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }}>
             <SectionLabel>Protocol Governance</SectionLabel>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
               <div>
-                <h2 className="text-2xl md:text-3xl font-bold text-white mb-6">Governance Framework</h2>
+                <h2 className="text-3xl md:text-4xl font-black text-white mb-6">Governance Framework</h2>
                 <p className="text-slate-400 text-base leading-relaxed font-light mb-4">
                   LBC Protocol governance is designed for phased, community-driven implementation — starting with transparent signaling and evolving into a full on-chain DAO.
                 </p>
@@ -400,16 +252,18 @@ Respond helpfully and concisely in 1-3 sentences.`,
                   All transactions, node data, and usage are logged immutably on Solana. A public dashboard provides verifiable impact metrics — no central control, no hidden levers.
                 </p>
               </div>
-              <div className="rounded-xl border p-6" style={{ background: 'rgba(99,102,241,0.04)', borderColor: 'rgba(99,102,241,0.12)' }}>
-                <div className="flex items-center gap-3 mb-4">
-                  <Shield className="w-5 h-5 text-indigo-400" strokeWidth={1.5} />
-                  <span className="text-white text-sm font-semibold">Anti-Corruption Core</span>
+              <div className="rounded-2xl border p-7" style={{ background: 'rgba(99,102,241,0.04)', borderColor: 'rgba(99,102,241,0.15)' }}>
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="w-9 h-9 rounded-xl flex items-center justify-center" style={{ background: 'rgba(99,102,241,0.15)', border: '1px solid rgba(99,102,241,0.25)' }}>
+                    <Shield className="w-4.5 h-4.5 text-indigo-400" strokeWidth={1.5} />
+                  </div>
+                  <span className="text-white font-bold">Anti-Corruption Core</span>
                 </div>
-                <div className="space-y-3">
+                <div className="space-y-3.5">
                   {['Immutable on-chain transaction ledger', 'Public verifiable impact dashboard', 'Community governance via future DAO', 'Phased rollout across regions', 'Built-in regulatory awareness', 'Driver-first incentive design'].map((item, i) => (
-                    <div key={i} className="flex items-center gap-2.5">
-                      <span className="w-1 h-1 rounded-full bg-indigo-400 flex-shrink-0" />
-                      <span className="text-slate-500 text-sm">{item}</span>
+                    <div key={i} className="flex items-center gap-3">
+                      <CheckCircle2 className="w-4 h-4 text-indigo-400 flex-shrink-0" strokeWidth={1.5} />
+                      <span className="text-slate-400 text-sm">{item}</span>
                     </div>
                   ))}
                 </div>
@@ -421,26 +275,26 @@ Respond helpfully and concisely in 1-3 sentences.`,
         <Divider />
 
         {/* ── ECOSYSTEM APPLICATIONS ── */}
-        <section id="ecosystem" className="px-6 pb-20">
+        <section id="ecosystem" className="px-6 pb-24">
           <motion.div initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }} className="mb-12">
             <SectionLabel>Applications</SectionLabel>
-            <h2 className="text-2xl md:text-3xl font-bold text-white mb-3">Ecosystem Applications</h2>
+            <h2 className="text-3xl md:text-4xl font-black text-white mb-3">Ecosystem Applications</h2>
             <p className="text-slate-500 text-base font-light">Every application is built on LBC Protocol infrastructure.</p>
           </motion.div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 mb-14">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mb-14">
             {ecosystemApps.map(({ name, icon: Icon, color }, i) => (
               <motion.div key={name}
                 initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }} transition={{ duration: 0.4, delay: i * 0.06 }}
-                className="flex items-center gap-3 px-5 py-4 rounded-xl border"
-                style={{ background: 'rgba(10,9,24,0.7)', borderColor: 'rgba(255,255,255,0.05)' }}>
-                <div className="w-8 h-8 rounded-md flex items-center justify-center flex-shrink-0"
-                  style={{ background: `${color}18`, border: `1px solid ${color}25` }}>
+                className="flex items-center gap-3.5 px-5 py-4 rounded-2xl border hover:scale-[1.02] transition-all duration-300"
+                style={{ background: 'rgba(10,9,24,0.6)', borderColor: `${color}18` }}>
+                <div className="w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0"
+                  style={{ background: `${color}18`, border: `1px solid ${color}28` }}>
                   <Icon className="w-4 h-4" style={{ color }} strokeWidth={1.5} />
                 </div>
                 <div>
-                  <p className="text-white text-sm font-medium">{name}</p>
+                  <p className="text-white text-sm font-bold">{name}</p>
                   <p className="text-slate-600 text-xs">Built on LBC Protocol</p>
                 </div>
               </motion.div>
@@ -448,8 +302,8 @@ Respond helpfully and concisely in 1-3 sentences.`,
           </div>
 
           <motion.div initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }}>
-            <p className="text-xs font-semibold tracking-widest uppercase text-slate-600 mb-6">Live Platforms</p>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
+            <p className="text-[10px] font-bold tracking-widest uppercase text-slate-700 mb-6">Live Platforms</p>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
               {domains.map((domain, i) => <DomainCard key={domain.url} domain={domain} index={i} />)}
             </div>
           </motion.div>
@@ -458,168 +312,69 @@ Respond helpfully and concisely in 1-3 sentences.`,
         <Divider />
 
         {/* ── ROADMAP ── */}
-        <section className="px-6 pb-20">
-          <motion.div initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }} className="mb-12">
-            <SectionLabel>Execution Plan</SectionLabel>
-            <h2 className="text-2xl md:text-3xl font-bold text-white mb-3">Strategic Roadmap 2026–2027</h2>
-            <p className="text-slate-500 text-base font-light max-w-2xl">
-              A structured, multi-phase approach to building global digital infrastructure — starting with pilot communities and scaling to the world.
-            </p>
-          </motion.div>
+        <RoadmapSection />
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-px rounded-xl overflow-hidden border border-white/[0.04]"
-            style={{ background: 'rgba(255,255,255,0.025)' }}>
-            {roadmapPhases.map(({ phase, title, subtitle, dot, bar, bg, items }, i) => (
-              <motion.div key={phase}
-                initial={{ opacity: 0 }} whileInView={{ opacity: 1 }}
-                viewport={{ once: true }} transition={{ duration: 0.45, delay: i * 0.1 }}
-                className="relative flex flex-col p-8"
-                style={{ background: 'rgba(6,5,16,0.97)' }}>
-                <div className="absolute top-0 inset-x-0 h-[2px]"
-                  style={{ background: `linear-gradient(90deg, transparent, ${bar}, transparent)` }} />
-                <div className="absolute inset-0 pointer-events-none" style={{ background: bg }} />
-                <div className="relative">
-                  <div className="flex items-center gap-2 mb-1">
-                    <span className="w-1.5 h-1.5 rounded-full" style={{ background: dot }} />
-                    <span className="text-[10px] font-semibold tracking-widest uppercase text-slate-600">{phase}</span>
-                  </div>
-                  <h3 className="text-base font-bold text-white leading-tight">{title}</h3>
-                  <p className="text-[11px] text-slate-600 mt-0.5 mb-5 tracking-wide">{subtitle}</p>
-                  <div className="h-px mb-5" style={{ background: 'rgba(255,255,255,0.04)' }} />
-                  <ul className="space-y-3.5">
-                    {items.map((item, j) => (
-                      <li key={j} className="flex items-start gap-2.5">
-                        <span className="mt-[7px] w-[3px] h-[3px] rounded-full flex-shrink-0" style={{ background: dot }} />
-                        <span className="text-slate-500 text-xs leading-relaxed">{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-
-          <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.3 }}
-            className="mt-10 flex flex-col items-center gap-4">
-            <div className="flex flex-wrap justify-center gap-6 text-xs text-slate-600">
-              <span className="flex items-center gap-1.5">🇨🇦 Founded in Canada</span>
-              <span className="hidden sm:block w-px h-3 bg-white/8 self-center" />
-              <span className="flex items-center gap-1.5">🌍 Scaling to MENA, Africa & Emerging Markets</span>
-              <span className="hidden sm:block w-px h-3 bg-white/8 self-center" />
-              <span className="flex items-center gap-1.5">☀️ Solar-Powered DePIN Nodes</span>
-            </div>
-          </motion.div>
-        </section>
-
-        {/* ── APP POLL ── */}
+        {/* ── POLL ── */}
         <AppPoll />
 
         <Divider />
 
         {/* ── FOOTER ── */}
-        <footer className="px-6 pb-12">
-          <div className="h-px mb-10" style={{ background: 'linear-gradient(90deg, transparent, rgba(255,255,255,0.05), transparent)' }} />
-          <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-            <div className="flex items-center gap-2.5">
-              <div className="w-7 h-7 rounded-md flex items-center justify-center"
-                style={{ background: 'linear-gradient(135deg, #f59e0b, #7c3aed)' }}>
-                <Star className="w-3.5 h-3.5 text-white fill-white" />
-              </div>
+        <footer className="px-6 pb-14">
+          <div className="rounded-2xl border p-8 mb-8"
+            style={{ background: 'rgba(10,9,24,0.6)', borderColor: 'rgba(255,255,255,0.05)' }}>
+            <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
               <div>
-                <p className="text-white font-semibold text-xs">LBC Protocol</p>
-                <p className="text-slate-700 text-[10px]">© 2026 LBC Network Inc. · All rights reserved</p>
+                <div className="flex items-center gap-3 mb-3">
+                  <div className="w-9 h-9 rounded-xl flex items-center justify-center"
+                    style={{ background: 'linear-gradient(135deg, #f59e0b, #7c3aed)', boxShadow: '0 0 16px rgba(124,58,237,0.3)' }}>
+                    <Star className="w-4 h-4 text-white fill-white" />
+                  </div>
+                  <div>
+                    <p className="text-white font-black text-sm">LBC Protocol</p>
+                    <p className="text-slate-600 text-[10px]">© 2026 LBC Network Inc. · All rights reserved</p>
+                  </div>
+                </div>
+                <p className="text-slate-600 text-xs max-w-xs leading-relaxed">
+                  Building brighter futures on Solana — transparent, inclusive, and decentralized.
+                </p>
+              </div>
+
+              <div className="flex flex-col gap-2 text-[11px]">
+                <a href="mailto:info@lbc.network" className="text-slate-600 hover:text-slate-300 transition-colors">📧 info@lbc.network</a>
+                <a href="mailto:tarek-samara@lbc-hub.com" className="text-slate-600 hover:text-slate-300 transition-colors">📧 tarek-samara@lbc-hub.com</a>
+                <a href="https://x.com/LBCHUB_FOUNDER" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1.5 text-slate-600 hover:text-slate-300 transition-colors">
+                  <X className="w-3 h-3" /> @LBCHUB_FOUNDER
+                </a>
+              </div>
+
+              <div className="flex flex-col gap-2">
+                <a href="https://lbc-hub.com" target="_blank" rel="noopener noreferrer"
+                  className="flex items-center gap-1 text-[11px] text-slate-600 hover:text-slate-300 transition-colors">
+                  lbc-hub.com <ChevronRight className="w-3 h-3" />
+                </a>
+                <a href="https://lbc.network" target="_blank" rel="noopener noreferrer"
+                  className="flex items-center gap-1 text-[11px] text-slate-600 hover:text-slate-300 transition-colors">
+                  lbc.network <ChevronRight className="w-3 h-3" />
+                </a>
+                <a href="https://lbchub.ca" target="_blank" rel="noopener noreferrer"
+                  className="flex items-center gap-1 text-[11px] text-slate-600 hover:text-slate-300 transition-colors">
+                  Investor Relations <ChevronRight className="w-3 h-3" />
+                </a>
               </div>
             </div>
-            <div className="flex flex-wrap items-center justify-center gap-5 text-[11px] text-slate-700">
-              <a href="mailto:info@lbc.network" className="hover:text-slate-400 transition-colors">info@lbc.network</a>
-              <a href="mailto:tarek-samara@lbc-hub.com" className="hover:text-slate-400 transition-colors">tarek-samara@lbc-hub.com</a>
-              <a href="https://x.com/LBCHUB_FOUNDER" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 hover:text-slate-400 transition-colors">
-                <X className="w-3 h-3" /> @LBCHUB_FOUNDER
-              </a>
-            </div>
-            <a href="https://lbc-hub.com" target="_blank" rel="noopener noreferrer"
-              className="flex items-center gap-1 text-[11px] text-slate-700 hover:text-slate-400 transition-colors">
-              lbc-hub.com <ChevronRight className="w-3 h-3" />
-            </a>
           </div>
-          <p className="text-center text-slate-700 text-[10px] mt-6 max-w-2xl mx-auto leading-relaxed">
+
+          <p className="text-center text-slate-700 text-[10px] max-w-2xl mx-auto leading-relaxed">
             This website is informational only. $LBC is a utility token. No securities offered. Participation carries risk. Always do your own research (DYOR). LBC Network Inc. – Building brighter futures on Solana.
           </p>
         </footer>
 
       </div>
 
-      {/* Floating Chat Button */}
-      <motion.button
-        initial={{ opacity: 0, scale: 0.8 }}
-        animate={{ opacity: 1, scale: 1 }}
-        whileHover={{ scale: 1.1 }}
-        whileTap={{ scale: 0.95 }}
-        onClick={() => setChatOpen(!chatOpen)}
-        className="fixed bottom-6 right-6 w-14 h-14 rounded-full flex items-center justify-center text-white shadow-lg z-50"
-        style={{ background: 'linear-gradient(135deg, #06b6d4, #0ea5e9)', boxShadow: '0 0 24px rgba(6,182,212,0.4)' }}>
-        <MessageCircle className="w-6 h-6" />
-      </motion.button>
+      {/* ── BIG BROTHER CHAT ── */}
+      <BigBrotherChat />
 
-      {/* AI Chat Panel - Big Brother */}
-      {chatOpen && (
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: 20 }}
-          className="fixed bottom-24 right-6 w-96 h-[500px] rounded-2xl border shadow-2xl overflow-hidden z-50"
-          style={{ background: 'rgba(10,9,24,0.95)', borderColor: 'rgba(6,182,212,0.2)', backdropFilter: 'blur(10px)' }}>
-          <div className="flex flex-col h-full">
-            <div className="px-6 py-4 border-b flex items-center justify-between" style={{ borderColor: 'rgba(6,182,212,0.1)' }}>
-              <div>
-                <h3 className="text-white font-semibold flex items-center gap-2">
-                  <LayoutDashboard className="w-4 h-4 text-cyan-400" /> Big Brother
-                </h3>
-                <p className="text-slate-500 text-xs mt-0.5">LBC Protocol Intelligence</p>
-              </div>
-              <button onClick={() => setChatOpen(false)} className="text-slate-600 hover:text-slate-400 transition-colors">
-                <X className="w-4 h-4" />
-              </button>
-            </div>
-            <div className="flex-1 overflow-y-auto px-6 py-4 space-y-3">
-              {messages.length === 0 ? (
-                <div className="bg-cyan-500/10 rounded-lg px-4 py-3 border border-cyan-500/20">
-                  <p className="text-slate-300 text-sm">Welcome to Big Brother. I'm here to help you navigate the LBC Protocol ecosystem — ask me anything about $LBC, DePIN nodes, the wallet, or our mission.</p>
-                </div>
-              ) : (
-                messages.map((msg, i) => (
-                  <div key={i} className={`flex ${msg.sender === 'user' ? 'justify-end' : 'justify-start'}`}>
-                    <div className={`max-w-xs rounded-lg px-4 py-2 ${msg.sender === 'user' ? 'bg-cyan-600 text-white' : 'bg-cyan-500/10 text-slate-300 border border-cyan-500/20'}`}>
-                      <p className="text-sm">{msg.text}</p>
-                    </div>
-                  </div>
-                ))
-              )}
-              {loading && (
-                <div className="flex justify-start">
-                  <div className="bg-cyan-500/10 border border-cyan-500/20 rounded-lg px-4 py-2">
-                    <div className="flex gap-1">
-                      <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-bounce" style={{ animationDelay: '0ms' }} />
-                      <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-bounce" style={{ animationDelay: '150ms' }} />
-                      <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-bounce" style={{ animationDelay: '300ms' }} />
-                    </div>
-                  </div>
-                </div>
-              )}
-            </div>
-            <div className="px-6 py-4 border-t" style={{ borderColor: 'rgba(6,182,212,0.1)' }}>
-              <input
-                type="text"
-                placeholder="Ask Big Brother..."
-                value={message}
-                onChange={(e) => setMessage(e.target.value)}
-                onKeyPress={handleKeyPress}
-                className="w-full px-4 py-2 rounded-lg text-sm text-white bg-white/5 border border-white/10 focus:outline-none focus:border-cyan-500/50"
-              />
-            </div>
-          </div>
-        </motion.div>
-      )}
     </div>
   );
 }
