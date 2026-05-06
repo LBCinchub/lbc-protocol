@@ -349,6 +349,16 @@ Respond helpfully and concisely in 1-3 sentences.`,
                 <p className="text-slate-400 text-base leading-relaxed mb-8 font-light">
                   Lumina ($LBC) — Lumina Blockchain Coin — is the native token of LBC Protocol. Fast, cheap, and scalable on Solana, it powers every transaction, reward, and governance decision across the ecosystem, enabling direct economic relationships between drivers, merchants, freelancers, node operators, and users.
                 </p>
+                <a href="https://solscan.io/account/2SYh5UjyGEVwCMTQrY5LJrGRfEAmU9MqXECRrAMsNK34" target="_blank" rel="noopener noreferrer"
+                  className="flex items-center gap-2 px-4 py-3 rounded-lg border mb-4 hover:border-emerald-500/30 transition-colors group"
+                  style={{ background: 'rgba(16,185,129,0.03)', borderColor: 'rgba(16,185,129,0.15)' }}>
+                  <span className="w-2 h-2 rounded-full bg-emerald-500 flex-shrink-0" />
+                  <div className="min-w-0">
+                    <p className="text-[10px] font-semibold tracking-widest uppercase text-emerald-600 mb-0.5">Official Solana Wallet</p>
+                    <p className="text-emerald-400/70 group-hover:text-emerald-400 font-mono text-[11px] truncate transition-colors">2SYh5UjyGEVwCMTQrY5LJrGRfEAmU9MqXECRrAMsNK34</p>
+                  </div>
+                  <ExternalLink className="w-3.5 h-3.5 text-emerald-600 flex-shrink-0 ml-auto" />
+                </a>
                 <p className="text-xs text-slate-600 border border-white/5 rounded-lg px-4 py-3"
                   style={{ background: 'rgba(255,255,255,0.02)' }}>
                   $LBC is a utility token enabling protocol participation. It does not represent equity, ownership, or financial guarantees. Always DYOR.
