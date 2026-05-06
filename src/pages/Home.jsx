@@ -330,13 +330,22 @@ Respond helpfully and concisely in 1-3 sentences.`,
               <div>
                 <h2 className="text-2xl md:text-3xl font-bold text-white mb-2">Lumina <span className="text-amber-400">($LBC)</span></h2>
                 <p className="text-slate-500 text-sm mb-2 font-light">Lumina Blockchain Coin — SPL utility & governance token on Solana</p>
-                <a href="https://solscan.io/token/2UoettzUUevYNNMhLYACqxjbvkpS4dnCZhbV6xFkuKkT" target="_blank" rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg border mb-8 font-mono text-[11px] text-amber-400/70 hover:text-amber-400 transition-colors"
-                  style={{ background: 'rgba(251,191,36,0.04)', borderColor: 'rgba(251,191,36,0.15)' }}>
-                  <span className="w-1.5 h-1.5 rounded-full bg-amber-400" />
-                  2UoettzUUevYNNMhLYACqxjbvkpS4dnCZhbV6xFkuKkT
-                  <ExternalLink className="w-3 h-3 flex-shrink-0" />
-                </a>
+                <div className="flex flex-wrap gap-2 mb-8">
+                  <a href="https://phantom.com/tokens/solana/2UoettzUUevYNNMhLYACqxjbvkpS4dnCZhbV6xFkuKkT?referralId=jx3tz816il" target="_blank" rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg border font-semibold text-[11px] text-violet-300 hover:text-violet-200 transition-colors"
+                    style={{ background: 'rgba(139,92,246,0.08)', borderColor: 'rgba(139,92,246,0.25)' }}>
+                    <span className="w-1.5 h-1.5 rounded-full bg-violet-400" />
+                    Buy $LBC on Phantom
+                    <ExternalLink className="w-3 h-3 flex-shrink-0" />
+                  </a>
+                  <a href="https://solscan.io/token/2UoettzUUevYNNMhLYACqxjbvkpS4dnCZhbV6xFkuKkT" target="_blank" rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg border font-mono text-[11px] text-amber-400/70 hover:text-amber-400 transition-colors"
+                    style={{ background: 'rgba(251,191,36,0.04)', borderColor: 'rgba(251,191,36,0.15)' }}>
+                    <span className="w-1.5 h-1.5 rounded-full bg-amber-400" />
+                    2UoettzU...uKkT
+                    <ExternalLink className="w-3 h-3 flex-shrink-0" />
+                  </a>
+                </div>
                 <p className="text-slate-400 text-base leading-relaxed mb-8 font-light">
                   Lumina ($LBC) — Lumina Blockchain Coin — is the native token of LBC Protocol. Fast, cheap, and scalable on Solana, it powers every transaction, reward, and governance decision across the ecosystem, enabling direct economic relationships between drivers, merchants, freelancers, node operators, and users.
                 </p>
