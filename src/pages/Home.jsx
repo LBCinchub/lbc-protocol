@@ -54,14 +54,14 @@ const roadmapPhases = [
     items: ['New $LBC mint & fair launch on Solana', 'Website relaunch: lbc-hub.com + new domains', 'Private pilot: 1–3 Starlink dishes + solar nodes', '🚗 Driver Portal App — first mobile release'],
   },
   {
-    phase: 'Q3–Q4 2026', title: 'Growth', subtitle: 'Wallet & DePIN Beta',
+    phase: 'Q3–Q4 2026', title: 'Growth', subtitle: 'Wallet, Hub & DePIN Beta',
     dot: '#8b5cf6', bar: 'rgba(139,92,246,0.5)', bg: 'rgba(139,92,246,0.05)',
-    items: ['💳 Lumina Blockchain Wallet App — iOS & Android launch', 'DePIN node prototype with solar tracking', 'Fiat ramp partnerships', 'Community beta launch in target regions'],
+    items: ['💳 Lumina Blockchain Wallet App — iOS & Android launch', '📱 LBC Hub App — iOS & Android release', 'DePIN node prototype with solar tracking', 'Fiat ramp partnerships', 'Community beta launch in target regions'],
   },
   {
     phase: '2027', title: 'Scale', subtitle: 'Full Ecosystem & DAO',
     dot: '#f59e0b', bar: 'rgba(251,191,36,0.4)', bg: 'rgba(251,191,36,0.04)',
-    items: ['📱 LBC Hub App — full iOS & Android release', 'Scale DePIN nodes across Bekaa Valley', 'Launch LBC governance DAO', 'Global rollout: MENA, Africa, and emerging markets'],
+    items: ['Scale DePIN nodes across Bekaa Valley', 'Launch LBC governance DAO', 'Global rollout: MENA, Africa, and emerging markets', 'Advanced ecosystem integrations & partnerships'],
   },
 ];
 
