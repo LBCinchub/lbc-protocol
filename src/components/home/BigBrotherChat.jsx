@@ -61,8 +61,8 @@ export default function BigBrotherChat() {
                 <Sparkles className="w-4 h-4 text-white" />
               </div>
               <div>
-                <p className="text-white font-bold text-sm">Big Brother</p>
-                <p className="text-slate-600 text-[10px]">LBC Protocol Intelligence · Always on</p>
+                <p className="text-white font-bold text-sm">LBC Protocol</p>
+                <p className="text-slate-600 text-[10px]">LBC AI · LBC Hub Lumina Ultra · Always on</p>
               </div>
               <div className="ml-auto flex items-center gap-1.5">
                 <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
