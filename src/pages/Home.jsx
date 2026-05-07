@@ -17,7 +17,7 @@ import BigBrotherChat from '@/components/home/BigBrotherChat';
 // ─── Data ─────────────────────────────────────────────────────────────────────
 
 const domains = [
-  { url: 'lbc.network',           fullUrl: 'https://lbc.network',           name: 'Main Homepage',      description: 'The parent ecosystem — official LBC Network hub',                  icon: Globe,           gradient: 'from-blue-500 to-cyan-400',      glow: 'rgba(59,130,246,0.15)' },
+  { url: 'lbc.network',           fullUrl: 'https://lbc.network',           name: 'LBC Network — Parent',      description: 'The parent ecosystem — official LBC Network hub',                  icon: Globe,           gradient: 'from-blue-500 to-cyan-400',      glow: 'rgba(59,130,246,0.15)' },
   { url: 'lbchub.io',             fullUrl: 'https://lbchub.io',             name: 'LBC Protocol — Big Brother',        description: 'Central intelligence and ecosystem coordination',                 icon: LayoutDashboard, gradient: 'from-indigo-600 to-purple-500',   glow: 'rgba(102,51,153,0.15)' },
   { url: 'lbc-hub.com',           fullUrl: 'https://lbc-hub.com',           name: 'LBC Hub — Twin Sister', description: 'Interactive hub and operational dashboard — Twin Sister to lbchub.io',   icon: LayoutDashboard, gradient: 'from-violet-500 to-purple-400',   glow: 'rgba(139,92,246,0.15)' },
   { url: 'lbchub.site',           fullUrl: 'https://lbchub.site',           name: 'LBC AI — Twin Sister', description: 'AI builder platform — Lumina Ultra, twin sister to Lumina AI, powered by intelligent automation', icon: Building,        gradient: 'from-orange-500 to-amber-400',   glow: 'rgba(249,115,22,0.15)' },
