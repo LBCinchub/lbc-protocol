@@ -341,7 +341,6 @@ export default function Home() {
               </div>
 
               <div className="flex flex-col gap-2 text-[11px]">
-                <a href="mailto:info@lbc.network" className="text-slate-600 hover:text-slate-300 transition-colors">📧 info@lbc.network</a>
                 <a href="mailto:tarek-samara@lbc-hub.com" className="text-slate-600 hover:text-slate-300 transition-colors">📧 tarek-samara@lbc-hub.com</a>
                 <a href="https://x.com/LBC_FOUNDER" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1.5 text-slate-600 hover:text-slate-300 transition-colors">
                   <X className="w-3 h-3" /> @LBC_FOUNDER
