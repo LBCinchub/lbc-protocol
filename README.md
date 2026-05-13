@@ -1,39 +1,29 @@
-**Welcome to your Base44 project** 
+# LBC Protocol — DeFi & Token Layer
 
-**About**
+> The financial engine of the LBC ecosystem.
 
-View and Edit  your app on [Base44.com](http://Base44.com) 
+LBC Protocol powers the $LBC token economy — liquidity, staking, payments, and DeFi integrations across the LBC Digital City.
 
-This project contains everything you need to run your app locally.
+---
 
-**Edit the code in your local development environment**
+## $LBC Token
 
-Any change pushed to the repo will also be reflected in the Base44 Builder.
+Network: Solana Mainnet
+Mint: `2UoettzUUevYNNMhLYACqxjbvkpS4dnCZhbV6xFkuKkT`
+Supply: 1,000,000,000 LBC (6 decimals)
+Mint authority: renounced | Freeze authority: renounced
 
-**Prerequisites:** 
+---
 
-1. Clone the repository using the project's Git URL 
-2. Navigate to the project directory
-3. Install dependencies: `npm install`
-4. Create an `.env.local` file and set the right environment variables
+## Tokenomics
 
-```
-VITE_BASE44_APP_ID=your_app_id
-VITE_BASE44_APP_BASE_URL=your_backend_url
+- 7% Team (4-year vest)
+- 7% Ecosystem fund
+- Remainder: community, liquidity, public
 
-e.g.
-VITE_BASE44_APP_ID=cbef744a8545c389ef439ea6
-VITE_BASE44_APP_BASE_URL=https://my-to-do-list-81bfaad7.base44.app
-```
+---
 
-Run the app: `npm run dev`
+## Company
 
-**Publish your changes**
+LBC NETWORK inc | Ottawa, Canada
 
-Open [Base44.com](http://Base44.com) and click on Publish.
-
-**Docs & Support**
-
-Documentation: [https://docs.base44.com/Integrations/Using-GitHub](https://docs.base44.com/Integrations/Using-GitHub)
-
-Support: [https://app.base44.com/support](https://app.base44.com/support)
