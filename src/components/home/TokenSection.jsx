@@ -20,7 +20,7 @@ export default function TokenSection() {
         <div className="mb-14">
           <span className="text-[10px] font-semibold tracking-widest uppercase text-amber-500/70 mb-3 block">Native Token</span>
           <h2 className="text-3xl md:text-4xl font-black text-white mb-3">
-            Lumina <span className="text-amber-400">($LBC)</span>
+            <span className="text-amber-400">$LBC</span> Token
           </h2>
           <p className="text-slate-500 text-base font-light max-w-xl">
             SPL utility & governance token on Solana — powering every layer of the LBC Protocol ecosystem.
