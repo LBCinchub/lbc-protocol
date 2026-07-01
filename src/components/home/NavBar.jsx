@@ -53,7 +53,17 @@ export default function NavBar() {
       </div>
 
       {/* CTA */}
-      <div className="flex items-center gap-3">
+      <div className="flex items-center gap-2">
+        <a href="https://lbc-hub.com" target="_blank" rel="noopener noreferrer"
+          className="hidden md:flex items-center gap-1.5 px-3 py-1.5 rounded-full text-[11px] font-semibold text-slate-400 hover:text-white transition-colors"
+          style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.07)' }}>
+          <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />Hub
+        </a>
+        <a href="https://lbchub.tech" target="_blank" rel="noopener noreferrer"
+          className="hidden md:flex items-center gap-1.5 px-3 py-1.5 rounded-full text-[11px] font-semibold text-slate-400 hover:text-white transition-colors"
+          style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.07)' }}>
+          <span className="w-1.5 h-1.5 rounded-full bg-teal-400 animate-pulse" />Auto
+        </a>
         <a href="https://lbchub.ca" target="_blank" rel="noopener noreferrer"
           className="hidden md:flex items-center gap-1.5 px-4 py-2 rounded-full text-xs font-bold border text-amber-300 hover:text-amber-200 transition-colors"
           style={{ background: 'rgba(251,191,36,0.06)', borderColor: 'rgba(251,191,36,0.2)' }}>
