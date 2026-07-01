@@ -54,12 +54,15 @@ const problems = [
 ];
 
 const ecosystemApps = [
-  { name: 'LBCHub — Central Intelligence',         icon: LayoutDashboard, color: '#8b5cf6' },
-  { name: 'Lumina Wallet — $LBC Native Wallet',    icon: Wallet,          color: '#f59e0b' },
-  { name: 'Driver Portal — Mobility First',        icon: Truck,           color: '#10b981' },
-  { name: 'Digital Marketplace — Commerce Layer',  icon: ShoppingBag,     color: '#6366f1' },
-  { name: 'NFT Gallery — Digital Assets',          icon: Palette,         color: '#06b6d4' },
-  { name: 'Impact Framework — Transparent Giving', icon: Heart,           color: '#f43f5e' },
+  { name: 'LBC Hub — Social, Market & Travel AI',  icon: LayoutDashboard, color: '#8b5cf6', href: 'https://lbc-hub.com', live: true },
+  { name: 'LBC Auto — Shop Management SaaS',       icon: Car,             color: '#14b8a6', href: 'https://lbchub.tech', live: true },
+  { name: 'LBC Charity — Zero-Fee On-Chain Aid',   icon: Heart,           color: '#f43f5e', href: 'https://lbchub.org',  live: true },
+  { name: 'Lumina Wallet — $LBC Native Wallet',    icon: Wallet,          color: '#f59e0b', href: 'https://lumina-blockchain.com', live: false },
+  { name: 'Driver Portal — Mobility First',        icon: Truck,           color: '#10b981', href: 'https://lbchub.app',  live: false },
+  { name: 'Digital Marketplace — Commerce Layer',  icon: ShoppingBag,     color: '#6366f1', href: 'https://lbc-hub.com', live: true },
+  { name: 'LBC Live — Creator Economy & Streaming',icon: Radio,           color: '#a855f7', href: 'https://lbchub.live', live: false },
+  { name: 'LBC AI — Powered by Lumina Ultra',      icon: Sparkles,        color: '#ec4899', href: 'https://lbchub.site', live: true },
+  { name: 'NFT Gallery — Digital Assets',          icon: Palette,         color: '#06b6d4', href: 'https://lbchub.art',  live: false },
 ];
 
 // ─── Sub-components ───────────────────────────────────────────────────────────
@@ -172,7 +175,7 @@ export default function Home() {
           <motion.div initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }} className="mb-12">
             <SectionLabel>LBC Hub Solution</SectionLabel>
             <h2 className="text-3xl md:text-4xl font-black text-white mb-3">A Modular, Solana-Native Platform</h2>
-            <p className="text-slate-500 text-base font-light max-w-2xl">Four integrated layers delivering real-world utility across finance, connectivity, commerce, and governance.</p>
+            <p className="text-slate-500 text-base font-light max-w-2xl">Four integrated layers delivering real-world utility across finance, connectivity, commerce, and governance — already powering live businesses via <a href="https://lbchub.tech" target="_blank" className="text-violet-400 hover:text-violet-300 underline underline-offset-2">LBC Auto</a> and <a href="https://lbc-hub.com" target="_blank" className="text-violet-400 hover:text-violet-300 underline underline-offset-2">LBC Hub</a>.</p>
           </motion.div>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
             {solutions.map(({ icon: Icon, title, desc, color }, i) => (
@@ -283,26 +286,37 @@ export default function Home() {
           </motion.div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mb-14">
-            {ecosystemApps.map(({ name, icon: Icon, color }, i) => (
-              <motion.div key={name}
+            {ecosystemApps.map(({ name, icon: Icon, color, href, live }, i) => (
+              <motion.a key={name} href={href} target="_blank" rel="noopener noreferrer"
                 initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }} transition={{ duration: 0.4, delay: i * 0.06 }}
-                className="flex items-center gap-3.5 px-5 py-4 rounded-2xl border hover:scale-[1.02] transition-all duration-300"
+                className="flex items-center gap-3.5 px-5 py-4 rounded-2xl border hover:scale-[1.02] hover:border-white/10 transition-all duration-300"
                 style={{ background: 'rgba(10,9,24,0.6)', borderColor: `${color}18` }}>
                 <div className="w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0"
                   style={{ background: `${color}18`, border: `1px solid ${color}28` }}>
                   <Icon className="w-4 h-4" style={{ color }} strokeWidth={1.5} />
                 </div>
-                <div>
-                  <p className="text-white text-sm font-bold">{name}</p>
-                  <p className="text-slate-600 text-xs">Built on LBC Protocol</p>
+                <div className="flex-1 min-w-0">
+                  <p className="text-white text-sm font-bold leading-tight">{name}</p>
+                  <div className="flex items-center gap-2 mt-1">
+                    {live ? (
+                      <span className="inline-flex items-center gap-1 text-[9px] font-bold text-emerald-400">
+                        <span className="w-1 h-1 rounded-full bg-emerald-400 animate-pulse inline-block" />LIVE
+                      </span>
+                    ) : (
+                      <span className="text-[9px] font-bold text-blue-400">BUILDING</span>
+                    )}
+                  </div>
                 </div>
-              </motion.div>
+              </motion.a>
             ))}
           </div>
 
           <motion.div initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }}>
-            <p className="text-[10px] font-bold tracking-widest uppercase text-slate-700 mb-6">Live Platforms</p>
+            <div className="flex items-center justify-between mb-6">
+              <p className="text-[10px] font-bold tracking-widest uppercase text-slate-600">Live Platforms</p>
+              <span className="text-[10px] text-slate-600 font-mono">14 domains · Ottawa, Canada 🍁</span>
+            </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
               {domains.map((domain, i) => <DomainCard key={domain.url} domain={domain} index={i} />)}
             </div>
@@ -355,6 +369,14 @@ export default function Home() {
                 <a href="https://lbc.network" target="_blank" rel="noopener noreferrer"
                   className="flex items-center gap-1 text-[11px] text-slate-600 hover:text-slate-300 transition-colors">
                   lbc.network <ChevronRight className="w-3 h-3" />
+                </a>
+                <a href="https://lbchub.tech" target="_blank" rel="noopener noreferrer"
+                  className="flex items-center gap-1 text-[11px] text-slate-600 hover:text-slate-300 transition-colors">
+                  LBC Auto <ChevronRight className="w-3 h-3" />
+                </a>
+                <a href="https://lbchub.org" target="_blank" rel="noopener noreferrer"
+                  className="flex items-center gap-1 text-[11px] text-slate-600 hover:text-slate-300 transition-colors">
+                  LBC Charity <ChevronRight className="w-3 h-3" />
                 </a>
                 <a href="https://lbchub.ca" target="_blank" rel="noopener noreferrer"
                   className="flex items-center gap-1 text-[11px] text-slate-600 hover:text-slate-300 transition-colors">
