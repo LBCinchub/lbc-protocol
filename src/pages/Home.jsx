@@ -334,54 +334,67 @@ export default function Home() {
         <Divider />
 
         {/* ── FOOTER ── */}
-        <footer className="px-6 pb-14">
-          <div className="rounded-2xl border p-8 mb-8"
-            style={{ background: 'rgba(10,9,24,0.6)', borderColor: 'rgba(255,255,255,0.05)' }}>
-            <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
-              <div>
-                <div className="flex items-center gap-3 mb-3">
-                  <div className="w-9 h-9 rounded-xl flex items-center justify-center"
-                    style={{ background: 'linear-gradient(135deg, #f59e0b, #7c3aed)', boxShadow: '0 0 16px rgba(124,58,237,0.3)' }}>
-                    <Star className="w-4 h-4 text-white fill-white" />
+        <footer className="px-6 pb-16">
+          <div className="rounded-2xl border p-10 mb-8"
+            style={{ background: 'rgba(10,9,24,0.7)', borderColor: 'rgba(255,255,255,0.06)' }}>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+              {/* Brand */}
+              <div className="flex flex-col gap-4">
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-xl flex items-center justify-center"
+                    style={{ background: 'linear-gradient(135deg, #f59e0b, #7c3aed)', boxShadow: '0 0 20px rgba(124,58,237,0.35)' }}>
+                    <Star className="w-5 h-5 text-white fill-white" />
                   </div>
                   <div>
-                    <p className="text-white font-black text-sm">LBC Protocol</p>
-                    <p className="text-slate-600 text-[10px]">© 2026 LBC Network Inc. · All rights reserved</p>
+                    <p className="text-white font-black text-base">LBC Protocol</p>
+                    <p className="text-slate-600 text-[10px] tracking-wide">lbchub.io</p>
                   </div>
                 </div>
-                <p className="text-slate-600 text-xs max-w-xs leading-relaxed">
+                <p className="text-slate-500 text-sm leading-relaxed max-w-xs">
                   Building brighter futures on Solana — transparent, inclusive, and decentralized.
                 </p>
+                <div className="flex items-center gap-3">
+                  <a href="https://x.com/LBC_FOUNDER" target="_blank" rel="noopener noreferrer"
+                    className="text-slate-600 hover:text-slate-300 transition-colors">
+                    <X className="w-4 h-4" />
+                  </a>
+                  <a href="https://t.me/LBCHUBofficial" target="_blank" rel="noopener noreferrer"
+                    className="text-slate-600 hover:text-slate-300 transition-colors text-[11px] font-medium">TG</a>
+                  <a href="https://github.com/LBCinchub" target="_blank" rel="noopener noreferrer"
+                    className="text-slate-600 hover:text-slate-300 transition-colors text-[11px] font-medium">GH</a>
+                </div>
               </div>
 
-              <div className="flex flex-col gap-2 text-[11px]">
-                <a href="mailto:tarek-samara@lbc-hub.com" className="text-slate-600 hover:text-slate-300 transition-colors">📧 tarek-samara@lbc-hub.com</a>
-                <a href="https://x.com/LBC_FOUNDER" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1.5 text-slate-600 hover:text-slate-300 transition-colors">
-                  <X className="w-3 h-3" /> @LBC_FOUNDER
-                </a>
+              {/* Ecosystem */}
+              <div className="flex flex-col gap-3">
+                <p className="text-[10px] font-bold tracking-widest uppercase text-slate-700 mb-2">Ecosystem</p>
+                {[
+                  { label: "LBC Hub", sub: "Social · Market · Travel", href: "https://lbc-hub.com", live: true },
+                  { label: "LBC Auto", sub: "$200/mo · Shop SaaS", href: "https://lbchub.tech", live: true },
+                  { label: "LBC Charity", sub: "Zero-fee on-chain aid", href: "https://lbchub.org", live: true },
+                  { label: "LBC AI", sub: "Lumina Ultra", href: "https://lbchub.site", live: true },
+                  { label: "LBC Wallet", sub: "$LBC · Solana", href: "https://lumina-blockchain.com", live: false },
+                  { label: "lbc.network", sub: "Parent ecosystem", href: "https://lbc.network", live: true },
+                ].map(l => (
+                  <a key={l.label} href={l.href} target="_blank" rel="noopener noreferrer"
+                    className="group flex items-center justify-between text-[11px] text-slate-500 hover:text-slate-200 transition-colors py-1 border-b border-white/[0.04]">
+                    <span className="flex items-center gap-2">
+                      {l.live && <span className="w-1 h-1 rounded-full bg-emerald-500" />}
+                      <span className="font-semibold">{l.label}</span>
+                    </span>
+                    <span className="text-slate-700 text-[10px]">{l.sub}</span>
+                  </a>
+                ))}
               </div>
 
-              <div className="flex flex-col gap-2">
-                <a href="https://lbc-hub.com" target="_blank" rel="noopener noreferrer"
-                  className="flex items-center gap-1 text-[11px] text-slate-600 hover:text-slate-300 transition-colors">
-                  lbc-hub.com <ChevronRight className="w-3 h-3" />
-                </a>
-                <a href="https://lbc.network" target="_blank" rel="noopener noreferrer"
-                  className="flex items-center gap-1 text-[11px] text-slate-600 hover:text-slate-300 transition-colors">
-                  lbc.network <ChevronRight className="w-3 h-3" />
-                </a>
-                <a href="https://lbchub.tech" target="_blank" rel="noopener noreferrer"
-                  className="flex items-center gap-1 text-[11px] text-slate-600 hover:text-slate-300 transition-colors">
-                  LBC Auto <ChevronRight className="w-3 h-3" />
-                </a>
-                <a href="https://lbchub.org" target="_blank" rel="noopener noreferrer"
-                  className="flex items-center gap-1 text-[11px] text-slate-600 hover:text-slate-300 transition-colors">
-                  LBC Charity <ChevronRight className="w-3 h-3" />
-                </a>
-                <a href="https://lbchub.ca" target="_blank" rel="noopener noreferrer"
-                  className="flex items-center gap-1 text-[11px] text-slate-600 hover:text-slate-300 transition-colors">
-                  Investor Relations <ChevronRight className="w-3 h-3" />
-                </a>
+              {/* Contact */}
+              <div className="flex flex-col gap-3">
+                <p className="text-[10px] font-bold tracking-widest uppercase text-slate-700 mb-2">Contact</p>
+                <a href="mailto:tarek-samara@lbc-hub.com" className="text-slate-500 hover:text-slate-200 text-[11px] transition-colors">tarek-samara@lbc-hub.com</a>
+                <a href="tel:+16133141994" className="text-slate-500 hover:text-slate-200 text-[11px] transition-colors">+1 (613) 314-1994</a>
+                <a href="https://lbchub.support" target="_blank" rel="noopener noreferrer" className="text-slate-500 hover:text-slate-200 text-[11px] transition-colors">lbchub.support</a>
+                <a href="https://lbchub.ca" target="_blank" rel="noopener noreferrer" className="text-slate-500 hover:text-slate-200 text-[11px] transition-colors">Investor Relations →</a>
+                <p className="text-slate-700 text-[10px] mt-2">Ottawa, Ontario, Canada 🍁</p>
               </div>
             </div>
           </div>
