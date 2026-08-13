@@ -380,7 +380,9 @@ export default function Home() {
                   <a key={l.label} href={l.href} target="_blank" rel="noopener noreferrer"
                     className="group flex items-center justify-between text-[11px] text-slate-500 hover:text-slate-200 transition-colors py-1 border-b border-white/[0.04]">
                     <span className="flex items-center gap-2">
-                      {l.live && <span className="w-1 h-1 rounded-full bg-emerald-500" />}
+                      {l.live
+                        ? <span className="w-1 h-1 rounded-full bg-emerald-500" />
+                        : <span className="w-1 h-1 rounded-full bg-red-500" />}
                       <span className="font-semibold">{l.label}</span>
                     </span>
                     <span className="text-slate-700 text-[10px]">{l.sub}</span>
