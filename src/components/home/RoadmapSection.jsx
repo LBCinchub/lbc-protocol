@@ -5,23 +5,19 @@ import { CheckCircle2, Circle, Clock } from 'lucide-react';
 const phases = [
   {
     phase: 'Q1–Q2 2026', status: 'active', title: 'Launch',
-    subtitle: 'Foundation & Fair Launch',
+    subtitle: 'Hub App & Liquidity Pool',
     color: '#6366f1', glow: 'rgba(99,102,241,0.2)',
     items: [
-      { text: 'New $LBC mint & fair launch on Solana', done: true },
-      { text: 'Website relaunch: lbc-hub.com + new domains', done: true },
-      { text: 'Private pilot: 1–3 Starlink dishes + solar nodes', done: false },
-      { text: '🚗 Driver Portal App — first mobile release', done: false },
+      { text: '📱 LBC Hub App — iOS & Android release', done: false },
+      { text: '🏊 $LBC Token Liquidity Pool launch — after LBC Hub App goes live', done: false },
     ],
   },
   {
     phase: 'Q3–Q4 2026', status: 'upcoming', title: 'Growth',
-    subtitle: 'Wallet, Hub, Pool & DePIN Beta',
+    subtitle: 'Driver Protocol & DePIN Beta',
     color: '#8b5cf6', glow: 'rgba(139,92,246,0.2)',
     items: [
-      { text: '💳 Lumina Blockchain Wallet App — iOS & Android launch', done: false },
-      { text: '📱 LBC Hub App — iOS & Android release', done: false },
-      { text: '🏊 $LBC Token Liquidity Pool launch — after LBC Hub App goes live', done: false },
+      { text: '🚗 Driver Protocol — mobility-first driver portal and protocol', done: false },
       { text: 'DePIN node prototype with solar tracking', done: false },
       { text: 'Fiat ramp partnerships', done: false },
       { text: 'Community beta launch in target regions', done: false },
@@ -29,13 +25,13 @@ const phases = [
   },
   {
     phase: '2027', status: 'future', title: 'Scale',
-    subtitle: 'Full Ecosystem & DAO',
+    subtitle: 'Wallet App, Scale & DAO',
     color: '#f59e0b', glow: 'rgba(251,191,36,0.15)',
     items: [
+      { text: '💳 LBC Wallet App — iOS & Android launch (launching AFTER Driver Protocol)', done: false },
       { text: 'Scale DePIN nodes across Bekaa Valley', done: false },
       { text: 'Launch LBC governance DAO', done: false },
       { text: 'Global rollout: MENA, Africa, and emerging markets', done: false },
-      { text: 'Advanced ecosystem integrations & partnerships', done: false },
     ],
   },
 ];

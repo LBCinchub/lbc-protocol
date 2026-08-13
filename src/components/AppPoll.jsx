@@ -3,16 +3,16 @@ import { motion } from 'framer-motion';
 import { Smartphone, CheckCircle2 } from 'lucide-react';
 
 const options = [
-  { id: 'driver',  label: 'Driver Portal App',       emoji: '🚗' },
-  { id: 'wallet',  label: 'Lumina Wallet App',        emoji: '💳' },
-  { id: 'hub',     label: 'Full LBC Hub App',         emoji: '📱' },
-  { id: 'depin',   label: 'DePIN Node Dashboard',     emoji: '☀️' },
+  { id: 'hub',     label: 'LBC Hub App',           emoji: '📱' },
+  { id: 'pool',    label: '$LBC Liquidity Pool',    emoji: '🏊' },
+  { id: 'driver',  label: 'Driver Protocol',        emoji: '🚗' },
+  { id: 'wallet',  label: 'LBC Wallet App',         emoji: '💳' },
 ];
 
 export default function AppPoll() {
   const [selected, setSelected] = useState(null);
   const [voted, setVoted] = useState(false);
-  const [votes, setVotes] = useState({ driver: 21, wallet: 34, hub: 47, depin: 13 });
+  const [votes, setVotes] = useState({ hub: 47, pool: 30, driver: 21, wallet: 34 });
 
   const total = Object.values(votes).reduce((a, b) => a + b, 0);
 
@@ -45,7 +45,7 @@ export default function AppPoll() {
 
           <h3 className="text-white font-bold text-lg mb-1">Which app are you most excited for?</h3>
           <p className="text-slate-500 text-sm mb-6">
-            Driver Portal app → Lumina Wallet → Full LBC Hub. Tell us what you're waiting for most.
+            LBC Hub App → $LBC Liquidity Pool → Driver Protocol → LBC Wallet App. Tell us what you're waiting for most.
           </p>
 
           <div className="space-y-3">

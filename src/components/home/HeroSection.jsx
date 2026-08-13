@@ -14,7 +14,7 @@ export default function HeroSection() {
         <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-[10px] font-semibold tracking-widest uppercase border border-amber-400/20 text-amber-400/80 mb-10"
           style={{ background: 'rgba(251,191,36,0.06)', backdropFilter: 'blur(8px)' }}>
           <span className="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse" />
-          Powered by Lumina Blockchain ($LBC) · Built on Solana · Founded in Canada
+          Powered by LBC ($LBC) · Built on Solana · Founded in Canada
         </span>
       </motion.div>
 
@@ -37,7 +37,7 @@ export default function HeroSection() {
 
       <motion.p initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.26 }}
         className="text-base text-slate-500 max-w-2xl mx-auto leading-relaxed mb-12 font-light">
-        A Solana-powered ecosystem delivering real-world utility through the Lumina Blockchain ($LBC) token —
+        A Solana-powered ecosystem delivering real-world utility through the LBC ($LBC) token —
         wallets, DePIN nodes, a driver portal, and transparent governance for underserved regions globally.
       </motion.p>
 

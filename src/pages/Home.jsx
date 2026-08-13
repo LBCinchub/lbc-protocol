@@ -20,8 +20,8 @@ const domains = [
   { url: 'LBC.Network',           fullUrl: 'https://lbc.network',           name: 'LBC Network — Parent',        description: 'LBC Network — the parent ecosystem and root hub of all LBC platforms',                           icon: Globe,           gradient: 'from-blue-500 to-cyan-400',      glow: 'rgba(59,130,246,0.15)' },
   { url: 'LBCHub.io',             fullUrl: 'https://lbchub.io',             name: 'LBC Protocol',               description: 'LBC Protocol — the central intelligence and coordination layer of the ecosystem',    icon: LayoutDashboard, gradient: 'from-indigo-600 to-purple-500',   glow: 'rgba(102,51,153,0.15)' },
   { url: 'LBC-Hub.com',           fullUrl: 'https://lbc-hub.com',           name: 'LBC Community',              description: 'LBC Community — social platform, community feed, trending topics and cross-site sync',   icon: Users,           gradient: 'from-violet-500 to-purple-400',   glow: 'rgba(139,92,246,0.15)' },
-  { url: 'LBCHub.site',           fullUrl: 'https://lbchub.site',           name: 'LBC AI',                     description: 'LBC AI — powered by Lumina Ultra, AI converse & builder platform by LBC.NETWORK',    icon: Building,        gradient: 'from-orange-500 to-amber-400',   glow: 'rgba(249,115,22,0.15)' },
-  { url: 'Lumina-Blockchain.com', fullUrl: 'https://lumina-blockchain.com', name: 'LBC Wallet',                  description: 'LBC Wallet — non-custodial Lumina Blockchain wallet for $LBC, SOL & USDC with full documentation', icon: Wallet,          gradient: 'from-amber-400 to-yellow-300',   glow: 'rgba(251,191,36,0.15)' },
+  { url: 'LBCHub.site',           fullUrl: 'https://lbchub.site',           name: 'LBC AI',                     description: 'LBC AI — powered by LBC Ultra, AI converse & builder platform by LBC.NETWORK',    icon: Building,        gradient: 'from-orange-500 to-amber-400',   glow: 'rgba(249,115,22,0.15)' },
+  { url: 'Lumina-Blockchain.com', fullUrl: 'https://lumina-blockchain.com', name: 'LBC Wallet',                  description: 'LBC Wallet — non-custodial LBC wallet for $LBC, SOL & USDC with full documentation', icon: Wallet,          gradient: 'from-amber-400 to-yellow-300',   glow: 'rgba(251,191,36,0.15)' },
   { url: 'LBCHub.ca',             fullUrl: 'https://lbchub.ca',             name: 'LBC Investor Relations',      description: 'LBC Investor Relations — investment opportunities, financial reports & partnership inquiries',       icon: TrendingUp,      gradient: 'from-indigo-500 to-blue-400',    glow: 'rgba(99,102,241,0.15)' },
   { url: 'LBCHub.app',            fullUrl: 'https://lbchub.app',            name: 'LBC Driver Portal',           description: 'LBC Driver Portal — mobility-first app for driver management, logistics and ride coordination',     icon: Truck,           gradient: 'from-emerald-500 to-teal-400',   glow: 'rgba(16,185,129,0.15)' },
   { url: 'LBCHub.tech',           fullUrl: 'https://lbchub.tech',           name: 'LBC AUTO',                    description: 'LBC AUTO — automotive platform for vehicle services, fleet management and auto commerce',           icon: Car,             gradient: 'from-slate-600 to-gray-500',     glow: 'rgba(71,85,105,0.15)' },
@@ -35,7 +35,7 @@ const domains = [
 
 const architecture = [
   { icon: Cpu,    label: 'Protocol Layer',    desc: 'Solana-native blockchain — high TPS, ~$0.00025/tx. SPL token standard with mutable metadata and controlled authority for adaptive governance.', color: '#6366f1' },
-  { icon: Zap,    label: 'Token Layer',       desc: 'Lumina ($LBC) — SPL utility & governance token. Powers fees, marketplace payments, DePIN node rewards, and on-chain governance signaling.',      color: '#f59e0b' },
+  { icon: Zap,    label: 'Token Layer',       desc: '$LBC — SPL utility & governance token. Powers fees, marketplace payments, DePIN node rewards, and on-chain governance signaling.',      color: '#f59e0b' },
   { icon: Layers, label: 'Application Layer', desc: 'Non-custodial wallet, freelancer marketplace with on-chain escrow, DePIN solar/Starlink nodes, and a public anti-corruption dashboard.',         color: '#8b5cf6' },
 ];
 
@@ -57,11 +57,12 @@ const ecosystemApps = [
   { name: 'LBC Hub — Social, Market & Travel AI',  icon: LayoutDashboard, color: '#8b5cf6', href: 'https://lbc-hub.com', live: true },
   { name: 'LBC Auto — Shop Management SaaS',       icon: Car,             color: '#14b8a6', href: 'https://lbchub.tech', live: true },
   { name: 'LBC Charity — Zero-Fee On-Chain Aid',   icon: Heart,           color: '#f43f5e', href: 'https://lbchub.org',  live: true },
-  { name: 'Lumina Wallet — $LBC Native Wallet',    icon: Wallet,          color: '#f59e0b', href: 'https://lumina-blockchain.com', live: false },
+  { name: 'LBC Wallet — $LBC Native Wallet',       icon: Wallet,          color: '#f59e0b', href: 'https://lumina-blockchain.com', live: false },
   { name: 'Driver Portal — Mobility First',        icon: Truck,           color: '#10b981', href: 'https://lbchub.app',  live: false },
+  { name: 'LBC Hub App — Community & Marketplace',  icon: Grid,            color: '#8b5cf6', href: 'https://lbc-hub.com', live: false },
   { name: 'Digital Marketplace — Commerce Layer',  icon: ShoppingBag,     color: '#6366f1', href: 'https://lbc-hub.com', live: true },
   { name: 'LBC Live — Creator Economy & Streaming',icon: Radio,           color: '#a855f7', href: 'https://lbchub.live', live: false },
-  { name: 'LBC AI — Powered by Lumina Ultra',      icon: Sparkles,        color: '#ec4899', href: 'https://lbchub.site', live: true },
+  { name: 'LBC AI — Powered by LBC Ultra',          icon: Sparkles,        color: '#ec4899', href: 'https://lbchub.site', live: true },
   { name: 'NFT Gallery — Digital Assets',          icon: Palette,         color: '#06b6d4', href: 'https://lbchub.art',  live: false },
 ];
 
@@ -372,7 +373,7 @@ export default function Home() {
                   { label: "LBC Hub", sub: "Social · Market · Travel", href: "https://lbc-hub.com", live: true },
                   { label: "LBC Auto", sub: "$200/mo · Shop SaaS", href: "https://lbchub.tech", live: true },
                   { label: "LBC Charity", sub: "Zero-fee on-chain aid", href: "https://lbchub.org", live: true },
-                  { label: "LBC AI", sub: "Lumina Ultra", href: "https://lbchub.site", live: true },
+                  { label: "LBC AI", sub: "LBC Ultra", href: "https://lbchub.site", live: true },
                   { label: "LBC Wallet", sub: "$LBC · Solana", href: "https://lumina-blockchain.com", live: false },
                   { label: "lbc.network", sub: "Parent ecosystem", href: "https://lbc.network", live: true },
                 ].map(l => (

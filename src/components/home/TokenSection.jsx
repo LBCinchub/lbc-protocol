@@ -57,7 +57,7 @@ export default function TokenSection() {
 
         {/* Description */}
         <p className="text-slate-400 text-base leading-relaxed mb-12 font-light max-w-3xl">
-          Lumina ($LBC) is the native token of LBC Protocol — fast, cheap, and scalable on Solana. It powers every
+          $LBC is the native token of LBC Protocol — fast, cheap, and scalable on Solana. It powers every
           transaction, reward, and governance decision across the ecosystem, enabling direct economic relationships
           between drivers, merchants, freelancers, node operators, and users.
         </p>
