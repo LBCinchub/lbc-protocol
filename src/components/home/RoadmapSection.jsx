@@ -8,10 +8,10 @@ const phases = [
     subtitle: 'Foundation & Fair Launch',
     color: '#6366f1', glow: 'rgba(99,102,241,0.2)',
     items: [
-      { text: 'New $LBC mint & fair launch on Solana', done: true },
-      { text: 'Website relaunch: lbc-hub.com + new domains', done: true },
       { text: '📱 LBC Hub App — iOS & Android release', done: false },
       { text: '🏊 $LBC Token Liquidity Pool launch — after LBC Hub App goes live', done: false },
+      { text: 'New $LBC mint & fair launch on Solana', done: true },
+      { text: 'Website relaunch: lbc-hub.com + new domains', done: true },
     ],
   },
   {
@@ -35,7 +35,6 @@ const phases = [
       { text: 'Scale DePIN nodes across Bekaa Valley', done: false },
       { text: 'Launch LBC governance DAO', done: false },
       { text: 'Global rollout: MENA, Africa, and emerging markets', done: false },
-      { text: 'Advanced ecosystem integrations & partnerships', done: false },
     ],
   },
 ];

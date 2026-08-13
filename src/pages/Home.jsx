@@ -62,7 +62,7 @@ const ecosystemApps = [
   { name: 'LBC Hub App — Community & Marketplace',  icon: Grid,            color: '#8b5cf6', href: 'https://lbc-hub.com', live: false },
   { name: 'Digital Marketplace — Commerce Layer',  icon: ShoppingBag,     color: '#6366f1', href: 'https://lbc-hub.com', live: true },
   { name: 'LBC Live — Creator Economy & Streaming',icon: Radio,           color: '#a855f7', href: 'https://lbchub.live', live: false },
-  { name: 'LBC AI — Powered by LBC Ultra',          icon: Sparkles,        color: '#ec4899', href: 'https://lbchub.site', live: true },
+  { name: 'LBC AI — Powered by LBC',          icon: Sparkles,        color: '#ec4899', href: 'https://lbchub.site', live: true },
   { name: 'NFT Gallery — Digital Assets',          icon: Palette,         color: '#06b6d4', href: 'https://lbchub.art',  live: false },
 ];
 
