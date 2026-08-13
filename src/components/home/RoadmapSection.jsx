@@ -1,43 +1,42 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { CheckCircle2, Circle, Clock } from 'lucide-react';
 
 const phases = [
   {
-    phase: 'Q1–Q2 2026', status: 'active', title: 'Launch',
+    phase: 'Q1–Q2 2026', status: 'active', number: 1, title: 'Launch',
     subtitle: 'The Foundation Goes Live',
     intro: 'This is where LBC stops being an idea and starts being infrastructure.',
     color: '#6366f1', glow: 'rgba(99,102,241,0.2)',
     items: [
-      { text: '📱 LBC Hub App goes live on iOS & Android — the front door to the entire ecosystem', done: false },
-      { text: '🏊 $LBC Liquidity Pool launches right after — real trading, real price discovery', done: false },
-      { text: '$LBC minted & fair-launched on Solana — no VC allocation games', done: true },
-      { text: 'New website live at lbc-hub.com — built to scale with every domain we add', done: true },
+      'LBC Hub App — iOS & Android release',
+      '$LBC Token Liquidity Pool launch — after LBC Hub App goes live',
+      'New $LBC mint & fair launch on Solana',
+      'Website relaunch: lbc-hub.com + new domains',
     ],
   },
   {
-    phase: 'Q3–Q4 2026', status: 'upcoming', title: 'Growth',
+    phase: 'Q3–Q4 2026', status: 'upcoming', number: 2, title: 'Growth',
     subtitle: 'Putting Wheels on the Ground',
     intro: 'Once the Hub and Pool are live, we start proving real-world utility — starting with the people who move our communities.',
     color: '#8b5cf6', glow: 'rgba(139,92,246,0.2)',
     items: [
-      { text: '🚗 Driver Protocol launches — a mobility-first driver portal built for real earnings, not gig-economy scraps', done: false },
-      { text: 'DePIN node prototype rolls out with solar-tracked energy data on-chain', done: false },
-      { text: 'Private pilot: 1–3 Starlink dishes + solar nodes go live in target regions', done: false },
-      { text: 'Fiat ramp partnerships open the door for anyone to get in', done: false },
-      { text: 'Community beta expands to early target regions', done: false },
+      'Driver Protocol — mobility-first driver portal and protocol',
+      'DePIN node prototype with solar tracking',
+      'Private pilot: 1–3 Starlink dishes + solar nodes',
+      'Fiat ramp partnerships',
+      'Community beta launch in target regions',
     ],
   },
   {
-    phase: '2027', status: 'future', title: 'Scale',
+    phase: '2027', status: 'future', number: 3, title: 'Scale',
     subtitle: 'From Community to Global Network',
     intro: 'This is where LBC becomes what it was always meant to be — infrastructure for underserved communities everywhere.',
     color: '#f59e0b', glow: 'rgba(251,191,36,0.15)',
     items: [
-      { text: '💳 LBC Wallet App launches on iOS & Android — your $LBC, SOL & USDC, always in your hands', done: false },
-      { text: 'DePIN nodes scale across Bekaa Valley', done: false },
-      { text: 'LBC governance DAO goes live — the community starts steering the ship', done: false },
-      { text: 'Global rollout begins across MENA, Africa & emerging markets', done: false },
+      'LBC Wallet App — iOS & Android launch',
+      'Scale DePIN nodes across Bekaa Valley',
+      'Launch LBC governance DAO',
+      'Global rollout: MENA, Africa, and emerging markets',
     ],
   },
 ];
@@ -54,7 +53,7 @@ export default function RoadmapSection() {
       </motion.div>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-        {phases.map(({ phase, status, title, subtitle, intro, color, glow, items }, i) => (
+        {phases.map(({ phase, status, number, title, subtitle, intro, color, glow, items }, i) => (
           <motion.div key={phase}
             initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }} transition={{ duration: 0.5, delay: i * 0.1 }}
@@ -68,37 +67,43 @@ export default function RoadmapSection() {
             <div className="h-1 w-full" style={{ background: `linear-gradient(90deg, transparent, ${color}, transparent)` }} />
 
             <div className="p-7">
-              {/* Status badge */}
+              {/* Large number badge + status + date */}
               <div className="flex items-center justify-between mb-5">
-                <span className="text-[10px] font-bold tracking-widest uppercase px-2.5 py-1 rounded-full"
-                  style={{
-                    background: status === 'active' ? `${color}18` : 'rgba(255,255,255,0.04)',
-                    color: status === 'active' ? color : 'rgba(255,255,255,0.3)',
-                    border: `1px solid ${status === 'active' ? `${color}30` : 'rgba(255,255,255,0.08)'}`,
-                  }}>
-                  {status === 'active' ? '● In Progress' : status === 'upcoming' ? '◌ Upcoming' : '◎ Future'}
-                </span>
+                <div className="flex items-center gap-3">
+                  <div className="flex items-center justify-center w-12 h-12 rounded-full text-2xl font-black flex-shrink-0"
+                    style={{ background: `${color}18`, border: `2px solid ${color}55`, color }}>
+                    {number}
+                  </div>
+                  <span className="text-[10px] font-bold tracking-widest uppercase px-2.5 py-1 rounded-full"
+                    style={{
+                      background: status === 'active' ? `${color}18` : 'rgba(255,255,255,0.04)',
+                      color: status === 'active' ? color : 'rgba(255,255,255,0.3)',
+                      border: `1px solid ${status === 'active' ? `${color}30` : 'rgba(255,255,255,0.08)'}`,
+                    }}>
+                    {status === 'active' ? 'In Progress' : status === 'upcoming' ? 'Upcoming' : 'Future'}
+                  </span>
+                </div>
                 <span className="text-[10px] font-semibold tracking-widest text-slate-600">{phase}</span>
               </div>
 
-              <h3 className="text-xl font-black text-white mb-0.5">{String(i + 1).padStart(2, '0')} - {title}</h3>
+              <h3 className="text-xl font-black text-white mb-0.5">{title}</h3>
               <p className="text-xs text-slate-600 mb-3 tracking-wide">{subtitle}</p>
               <p className="text-sm text-slate-400 mb-6 leading-relaxed italic font-light">{intro}</p>
 
               <div className="h-px mb-6" style={{ background: `linear-gradient(90deg, ${color}20, transparent)` }} />
 
-              <ul className="space-y-4">
-                {items.map(({ text, done }, j) => (
+              {/* Numbered steps */}
+              <ol className="space-y-4">
+                {items.map((text, j) => (
                   <li key={j} className="flex items-start gap-3">
-                    {done
-                      ? <CheckCircle2 className="w-4 h-4 mt-0.5 flex-shrink-0" style={{ color }} />
-                      : <div className="w-4 h-4 mt-0.5 flex-shrink-0 rounded-full border-2 flex items-center justify-center"
-                          style={{ borderColor: `${color}40` }} />
-                    }
-                    <span className={`text-sm leading-relaxed ${done ? 'text-slate-300' : 'text-slate-500'}`}>{text}</span>
+                    <span className="flex items-center justify-center w-5 h-5 mt-0.5 flex-shrink-0 rounded-md text-[11px] font-bold"
+                      style={{ background: `${color}15`, border: `1px solid ${color}35`, color }}>
+                      {j + 1}
+                    </span>
+                    <span className="text-sm leading-relaxed text-slate-400">{text}</span>
                   </li>
                 ))}
-              </ul>
+              </ol>
             </div>
           </motion.div>
         ))}
