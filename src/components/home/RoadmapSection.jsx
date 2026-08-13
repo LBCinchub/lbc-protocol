@@ -81,13 +81,7 @@ export default function RoadmapSection() {
                 <span className="text-[10px] font-semibold tracking-widest text-slate-600">{phase}</span>
               </div>
 
-              <div className="flex items-center gap-3 mb-2">
-                <div className="flex items-center justify-center w-12 h-12 rounded-xl text-2xl font-black flex-shrink-0"
-                  style={{ background: `${color}18`, border: `1px solid ${color}40`, color }}>
-                  {String(i + 1).padStart(2, '0')}
-                </div>
-                <h3 className="text-xl font-black text-white">{title}</h3>
-              </div>
+              <h3 className="text-xl font-black text-white mb-0.5">{String(i + 1).padStart(2, '0')} — {title}</h3>
               <p className="text-xs text-slate-600 mb-3 tracking-wide">{subtitle}</p>
               <p className="text-sm text-slate-400 mb-6 leading-relaxed italic font-light">{intro}</p>
 
