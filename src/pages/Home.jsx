@@ -102,7 +102,7 @@ function DomainCard({ domain, index }) {
         <p className="text-slate-500 text-xs leading-relaxed mb-4">{domain.description}</p>
         <div className="flex items-center gap-1.5">
           <span className="w-1 h-1 rounded-full bg-emerald-500" />
-          <span className="text-slate-600 text-xs font-mono">{domain.url}</span>
+          <span className="text-slate-600 text-xs font-mono uppercase">{domain.url}</span>
         </div>
       </div>
     </motion.a>
@@ -348,7 +348,7 @@ export default function Home() {
                   </div>
                   <div>
                     <p className="text-white font-black text-base">LBC Protocol</p>
-                    <p className="text-slate-600 text-[10px] tracking-wide">lbchub.io</p>
+                    <p className="text-slate-600 text-[10px] tracking-wide">LBCHUB.IO</p>
                   </div>
                 </div>
                 <p className="text-slate-500 text-sm leading-relaxed max-w-xs">
@@ -375,7 +375,7 @@ export default function Home() {
                   { label: "LBC Charity", sub: "Zero-fee on-chain aid", href: "https://lbchub.org", live: true },
                   { label: "LBC AI", sub: "LBC Ultra", href: "https://lbchub.site", live: true },
                   { label: "LBC Wallet", sub: "$LBC · Solana", href: "https://lumina-blockchain.com", live: false },
-                  { label: "lbc.network", sub: "Parent ecosystem", href: "https://lbc.network", live: true },
+                  { label: "LBC.NETWORK", sub: "Parent ecosystem", href: "https://lbc.network", live: true },
                 ].map(l => (
                   <a key={l.label} href={l.href} target="_blank" rel="noopener noreferrer"
                     className="group flex items-center justify-between text-[11px] text-slate-500 hover:text-slate-200 transition-colors py-1 border-b border-white/[0.04]">
@@ -395,7 +395,7 @@ export default function Home() {
                 <p className="text-[10px] font-bold tracking-widest uppercase text-slate-700 mb-2">Contact</p>
                 <a href="mailto:tarek-samara@lbc-hub.com" className="text-slate-500 hover:text-slate-200 text-[11px] transition-colors">tarek-samara@lbc-hub.com</a>
                 <a href="tel:+16133141994" className="text-slate-500 hover:text-slate-200 text-[11px] transition-colors">+1 (613) 314-1994</a>
-                <a href="https://lbchub.support" target="_blank" rel="noopener noreferrer" className="text-slate-500 hover:text-slate-200 text-[11px] transition-colors">lbchub.support</a>
+                <a href="https://lbchub.support" target="_blank" rel="noopener noreferrer" className="text-slate-500 hover:text-slate-200 text-[11px] transition-colors">LBCHUB.SUPPORT</a>
                 <a href="https://lbchub.ca" target="_blank" rel="noopener noreferrer" className="text-slate-500 hover:text-slate-200 text-[11px] transition-colors">Investor Relations →</a>
                 <p className="text-slate-700 text-[10px] mt-2">Ottawa, Ontario, Canada 🍁</p>
               </div>
