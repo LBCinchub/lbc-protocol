@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 
 const phases = [
   {
-    phase: 'Q1–Q2 2026', status: 'active', number: 1, title: 'Launch',
+    phase: 'Q1–Q2 2026', status: 'active', number: 1, title: 'Phase 1 — Launch',
     subtitle: 'The Foundation Goes Live',
     intro: 'This is where LBC stops being an idea and starts being infrastructure.',
     color: '#6366f1', glow: 'rgba(99,102,241,0.2)',
@@ -15,7 +15,7 @@ const phases = [
     ],
   },
   {
-    phase: 'Q3–Q4 2026', status: 'upcoming', number: 2, title: 'Growth',
+    phase: 'Q3–Q4 2026', status: 'upcoming', number: 2, title: 'Phase 2 — Growth',
     subtitle: 'Putting Wheels on the Ground',
     intro: 'Once the Hub and Pool are live, we start proving real-world utility — starting with the people who move our communities.',
     color: '#8b5cf6', glow: 'rgba(139,92,246,0.2)',
@@ -28,7 +28,7 @@ const phases = [
     ],
   },
   {
-    phase: '2027', status: 'future', number: 3, title: 'Scale',
+    phase: '2027', status: 'future', number: 3, title: 'Phase 3 — Scale',
     subtitle: 'From Community to Global Network',
     intro: 'This is where LBC becomes what it was always meant to be — infrastructure for underserved communities everywhere.',
     color: '#f59e0b', glow: 'rgba(251,191,36,0.15)',
