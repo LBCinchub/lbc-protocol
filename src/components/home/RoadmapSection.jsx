@@ -5,36 +5,39 @@ import { CheckCircle2, Circle, Clock } from 'lucide-react';
 const phases = [
   {
     phase: 'Q1–Q2 2026', status: 'active', title: 'Launch',
-    subtitle: 'Foundation & Fair Launch',
+    subtitle: 'The Foundation Goes Live',
+    intro: 'This is where LBC stops being an idea and starts being infrastructure.',
     color: '#6366f1', glow: 'rgba(99,102,241,0.2)',
     items: [
-      { text: '📱 LBC Hub App — iOS & Android release', done: false },
-      { text: '🏊 $LBC Token Liquidity Pool launch — after LBC Hub App goes live', done: false },
-      { text: 'New $LBC mint & fair launch on Solana', done: true },
-      { text: 'Website relaunch: lbc-hub.com + new domains', done: true },
+      { text: '📱 LBC Hub App goes live on iOS & Android — the front door to the entire ecosystem', done: false },
+      { text: '🏊 $LBC Liquidity Pool launches right after — real trading, real price discovery', done: false },
+      { text: '$LBC minted & fair-launched on Solana — no VC allocation games', done: true },
+      { text: 'New website live at lbc-hub.com — built to scale with every domain we add', done: true },
     ],
   },
   {
     phase: 'Q3–Q4 2026', status: 'upcoming', title: 'Growth',
-    subtitle: 'Driver Protocol & DePIN Beta',
+    subtitle: 'Putting Wheels on the Ground',
+    intro: 'Once the Hub and Pool are live, we start proving real-world utility — starting with the people who move our communities.',
     color: '#8b5cf6', glow: 'rgba(139,92,246,0.2)',
     items: [
-      { text: '🚗 Driver Protocol — mobility-first driver portal and protocol', done: false },
-      { text: 'DePIN node prototype with solar tracking', done: false },
-      { text: 'Private pilot: 1–3 Starlink dishes + solar nodes', done: false },
-      { text: 'Fiat ramp partnerships', done: false },
-      { text: 'Community beta launch in target regions', done: false },
+      { text: '🚗 Driver Protocol launches — a mobility-first driver portal built for real earnings, not gig-economy scraps', done: false },
+      { text: 'DePIN node prototype rolls out with solar-tracked energy data on-chain', done: false },
+      { text: 'Private pilot: 1–3 Starlink dishes + solar nodes go live in target regions', done: false },
+      { text: 'Fiat ramp partnerships open the door for anyone to get in', done: false },
+      { text: 'Community beta expands to early target regions', done: false },
     ],
   },
   {
     phase: '2027', status: 'future', title: 'Scale',
-    subtitle: 'Wallet App & Full Ecosystem',
+    subtitle: 'From Community to Global Network',
+    intro: 'This is where LBC becomes what it was always meant to be — infrastructure for underserved communities everywhere.',
     color: '#f59e0b', glow: 'rgba(251,191,36,0.15)',
     items: [
-      { text: '💳 LBC Wallet App — iOS & Android launch', done: false },
-      { text: 'Scale DePIN nodes across Bekaa Valley', done: false },
-      { text: 'Launch LBC governance DAO', done: false },
-      { text: 'Global rollout: MENA, Africa, and emerging markets', done: false },
+      { text: '💳 LBC Wallet App launches on iOS & Android — your $LBC, SOL & USDC, always in your hands', done: false },
+      { text: 'DePIN nodes scale across Bekaa Valley', done: false },
+      { text: 'LBC governance DAO goes live — the community starts steering the ship', done: false },
+      { text: 'Global rollout begins across MENA, Africa & emerging markets', done: false },
     ],
   },
 ];
@@ -51,7 +54,7 @@ export default function RoadmapSection() {
       </motion.div>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-        {phases.map(({ phase, status, title, subtitle, color, glow, items }, i) => (
+        {phases.map(({ phase, status, title, subtitle, intro, color, glow, items }, i) => (
           <motion.div key={phase}
             initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }} transition={{ duration: 0.5, delay: i * 0.1 }}
@@ -79,7 +82,8 @@ export default function RoadmapSection() {
               </div>
 
               <h3 className="text-xl font-black text-white mb-0.5">{title}</h3>
-              <p className="text-xs text-slate-600 mb-6 tracking-wide">{subtitle}</p>
+              <p className="text-xs text-slate-600 mb-3 tracking-wide">{subtitle}</p>
+              <p className="text-sm text-slate-400 mb-6 leading-relaxed italic font-light">{intro}</p>
 
               <div className="h-px mb-6" style={{ background: `linear-gradient(90deg, ${color}20, transparent)` }} />
 
