@@ -1,90 +1,107 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 
-const websites = [
-  'LBC.NETWORK',
-  'LBCHUB.IO',
-  'LBC-HUB.COM',
-  'LBCHUB.SITE',
-  'LBCHUB.TECH',
-  'LBCHUB.APP',
-  'LBCHUB.SHOP',
-  'LBCHUB.LIVE',
-  'LBCHUB.ART',
-  'LBCHUB.CA',
-  'LBCHUB.ORG',
-  'LBC.COM',
-  'LBC.INK',
-  'LBCHUB.SUPPORT',
-];
-
-const startingApps = [
-  { name: 'LBC Hub App', year: '2026', color: '#6366f1' },
-  { name: '$LBC Liquidity Pool', year: '2026', color: '#f59e0b' },
-  { name: 'Driver App', year: '2026', color: '#10b981' },
-  { name: 'Wallet App', year: '2027', color: '#8b5cf6' },
-  { name: 'LBC Auto App', year: '2027', color: '#14b8a6' },
-  { name: 'LBC Live App', year: '2028', color: '#a855f7' },
+const phases = [
+  {
+    number: 1,
+    title: 'Launch',
+    period: 'Q1–Q2 2026',
+    status: 'IN PROGRESS',
+    statusColor: '#10b981',
+    color: '#10b981',
+    items: [
+      'LBC Hub App goes live on iOS & Android',
+      '$LBC Liquidity Pool launches right after',
+      '$LBC minted & fair-launched on Solana',
+      'New website live at lbc-hub.com',
+    ],
+  },
+  {
+    number: 2,
+    title: 'Growth',
+    period: 'Q3–Q4 2026',
+    status: 'UPCOMING',
+    statusColor: '#f59e0b',
+    color: '#f59e0b',
+    items: [
+      'Driver Protocol launches',
+      'DePIN node prototype with solar tracking',
+      'Private pilot: 1–3 Starlink dishes + solar nodes',
+      'Fiat ramp partnerships',
+      'Community beta in target regions',
+    ],
+  },
+  {
+    number: 3,
+    title: 'Scale',
+    period: '2027',
+    status: 'FUTURE',
+    statusColor: '#6366f1',
+    color: '#6366f1',
+    items: [
+      'LBC Wallet App launches on iOS & Android',
+      'DePIN nodes scale across Bekaa Valley',
+      'LBC governance DAO goes live',
+      'Global rollout: MENA, Africa & emerging markets',
+    ],
+  },
 ];
 
 export default function RoadmapSection() {
   return (
     <section id="roadmap" className="px-6 pb-24">
       {/* ── TITLE ── */}
-      <motion.div initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }} className="mb-16">
-        <h2 className="text-3xl md:text-5xl font-black text-white tracking-tight">STRATEGIC ROADMAP 2026–2028</h2>
+      <motion.div initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }} className="mb-14">
+        <span className="text-[10px] font-semibold tracking-widest uppercase text-slate-600 mb-3 block">Execution Plan</span>
+        <h2 className="text-3xl md:text-5xl font-black text-white tracking-tight">Strategic Roadmap 2026–2028</h2>
       </motion.div>
 
-      {/* ── SECTION 1: WEBSITES ECOSYSTEM ── */}
-      <motion.div initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }} className="mb-16">
-        <div className="flex items-center gap-3 mb-8">
-          <div className="w-1 h-8 rounded-full bg-gradient-to-b from-indigo-500 to-violet-500" />
-          <h3 className="text-2xl md:text-3xl font-black text-white tracking-tight">WEBSITES ECOSYSTEM</h3>
-        </div>
+      {/* ── PHASES ── */}
+      <div className="space-y-6">
+        {phases.map((phase, i) => (
+          <motion.div key={phase.title}
+            initial={{ opacity: 0, y: 14 }} whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }} transition={{ duration: 0.45, delay: i * 0.08 }}
+            className="relative rounded-3xl border p-7 md:p-9 overflow-hidden"
+            style={{ background: 'rgba(10,9,24,0.6)', borderColor: `${phase.color}22`, boxShadow: `0 0 40px ${phase.color}10` }}>
+            {/* glow line top */}
+            <div className="absolute top-0 left-0 right-0 h-px"
+              style={{ background: `linear-gradient(90deg, transparent, ${phase.color}55, transparent)` }} />
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
-          {websites.map((site, i) => (
-            <motion.div key={site}
-              initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }} transition={{ duration: 0.35, delay: (i % 3) * 0.05 }}
-              className="flex items-center gap-4 rounded-2xl border p-4 hover:border-indigo-500/30 transition-colors duration-300"
-              style={{ background: 'rgba(10,9,24,0.6)', borderColor: 'rgba(255,255,255,0.05)' }}>
-              <div className="flex items-center justify-center w-12 h-12 rounded-xl text-2xl font-black flex-shrink-0"
-                style={{ background: 'rgba(99,102,241,0.15)', border: '2px solid rgba(99,102,241,0.45)', color: '#818cf8' }}>
-                {i + 1}
-              </div>
-              <span className="text-white text-sm font-bold font-mono tracking-wide">{site}</span>
-            </motion.div>
-          ))}
-        </div>
-      </motion.div>
-
-      {/* ── SECTION 2: STARTING APPS ── */}
-      <motion.div initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }}>
-        <div className="flex items-center gap-3 mb-8">
-          <div className="w-1 h-8 rounded-full bg-gradient-to-b from-amber-500 to-emerald-500" />
-          <h3 className="text-2xl md:text-3xl font-black text-white tracking-tight">STARTING APPS</h3>
-        </div>
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          {startingApps.map(({ name, year, color }, i) => (
-            <motion.div key={name}
-              initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }} transition={{ duration: 0.4, delay: (i % 3) * 0.06 }}
-              className="rounded-2xl border p-6 flex items-center gap-5"
-              style={{ background: 'rgba(10,9,24,0.6)', borderColor: `${color}25` }}>
-              <div className="flex items-center justify-center w-14 h-14 rounded-xl text-3xl font-black flex-shrink-0"
-                style={{ background: `${color}18`, border: `2px solid ${color}55`, color }}>
-                {i + 1}
+            {/* Phase header */}
+            <div className="flex items-center gap-5 mb-8">
+              <div className="flex items-center justify-center w-16 h-16 md:w-20 md:h-20 rounded-2xl text-4xl md:text-5xl font-black flex-shrink-0"
+                style={{ background: `${phase.color}18`, border: `2px solid ${phase.color}50`, color: phase.color, boxShadow: `0 0 24px ${phase.color}30` }}>
+                {phase.number}
               </div>
               <div>
-                <p className="text-white text-base font-black leading-tight">{name}</p>
-                <p className="text-[11px] font-bold tracking-widest uppercase mt-1" style={{ color }}>{year}</p>
+                <div className="flex items-center gap-3 flex-wrap">
+                  <h3 className="text-2xl md:text-3xl font-black text-white leading-none">{phase.title}</h3>
+                  <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[9px] font-bold tracking-widest uppercase"
+                    style={{ background: `${phase.statusColor}15`, color: phase.statusColor, border: `1px solid ${phase.statusColor}40` }}>
+                    <span className="w-1.5 h-1.5 rounded-full" style={{ background: phase.statusColor }} />
+                    {phase.status}
+                  </span>
+                </div>
+                <p className="text-slate-500 text-xs font-semibold tracking-wider uppercase mt-2">{phase.period}</p>
               </div>
-            </motion.div>
-          ))}
-        </div>
-      </motion.div>
+            </div>
+
+            {/* Numbered items */}
+            <div className="space-y-3">
+              {phase.items.map((item, j) => (
+                <div key={j} className="flex items-center gap-4">
+                  <div className="flex items-center justify-center w-8 h-8 rounded-lg text-sm font-black flex-shrink-0"
+                    style={{ background: `${phase.color}14`, border: `1px solid ${phase.color}38`, color: phase.color }}>
+                    {j + 1}
+                  </div>
+                  <span className="text-slate-300 text-sm md:text-base font-medium leading-snug">{item}</span>
+                </div>
+              ))}
+            </div>
+          </motion.div>
+        ))}
+      </div>
     </section>
   );
 }
