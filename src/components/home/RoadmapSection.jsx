@@ -81,7 +81,7 @@ export default function RoadmapSection() {
                 <span className="text-[10px] font-semibold tracking-widest text-slate-600">{phase}</span>
               </div>
 
-              <h3 className="text-xl font-black text-white mb-0.5">{String(i + 1).padStart(2, '0')} — {title}</h3>
+              <h3 className="text-xl font-black text-white mb-0.5">{String(i + 1).padStart(2, '0')} - {title}</h3>
               <p className="text-xs text-slate-600 mb-3 tracking-wide">{subtitle}</p>
               <p className="text-sm text-slate-400 mb-6 leading-relaxed italic font-light">{intro}</p>
 
