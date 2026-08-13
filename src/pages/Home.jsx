@@ -20,7 +20,7 @@ const domains = [
   { url: 'LBC.Network',           fullUrl: 'https://lbc.network',           name: 'LBC Network — Parent',        description: 'LBC Network — the parent ecosystem and root hub of all LBC platforms',                           icon: Globe,           gradient: 'from-blue-500 to-cyan-400',      glow: 'rgba(59,130,246,0.15)' },
   { url: 'LBCHub.io',             fullUrl: 'https://lbchub.io',             name: 'LBC Protocol',               description: 'LBC Protocol — the central intelligence and coordination layer of the ecosystem',    icon: LayoutDashboard, gradient: 'from-indigo-600 to-purple-500',   glow: 'rgba(102,51,153,0.15)' },
   { url: 'LBC-Hub.com',           fullUrl: 'https://lbc-hub.com',           name: 'LBC Community',              description: 'LBC Community — social platform, community feed, trending topics and cross-site sync',   icon: Users,           gradient: 'from-violet-500 to-purple-400',   glow: 'rgba(139,92,246,0.15)' },
-  { url: 'LBCHub.site',           fullUrl: 'https://lbchub.site',           name: 'LBC AI',                     description: 'LBC AI — powered by LBC Ultra, AI converse & builder platform by LBC.NETWORK',    icon: Building,        gradient: 'from-orange-500 to-amber-400',   glow: 'rgba(249,115,22,0.15)' },
+  { url: 'LBCHub.site',           fullUrl: 'https://lbchub.site',           name: 'LBC AI',                     description: 'LBC AI — Powered by LBC, AI converse & builder platform by LBC.NETWORK',    icon: Building,        gradient: 'from-orange-500 to-amber-400',   glow: 'rgba(249,115,22,0.15)' },
   { url: 'Lumina-Blockchain.com', fullUrl: 'https://lumina-blockchain.com', name: 'LBC Wallet',                  description: 'LBC Wallet — non-custodial LBC wallet for $LBC, SOL & USDC with full documentation', icon: Wallet,          gradient: 'from-amber-400 to-yellow-300',   glow: 'rgba(251,191,36,0.15)' },
   { url: 'LBCHub.ca',             fullUrl: 'https://lbchub.ca',             name: 'LBC Investor Relations',      description: 'LBC Investor Relations — investment opportunities, financial reports & partnership inquiries',       icon: TrendingUp,      gradient: 'from-indigo-500 to-blue-400',    glow: 'rgba(99,102,241,0.15)' },
   { url: 'LBCHub.app',            fullUrl: 'https://lbchub.app',            name: 'LBC Driver Portal',           description: 'LBC Driver Portal — mobility-first app for driver management, logistics and ride coordination',     icon: Truck,           gradient: 'from-emerald-500 to-teal-400',   glow: 'rgba(16,185,129,0.15)' },
@@ -35,7 +35,7 @@ const domains = [
 
 const architecture = [
   { icon: Cpu,    label: 'Protocol Layer',    desc: 'Solana-native blockchain — high TPS, ~$0.00025/tx. SPL token standard with mutable metadata and controlled authority for adaptive governance.', color: '#6366f1' },
-  { icon: Zap,    label: 'Token Layer',       desc: '$LBC — SPL utility & governance token. Powers fees, marketplace payments, DePIN node rewards, and on-chain governance signaling.',      color: '#f59e0b' },
+  { icon: Zap,    label: 'Token Layer',       desc: 'LBC ($LBC) — SPL utility & governance token. Powers fees, marketplace payments, DePIN node rewards, and on-chain governance signaling.',      color: '#f59e0b' },
   { icon: Layers, label: 'Application Layer', desc: 'Non-custodial wallet, freelancer marketplace with on-chain escrow, DePIN solar/Starlink nodes, and a public anti-corruption dashboard.',         color: '#8b5cf6' },
 ];
 

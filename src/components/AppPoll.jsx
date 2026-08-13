@@ -45,7 +45,7 @@ export default function AppPoll() {
 
           <h3 className="text-white font-bold text-lg mb-1">Which app are you most excited for?</h3>
           <p className="text-slate-500 text-sm mb-6">
-            LBC Hub App → $LBC Liquidity Pool → Driver Protocol → LBC Wallet App. Tell us what you're waiting for most.
+            LBC Hub App → $LBC Pool → Driver Protocol → LBC Wallet App. Tell us what you're waiting for most.
           </p>
 
           <div className="space-y-3">

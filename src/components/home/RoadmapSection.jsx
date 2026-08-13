@@ -5,9 +5,11 @@ import { CheckCircle2, Circle, Clock } from 'lucide-react';
 const phases = [
   {
     phase: 'Q1–Q2 2026', status: 'active', title: 'Launch',
-    subtitle: 'Hub App & Liquidity Pool',
+    subtitle: 'Foundation & Fair Launch',
     color: '#6366f1', glow: 'rgba(99,102,241,0.2)',
     items: [
+      { text: 'New $LBC mint & fair launch on Solana', done: true },
+      { text: 'Website relaunch: lbc-hub.com + new domains', done: true },
       { text: '📱 LBC Hub App — iOS & Android release', done: false },
       { text: '🏊 $LBC Token Liquidity Pool launch — after LBC Hub App goes live', done: false },
     ],
@@ -19,19 +21,21 @@ const phases = [
     items: [
       { text: '🚗 Driver Protocol — mobility-first driver portal and protocol', done: false },
       { text: 'DePIN node prototype with solar tracking', done: false },
+      { text: 'Private pilot: 1–3 Starlink dishes + solar nodes', done: false },
       { text: 'Fiat ramp partnerships', done: false },
       { text: 'Community beta launch in target regions', done: false },
     ],
   },
   {
     phase: '2027', status: 'future', title: 'Scale',
-    subtitle: 'Wallet App, Scale & DAO',
+    subtitle: 'Wallet App & Full Ecosystem',
     color: '#f59e0b', glow: 'rgba(251,191,36,0.15)',
     items: [
-      { text: '💳 LBC Wallet App — iOS & Android launch (launching AFTER Driver Protocol)', done: false },
+      { text: '💳 LBC Wallet App — iOS & Android launch', done: false },
       { text: 'Scale DePIN nodes across Bekaa Valley', done: false },
       { text: 'Launch LBC governance DAO', done: false },
       { text: 'Global rollout: MENA, Africa, and emerging markets', done: false },
+      { text: 'Advanced ecosystem integrations & partnerships', done: false },
     ],
   },
 ];
