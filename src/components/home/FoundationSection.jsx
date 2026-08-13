@@ -18,7 +18,6 @@ export default function FoundationSection() {
   return (
     <section id="foundation" className="px-6 pb-24">
       <motion.div initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }} className="mb-12">
-        <span className="text-[10px] font-semibold tracking-widest uppercase text-slate-600 mb-3 block">Already Built</span>
         <div className="flex items-center gap-3 mb-3">
           <div className="w-1 h-9 rounded-full bg-gradient-to-b from-indigo-500 to-violet-500" />
           <h2 className="text-3xl md:text-4xl font-black text-white tracking-tight">Foundation — Websites Ecosystem</h2>
