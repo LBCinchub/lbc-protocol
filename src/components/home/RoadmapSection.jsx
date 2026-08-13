@@ -10,8 +10,8 @@ const phases = [
     statusColor: '#10b981',
     color: '#10b981',
     items: [
-      'LBC Hub App goes live on iOS & Android — the front door to the entire ecosystem',
-      '$LBC Liquidity Pool launches right after — real trading, real price discovery',
+      '📱 LBC Hub App goes live on iOS & Android — the front door to the entire ecosystem',
+      '🏊 $LBC Liquidity Pool launches right after — real trading, real price discovery',
       '$LBC minted & fair-launched on Solana — no VC allocation games',
       'New website live at lbc-hub.com — built to scale with every domain we add',
     ],
@@ -24,7 +24,7 @@ const phases = [
     statusColor: '#f59e0b',
     color: '#f59e0b',
     items: [
-      'Driver Protocol launches — a mobility-first driver portal built for real earnings, not gig-economy scraps',
+      '🚗 Driver Protocol launches — a mobility-first driver portal built for real earnings, not gig-economy scraps',
       'DePIN node prototype rolls out with solar-tracked energy data on-chain',
       'Private pilot: 1–3 Starlink dishes + solar nodes go live in target regions',
       'Fiat ramp partnerships open the door for anyone to get in',
@@ -39,7 +39,7 @@ const phases = [
     statusColor: '#6366f1',
     color: '#6366f1',
     items: [
-      'LBC Wallet App launches on iOS & Android — your $LBC, SOL & USDC, always in your hands',
+      '💳 LBC Wallet App launches on iOS & Android — your $LBC, SOL & USDC, always in your hands',
       'DePIN nodes scale across Bekaa Valley',
       'LBC governance DAO goes live — the community starts steering the ship',
       'Global rollout begins across MENA, Africa & emerging markets',
