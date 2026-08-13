@@ -393,7 +393,7 @@ export default function Home() {
               {/* Contact */}
               <div className="flex flex-col gap-3">
                 <p className="text-[10px] font-bold tracking-widest uppercase text-slate-700 mb-2">Contact</p>
-                <a href="mailto:tarek-samara@lbc-hub.com" className="text-slate-500 hover:text-slate-200 text-[11px] transition-colors">tarek-samara@lbc-hub.com</a>
+                <a href="mailto:tarek-samara@lbc-hub.com" className="text-slate-500 hover:text-slate-200 text-[11px] transition-colors">Tarek-Samara@LBC-Hub.Com</a>
                 <a href="tel:+16133141994" className="text-slate-500 hover:text-slate-200 text-[11px] transition-colors">+1 (613) 314-1994</a>
                 <a href="https://lbchub.support" target="_blank" rel="noopener noreferrer" className="text-slate-500 hover:text-slate-200 text-[11px] transition-colors">LBCHUB.SUPPORT</a>
                 <a href="https://lbchub.ca" target="_blank" rel="noopener noreferrer" className="text-slate-500 hover:text-slate-200 text-[11px] transition-colors">Investor Relations →</a>
