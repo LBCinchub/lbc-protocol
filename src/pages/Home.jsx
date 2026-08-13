@@ -12,6 +12,7 @@ import NavBar from '@/components/home/NavBar';
 import HeroSection from '@/components/home/HeroSection';
 import TokenSection from '@/components/home/TokenSection';
 import RoadmapSection from '@/components/home/RoadmapSection';
+import FoundationSection from '@/components/home/FoundationSection';
 import BigBrotherChat from '@/components/home/BigBrotherChat';
 
 // ─── Data ─────────────────────────────────────────────────────────────────────
@@ -323,6 +324,11 @@ export default function Home() {
             </div>
           </motion.div>
         </section>
+
+        <Divider />
+
+        {/* ── FOUNDATION ── */}
+        <FoundationSection />
 
         <Divider />
 
