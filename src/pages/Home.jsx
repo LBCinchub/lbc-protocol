@@ -315,9 +315,12 @@ export default function Home() {
           </div>
 
           <motion.div initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }}>
-            <div className="flex items-center justify-between mb-6">
-              <p className="text-[10px] font-bold tracking-widest uppercase text-slate-600">Live Platforms</p>
-              <span className="text-[10px] text-slate-600 font-mono">14 domains · Ottawa, Canada 🍁</span>
+            <div className="mb-6">
+              <div className="flex items-center justify-between">
+                <p className="text-[10px] font-bold tracking-widest uppercase text-slate-600">Foundation — Websites Ecosystem</p>
+                <span className="text-[10px] text-slate-600 font-mono">14 domains · Ottawa, Canada 🍁</span>
+              </div>
+              <p className="text-slate-500 text-sm font-light mt-2">The LBC Ecosystem Foundation — Already Live</p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
               {domains.map((domain, i) => <DomainCard key={domain.url} domain={domain} index={i} />)}

@@ -23,7 +23,7 @@ export default function RoadmapSection() {
           <div className="w-1 h-8 rounded-full bg-gradient-to-b from-amber-500 to-emerald-500" />
           <h3 className="text-2xl md:text-3xl font-black text-white tracking-tight">App Launch Sequence (2026–2028)</h3>
         </div>
-        <p className="text-slate-500 text-sm font-light mb-8 ml-4">The App Launch Order, Built On Top Of The Foundation.</p>
+        <p className="text-slate-500 text-sm font-light mb-8 ml-4">Building On The Foundation — Apps Launching Next</p>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {startingApps.map(({ name, year, color }, i) => (
