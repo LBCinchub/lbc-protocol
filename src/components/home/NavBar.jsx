@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Star, TrendingUp, Menu, X } from 'lucide-react';
+import { TrendingUp, Menu, X } from 'lucide-react';
+import LBCLogo from '@/components/LBCLogo';
 
 const navLinks = [
   { label: 'Solution', id: 'solution' },
@@ -35,10 +36,7 @@ export default function NavBar() {
       }}>
       {/* Logo */}
       <div className="flex items-center gap-2.5">
-        <div className="w-8 h-8 rounded-lg flex items-center justify-center"
-          style={{ background: 'linear-gradient(135deg, #f59e0b, #7c3aed)', boxShadow: '0 0 16px rgba(124,58,237,0.35)' }}>
-          <Star className="w-4 h-4 text-white fill-white" />
-        </div>
+        <LBCLogo size={32} />
         <span className="font-black text-base tracking-tight text-white">LBC Protocol</span>
       </div>
 
