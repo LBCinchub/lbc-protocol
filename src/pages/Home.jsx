@@ -3,11 +3,12 @@ import { motion } from 'framer-motion';
 import {
   Globe, LayoutDashboard, Truck, Wallet, TrendingUp, Heart,
   ShoppingBag, Palette, HeadphonesIcon, ExternalLink,
-  Zap, ArrowRight, ChevronRight, Shield, Star, Layers, Cpu, Grid,
-  Radio, Car, Sparkles, Building, MessageCircle, Sun, Users, MapPin,
+  Zap, Shield, Layers, Cpu, Grid,
+  Radio, Car, Sparkles, Building, Sun, Users, MapPin,
   Lock, X, CheckCircle2
 } from 'lucide-react';
 import AppPoll from '@/components/AppPoll';
+import LBCLogo from '@/components/LBCLogo';
 import NavBar from '@/components/home/NavBar';
 import HeroSection from '@/components/home/HeroSection';
 import TokenSection from '@/components/home/TokenSection';
@@ -351,10 +352,7 @@ export default function Home() {
               {/* Brand */}
               <div className="flex flex-col gap-4">
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-xl flex items-center justify-center"
-                    style={{ background: 'linear-gradient(135deg, #f59e0b, #7c3aed)', boxShadow: '0 0 20px rgba(124,58,237,0.35)' }}>
-                    <Star className="w-5 h-5 text-white fill-white" />
-                  </div>
+                  <LBCLogo size={40} radius="rounded-xl" />
                   <div>
                     <p className="text-white font-black text-base">LBC Protocol</p>
                     <p className="text-slate-600 text-[10px] tracking-wide">LBCHUB.IO</p>
